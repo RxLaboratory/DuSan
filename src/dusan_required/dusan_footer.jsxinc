@@ -1,4 +1,5 @@
 
     DuAEF.DuScriptUI.showUI(ui);
     DuAEF.enterRunTime();
+    checkSanity();
 })(this);

@@ -21,4 +21,4 @@
     DuAEF.scriptIconOver = DuAEF.DuBinary.toFile(w18_rx_r);
 
     // _______ UI SETUP _______
-	var ui = DuAEF.DuScriptUI.createMainPanel(thisObj, true);
+	var ui = DuAEF.DuScriptUI.createMainPanel(thisObj, true, false, false, true);
