@@ -3,7 +3,7 @@
 //Encapsulate everything to avoid global variables
 (function(thisObj) {
 
-    //init DuAEF
+    //init DuAEF >= 0.7.0
     #include '../DuAEF.jsxinc'
     DuAEF.init("DuSan","0.0.1-Alpha");
 
