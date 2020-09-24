@@ -21,6 +21,12 @@ function checkSanity()
         ui_sanityButton.setBackgroundColor(DuAEF.DuJS.Color.Colors.VERY_DARK_GREY);
         ui_sanityButton.setTextColor(DuAEF.DuJS.Color.Colors.LIGHT_GREY);
     }
+    else if (level == DuAEF.DuSanity.Levels.INFO)
+    {
+        ui_sanityButton.label.text = "Sanity level: INFO";
+        ui_sanityButton.setBackgroundColor(DuAEF.DuJS.Color.Colors.VERY_DARK_GREY);
+        ui_sanityButton.setTextColor(DuAEF.DuJS.Color.Colors.AFTER_EFFECTS_BLUE);
+    }
     else if (level == DuAEF.DuSanity.Levels.WARNING)
     {
         ui_sanityButton.label.text = "Sanity level: WARNING";
@@ -53,7 +59,6 @@ ui_sanityButton.onClick = function () {
     ui.mainGroup.visible = false;
     ui.sanityGroup.visible = true;
 }
-
 
 DuAEF.DuScriptUI.addEvent(checkSanity);
 
