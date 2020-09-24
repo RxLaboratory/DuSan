@@ -5,16 +5,16 @@
 
     //init DuAEF >= 0.7.0
     #include '../DuAEF.jsxinc'
-    DuAEF.init("DuSan","0.0.1-Alpha");
+    DuAEF.init("DuSan","0.0.2-Alpha");
 
     #include "dusan_required/icons.jsxinc"
 
     DuAEF.forumURL = 'https://forum.rainboxlab.org';
     DuAEF.chatURL = 'http://chat.rainboxlab.org';
-    //DuAEF.bugReportURL = 'https://github.com/Rainbox-dev/DuAEF_Duik/issues/new?template=bug_report.md';
+    DuAEF.bugReportURL = 'https://github.com/Rainbox-dev/DuAEF_DuSan/issues/new/choose';
     //DuAEF.featureRequestURL = 'https://github.com/Rainbox-dev/DuAEF_Duik/issues/new?template=feature_request.md';
     //DuAEF.aboutURL = 'https://rainboxlab.org/tools/duik/';
-    DuAEF.scriptAbout = 'DuSan - Sanity checks for After Effects Projects\nDeveloped by Nicolas Dufresne and Contributors.\n\nLicensed under the GNU General Public License v3.';
+    DuAEF.scriptAbout = 'DuSan - Sanity Tests for After Effects Projects\nDeveloped by Nicolas Dufresne and Contributors.\n\nLicensed under the GNU General Public License v3.';
     DuAEF.newsServer = 'rainboxprod.net'
 	DuAEF.newsArgs = 'wp/?call_custom_simple_rss=1&csrp_show_meta=0&csrp_cat=20';
     DuAEF.scriptIcon = DuAEF.DuBinary.toFile(w18_rx_l);
