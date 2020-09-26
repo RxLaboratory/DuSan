@@ -1,7 +1,5 @@
 #include 'dusan_required/dusan_header.jsxinc'
 
-DuAEF.debug = true;
-
 //TODO
 //polices manquantes
 

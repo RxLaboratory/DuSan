@@ -6,6 +6,7 @@
     //init DuAEF >= 0.7.0
     #include '../DuAEF.jsxinc'
     DuAEF.init("DuSan","0.0.2-Alpha");
+    DuAEF.debug = true;
 
     #include "dusan_required/icons.jsxinc"
 
