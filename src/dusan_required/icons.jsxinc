@@ -1,2 +1,8 @@
 #include "icons/w18_rx_r.png.jsxinc"
 #include "icons/w18_rx_l.png.jsxinc"
+#include "icons/w25_brain_m.png.jsxinc"
+#include "icons/w25_brain_b.png.jsxinc"
+#include "icons/w25_brain_y.png.jsxinc"
+#include "icons/w25_brain_o.png.jsxinc"
+#include "icons/w25_brain_r.png.jsxinc"
+#include "icons/w25_brain_p.png.jsxinc"
