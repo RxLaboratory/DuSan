@@ -1,0 +1,13 @@
+#include "icons/w12_check.png.jsxinc"
+#include "icons/w12_check_g.png.jsxinc"
+#include "icons/w12_critical.png.jsxinc"
+#include "icons/w12_fatal.png.jsxinc"
+#include "icons/w12_information.png.jsxinc"
+#include "icons/w12_warning.png.jsxinc"
+#include "icons/w12_danger.png.jsxinc"
+
+#include "icons/w16_file.png.jsxinc"
+#include "icons/w16_file_d.png.jsxinc"
+#include "icons/w16_fix.png.jsxinc"
+#include "icons/w16_live_fix.png.jsxinc"
+#include "icons/w16_live_fix_d.png.jsxinc"

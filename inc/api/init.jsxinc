@@ -1,0 +1,86 @@
+
+DuSanity.initialized = false;
+
+/**
+ * Runs all sanity tests
+ * @param {boolean} [force=false] Force running all tests even if they've not timed out yet.
+ */
+DuSanity.run = function( force ) {
+    if (!DuSanity.initialized) return;
+
+    force = def(force, false);
+
+    // Runs all tests and get the result
+    DuSanity.currentLevel = DuSanity.Level.OK;
+
+    var level = DuSanity.Level.UNKNOWN;
+    for (var k in DuSanity.Test) {
+        if (!DuSanity.Test.hasOwnProperty(k)) continue;
+        var test = DuSanity.Test[k];
+        if (test.enabled) {
+            var testLevel = test.currentLevel;
+            if (force) testLevel = test();
+            if (testLevel > level) level = testLevel;
+        }
+    }
+
+    DuSanity.currentLevel = level;
+
+    // Update UI
+    for(var i = 0; i < DuSanity.UI.items.length; i++) {
+        DuSanity.UI.items[i].setLevel( DuSanity.currentLevel );
+    }
+
+}
+
+/**
+ * This function must be called once when everything in the script is ready and after {@link DuAEF.init}
+ */
+DuSanity.init = function() {
+    // A single global variable to keep track of Ae Uptime
+    $.global.DuSan_AEStartTime = def($.global.DuSan_AEStartTime, Date.now());
+
+    // Defaults
+    DuESF.settings.data.sanity = def(DuESF.settings.data.sanity, {});
+    DuESF.settings.data.sanity.fix = def(DuESF.settings.data.sanity.fix, {});
+    DuESF.settings.data.sanity.timeOut = def(DuESF.settings.data.sanity.timeOut, {});
+    DuESF.settings.data.sanity.options = def(DuESF.settings.data.sanity.options, {});
+
+    // Add default options
+    for (var k in DuSanity.Test) {
+        if (!DuSanity.Test.hasOwnProperty(k)) continue;
+        var test = DuSanity.Test[k];
+        // Add option
+        if (typeof test.options !== 'undefined') {
+            DuESF.settings.data.sanity.options[test.stringId] = def(DuESF.settings.data.sanity.options[test.stringId], {});
+            for (var o in test.options) {
+                if (!test.options.hasOwnProperty(o)) continue;
+                DuESF.settings.data.sanity.options[test.stringId][o] = def(DuESF.settings.data.sanity.options[test.stringId][o], test.options[o].value);
+            }
+        }
+    }
+    
+};
+DuESF.initMethods.push( DuSanity.init );
+
+DuSanity.enterRunTime = function() {
+    
+    if (DuSanity.initialized) return;
+
+    DuESF.settings.data.sanity.options[DuSanity.Test.projectSize.stringId] = def(DuESF.settings.data.sanity.options[DuSanity.Test.projectSize.stringId], {});
+
+    // Enable tests
+    for (var k in DuSanity.Test) {
+        if (!DuSanity.Test.hasOwnProperty(k)) continue;
+        var test = DuSanity.Test[k];
+        DuSanity.setEnabled(test, DuSanity.isProjectEnabled(test) && DuSanity.isGloballyEnabled(test));        
+    }
+
+    // first run
+    DuSanity.run(true);
+    // Add event
+    DuScriptUI.addEvent(DuSanity.run);
+
+    DuSanity.initialized = true;
+};
+DuESF.enterRunTimeMethods.push( DuSanity.enterRunTime );

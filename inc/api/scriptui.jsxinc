@@ -1,0 +1,294 @@
+/**
+ * UI tools to show sanity levels and settings
+ * @namespace
+ * @memberof DuSanity
+ */
+DuSanity.UI = {}
+
+// The list of icons and labels in the ui, kept to update them
+DuSanity.UI.items = [];
+
+/**
+ * Creates an icon to show the current sanity level
+ * @param {Group} container A ScriptUI group where to add the icon
+ * @param {boolean} [addLabel=true] Adds a label next to the icon
+ * @param {boolean} [autoUpdate=true] If true, the icon will be automatically updated according to the current sanity level. Otherwise, call setLevel to change the level.
+ * @return {Group} The ScriptUI Group containing the icon and its label
+ */
+DuSanity.UI.icon = function( container, addLabel, autoUpdate ) {
+    addLabel = def(addLabel, true);
+    autoUpdate = def(autoUpdate, true);
+
+    // Add status
+    var statusGroup = DuScriptUI.group(container, 'row');
+    statusGroup.spacing = 3;
+
+    var statusIconGroup = DuScriptUI.group(statusGroup, 'stacked');
+    statusIconGroup.alignment = ['left', 'center'];
+
+    var statusUnknownIcon = statusIconGroup.add('image', undefined, w12_check.binAsString );
+    statusUnknownIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.UNKNOWN;
+    var statusOKIcon = statusIconGroup.add('image', undefined, w12_check_g.binAsString );
+    statusOKIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.OK;
+    var statusInfoIcon = statusIconGroup.add('image', undefined, w12_information.binAsString );
+    statusInfoIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.INFO;
+    var statusWarningIcon = statusIconGroup.add('image', undefined, w12_warning.binAsString );
+    statusWarningIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.WARNING;
+    var statusDangerIcon = statusIconGroup.add('image', undefined, w12_danger.binAsString );
+    statusDangerIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.DANGER;
+    var statusCriticalIcon = statusIconGroup.add('image', undefined, w12_critical.binAsString );
+    statusCriticalIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.CRITICAL;
+    var statusFatalIcon = statusIconGroup.add('image', undefined, w12_fatal.binAsString );
+    statusFatalIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.FATAL;
+
+    statusIconGroup.setLevel = function( level ) {
+        statusUnknownIcon.visible = level == DuSanity.Level.UNKNOWN;
+        statusOKIcon.visible = level == DuSanity.Level.OK;
+        statusInfoIcon.visible = level == DuSanity.Level.INFO;
+        statusWarningIcon.visible = level == DuSanity.Level.WARNING;
+        statusDangerIcon.visible = level == DuSanity.Level.DANGER;
+        statusCriticalIcon.visible = level == DuSanity.Level.CRITICAL;
+        statusFatalIcon.visible = level == DuSanity.Level.FATAL;
+    };
+
+    if (addLabel) {
+        var statusLabel = DuScriptUI.staticText( statusGroup, {
+            text: DuScriptUI.String.OK,
+            color: DuColor.Color.LIGHT_GREEN
+        });
+        statusLabel.alignment = ['fill', 'center'];
+        statusLabel.setLevel = function( level ) {
+            if (level == DuSanity.Level.UNKNOWN) {
+                statusLabel.text = DuScriptUI.String.UNKNOWN;
+                DuScriptUI.setTextColor( statusLabel, DuColor.Color.APP_TEXT_COLOR.darker());
+            }
+            else if (level == DuSanity.Level.OK) {
+                statusLabel.text = DuScriptUI.String.OK;
+                DuScriptUI.setTextColor( statusLabel, DuColor.Color.LIGHT_GREEN);
+            }
+            else if (level == DuSanity.Level.INFO) {
+                statusLabel.text = DuScriptUI.String.INFO;
+                DuScriptUI.setTextColor( statusLabel, DuColor.Color.LIGHT_BLUE);
+            }
+            else if (level == DuSanity.Level.WARNING) {
+                statusLabel.text = DuScriptUI.String.WARNING;
+                DuScriptUI.setTextColor( statusLabel, DuColor.Color.YELLOW);
+            }
+            else if (level == DuSanity.Level.DANGER) {
+                statusLabel.text = DuScriptUI.String.DANGER;
+                DuScriptUI.setTextColor( statusLabel, DuColor.Color.ORANGE);
+            }
+            else if (level == DuSanity.Level.CRITICAL) {
+                statusLabel.text = DuScriptUI.String.CRITICAL;
+                DuScriptUI.setTextColor( statusLabel, DuColor.Color.RAINBOX_RED);
+            }
+            else if (level == DuSanity.Level.FATAL) {
+                statusLabel.text = DuScriptUI.String.FATAL;
+                DuScriptUI.setTextColor( statusLabel, DuColor.Color.RX_PURPLE);
+            }
+        };
+    }
+
+    statusGroup.setLevel = function( level ) {
+        if (addLabel) statusLabel.setLevel( level );
+        statusIconGroup.setLevel( level );
+    }
+    statusGroup.setInfo = function( info ) {
+        if (!addLabel) return;
+        if (info != "") statusLabel.text = statusLabel.text + ' - ' + info;
+    }
+    statusGroup.setHelpTip = function( tip ) {
+        if (addLabel) statusLabel.helpTip = tip;
+    }
+
+    statusGroup.setLevel(DuSanity.Level.UNKNOWN);
+
+    if (autoUpdate) DuSanity.UI.items.push(statusGroup);
+
+    return statusGroup;
+}
+
+/**
+ * Creates a panel showing all tests and current status
+ * @param {Group} container The ScriptUI Group containing the DuSanity panel
+ * @return {Group} The panel
+ */
+DuSanity.UI.panel = function(container) {
+    // Add tests
+    for (var k in DuSanity.Test) {
+        if (DuSanity.Test.hasOwnProperty(k)) DuSanity.UI.test( container, DuSanity.Test[k] );
+    }
+
+    DuScriptUI.separator(container);
+    // Run all button
+    var runAllButton = DuScriptUI.button( container, {
+        text: DuScriptUI.String.RUN_ALL,
+        helpTip: DuScriptUI.String.RUN_ALL_TESTS_TIP,
+        image: DuScriptUI.Icon.UPDATE,
+        alignment: 'center',
+        orientation: 'row'
+    });
+    runAllButton.alignment = ['fill', 'top'];
+    runAllButton.onCLick =  function() { DuSanity.run(true); };
+}
+
+/**
+ * Adds the UI to display a test in the UI
+ * @param {Group} container A ScriptUI group where to add the test report
+ * @param {DuSanity.Test} test The test to show
+ * @return {Group} The ScriptUI Group containing the test report
+ */
+DuSanity.UI.test = function (container, test) {
+    // Util: updates the UI for the current test
+    function updateUI() {
+        group.setChecked( DuSanity.isGloballyEnabled(test) );
+        projectEnableButton.setChecked( DuSanity.isProjectEnabled(test) );
+        liveFixButton.setChecked( DuSanity.isLiveFixEnabled(test) );
+
+        if (!DuSanity.isEnabled(test))
+        {
+            statusIcon.setLevel(DuSanity.Level.UNKNOWN);
+            return;
+        }
+
+        statusIcon.setLevel( test.currentLevel );
+        statusIcon.setInfo( test.info );
+        statusIcon.setHelpTip( test.tip );
+    }
+
+    var group = DuScriptUI.settingField( container, test.testName, 140 );
+    group.onClick = function() {
+        var c = group.checked;
+        
+        if (!c) projectEnableButton.setChecked(false);
+        else projectEnableButton.setChecked( DuSanity.isProjectEnabled( test ) );
+        projectEnableButton.enabled = c;
+
+        DuSanity.setGloballyEnabled(test, c);
+        DuSanity.setEnabled(test, c && projectEnableButton.checked);
+        updateUI();
+    };
+
+    var projectEnableButton = DuScriptUI.checkBox(group, {
+        text: '',
+        image: w16_file_d,
+        imageChecked: w16_file,
+        helpTip: DuScriptUI.String.PROJECT_ENABLE_TIP
+    });
+    projectEnableButton.alignment = ['left', 'center'];
+    projectEnableButton.onClick = function () {
+        var c = projectEnableButton.checked;
+        DuSanity.setProjectEnabled(test, c)
+        DuSanity.setEnabled(test, c);
+        updateUI();
+    };
+
+    var liveFixButton = DuScriptUI.checkBox(group, {
+        text: '',
+        image: w16_live_fix_d,
+        imageChecked: w16_live_fix,
+        helpTip: DuScriptUI.String.LIVE_FIX_TIP
+    });
+    liveFixButton.alignment = ['left', 'center'];
+    liveFixButton.visible = test.hasAutoFix;
+    liveFixButton.onClick = function() {
+        DuSanity.setLiveFixEnabled(test, liveFixButton.checked);
+    };
+
+    var fixButton = DuScriptUI.button(group, {
+        text: '',
+        image: w16_fix,
+        helpTip: DuScriptUI.String.FIX_TIP
+    });
+    fixButton.alignment = ['left', 'center'];
+    fixButton.visible = test.hasFix;
+    fixButton.onClick = function() {
+        test.fix();
+        test();
+        updateUI();
+    };
+
+    var statusIcon = DuSanity.UI.icon(group, true, false);
+    statusIcon.alignment = ['fill', 'center'];
+
+    var refreshButton = DuScriptUI.button( group, {
+        text: '',
+        image: DuScriptUI.Icon.UPDATE,
+        helpTip: DuScriptUI.String.RUN_TEST_TIP
+    });
+    refreshButton.alignment = ['right', 'center'];
+    refreshButton.onClick = function() { test(); updateUI(); };
+
+    var optionsButton = DuScriptUI.button(group, {
+        text: '',
+        image: DuScriptUI.Icon.OPTIONS,
+        helpTip: DuScriptUI.String.TEST_OPTIONS_TIP
+    });
+    optionsButton.alignment = ['right', 'center'];
+
+    var optionsPopup = DuScriptUI.popUp(DuScriptUI.String.OPTIONS + ' (' + test.testName + ')');
+
+    var timeG = DuScriptUI.group(optionsPopup.content, 'row');
+    DuScriptUI.staticText(timeG, DuScriptUI.String.TEST_EVERY + ':');
+    var timeOut = def ( DuESF.settings.data.sanity.timeOut[test.stringId], test.timeOut );
+    var timeOutStr = timeOut.toString();
+    var unit = "ms";
+    if (timeOut > 1000)
+    {
+        timeOutStr = (timeOut / 1000).toString();
+        unit = "s";
+    }
+    if (timeOut > 60000)
+    {
+        timeOutStr = (timeOut / 60000).toString();
+        unit = "mn";
+    }
+    var timeOutEdit = DuScriptUI.editText( timeG, {
+        text: timeOutStr,
+        suffix: ' ' + unit,
+        localize: false
+    });
+    timeOutEdit.onChange = function()
+    {
+        var t = parseInt(timeOutEdit.text);
+        if (unit == " s") t = t*1000;
+        if (unit == " mn") t = t*60000;
+        DuSanity.setTimeOut(test, t);
+    };
+    // Add custom options
+    if (isdef(test.options)) {
+        for (var o in test.options) {
+            if (!test.options.hasOwnProperty(o)) continue;
+            var option = test.options[o];
+            var optG = DuScriptUI.group( optionsPopup.content, 'row');
+            DuScriptUI.staticText(optG, option.description + ':');
+            if (jstype(option.value) == 'number' || jstype(option.value) == 'string' ) {
+                var optB = DuScriptUI.editText( optG, {
+                    text: DuESF.settings.data.sanity.options[test.stringId][o].toString(),
+                    placeHolder: DuScriptUI.String.DEFAULT
+                });
+                optB.onChange = function () {
+                    DuESF.settings.data.sanity.options[test.stringId][o] = optB.text;
+                    DuESF.settings.save();
+                    test();
+                }
+            }
+            else if ( jstype(option.value) == 'boolean' )
+            {
+                var optB = DuScriptUI.simpleCheckBox(  optG );
+                optB.onClick = function () {
+                    DuESF.settings.data.sanity.options[test.stringId][o] = optB.checked;
+                    DuESF.settings.save();
+                    test();
+                }
+            }
+        }
+    }
+
+    optionsPopup.tieTo(optionsButton);
+
+    //First run
+    updateUI();
+    //add to events
+    DuScriptUI.addEvent(updateUI, 1000);
+}

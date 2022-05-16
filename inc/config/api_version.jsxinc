@@ -1,0 +1,26 @@
+/**
+ * <h3>Sanity tests for After Effects</h3>
+ * <p>DuSan requires <i>DuAEF</i>, the <i>Duduf After Effects Framework</i>. Two builds of the <i>DuSan API</i> are available:<br />
+ * <ul><li><code>DuSan_api.jsxinc</code> does not include <i>DuAEF</i>, and can be used to compine multiple <i>Duduf APIs</i> with a single copy of <i>DuAEF</i>.<br />
+ * Be careful to grab the right version of <i>DuAEF</i> in this case.</li>
+ * <li><code>DuAEF_DuSan_api.jsxinc</code> includes all dependencies, with <i>DuAEF</i>, and is easier to include in your scripts.</li></ul></p>
+ * @namespace
+ * @author Nicolas Dufresne and contributors
+ * @copyright 2022 Nicolas Dufresne, RxLaboratory
+ * @version 2.0.0-Dev
+ * @requires DuAEF>=1.0.0
+ * @license GPL-3.0 <br />
+ * DuSan is free software: you can redistribute it and/or modify<br />
+ * it under the terms of the GNU General Public License as published by<br />
+ * the Free Software Foundation, either version 3 of the License, or<br />
+ * (at your option) any later version.<br />
+ *<br />
+ * DuSan is distributed in the hope that it will be useful,<br />
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of<br />
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br />
+ * GNU General Public License for more details.<br />
+ *<br />
+ * You should have received a copy of the GNU General Public License<br />
+ * along with DuSan. If not, see {@link http://www.gnu.org/licenses/}.
+ */
+var DuSanity = {}
