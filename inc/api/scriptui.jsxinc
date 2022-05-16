@@ -2,6 +2,7 @@
  * UI tools to show sanity levels and settings
  * @namespace
  * @memberof DuSanity
+ * @category DuSanity
  */
 DuSanity.UI = {}
 

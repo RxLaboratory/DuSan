@@ -203,7 +203,8 @@ DuSanity.checkLevel = function(value, limit)
 
 /**
  * All the available tests.
- * @enum {function}
+ * @namespace
+ * @category DuSanity
  */
 DuSanity.Test = {};
 

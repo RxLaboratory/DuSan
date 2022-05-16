@@ -1,0 +1,47 @@
+site_name: DuSan
+site_url: http://dusan.rxlab.guide
+repo_url: https://github.com/RxLaboratory/DuSan/
+edit_uri: tree/master/src/docs/
+site_description: The DuSan comprehensive documentation
+site_author: Nicolas Dufresne and contributors
+copyright: 'Copyright © 2022 <a href="https://rxlaboratory.org" target="_blank">Rainbox Laboratory</a> and <a href="http://duduf.com" target="_blank">Nicolas Dufresne</a>'
+use_directory_urls: false
+theme:
+    name: null
+    custom_dir: 'cinder'
+    colorscheme: zenburn
+extra:
+    collapse_toc: true
+markdown_extensions:
+    - smarty
+    - footnotes
+    - tables
+    - admonition
+    - fenced_code
+    - toc
+    - attr_list
+extra_css:
+    - style.css
+    - video.css
+extra_javascript:
+    - video.js
+    - meta.js
+    - collapser.js
+site_dir: ../docs/
+dev_addr: '127.0.0.1:8001'
+nav:
+    - v2.0.0: index.md
+    - Installation: install.md
+    - Usage: use.md
+    - API Reference: reference/index.html
+    - ...:
+        - Changelog: changelog.md
+        - Contact: http://contact.rxlab.info
+        - Chat: http://chat.rxlab.info
+        - Donate: http://donate.rxlab.info
+        - License:
+            - Introduction: license.md
+            - Documentation license: gnu-fdl.md
+            - DuSan license: gnu-gpl.md
+            - Graphics license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+            - Documentation license: gnu-fdl.md

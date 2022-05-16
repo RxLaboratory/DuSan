@@ -1,0 +1,58 @@
+{
+    "plugins": [
+        "node_modules/better-docs/category"
+    ],
+    "recurseDepth": 1,
+    "source": {
+        "include": ["../output/DuSan_API/DuAEF_DuSan_api.jsxinc"],
+        "includePattern": ".+\\.jsxinc$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "sourceType": "script",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": false,
+        "copyright"             : "Copyright © 2022 Nicolas Dufresne and contributors",
+        "includeDate"           : true,
+        "search"                : true,
+        "better-docs": {
+            "name": "DuSan API Reference",
+            "logo": "",
+            "title": "",
+            "css": "",
+            "hideGenerator": false,
+            "navLinks": [
+                {
+                    "label": "Website",
+                    "href": "https://rxlaboratory.org/tools/dusan"
+                },
+                {
+                    "label": "Source code",
+                    "href": "https://github.com/RxLaboratory/DuSan"
+                },
+                {
+                    "label": "User guide",
+                    "href": "http://dusan.rxlab.guide"
+                },
+                {
+                    "label": "Donate",
+                    "href": "http://donate.rxlab.info"
+                }
+            ]
+        }
+    },
+    "meta": {
+        "title": "DuSan",
+        "description": "Sanity tests for After Effects",
+        "keyword": "ExtendScript, Adobe, After Effects, Sanity tests"
+    },
+    "opts": {
+        "template": "node_modules/better-docs",
+        "recurse": false,
+        "destination": "../../../docs/reference"
+    }
+}
