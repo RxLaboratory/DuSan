@@ -1,0 +1,12 @@
+var isPreRelease = true;
+var scriptName = "DuSan";
+var scriptVersion = "2.0.0-Dev";
+var scriptAbout = 'Sanity tests.';
+var companyName = "RxLaboratory";
+
+var chatURL = 'http://chat.rxlab.info';
+var bugReportURL = 'https://github.com/RxLaboratory/DuSan/issues/new/choose';
+var aboutURL = 'http://rxlaboratory.org/tools/dusan/';
+var docURL = 'http://dusan.rxlab.guide';
+var companyURL = 'https://rxlaboratory.org';
+var rxVersionURL = 'http://api.rxlab.io';
