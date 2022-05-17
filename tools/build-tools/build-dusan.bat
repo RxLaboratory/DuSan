@@ -5,7 +5,6 @@ cd src-docs
 mkdocs build
 cd ..
 cd docs
-echo dusan.rxlab.guide > "CNAME"
 cd ..
 cd tools
 cd "build-tools"
