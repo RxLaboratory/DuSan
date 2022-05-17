@@ -13,7 +13,7 @@
 DuSan periodically runs some tests during an *After Effects* session to detect anything which might go wrong or lead to poor performance (like the project size, memory in use, layers sharing the same name, number of essential properties...). It can be used as a stand-alone *ScriptUI Panel*, but it is also meant to be included in other [*RxLab.*](https://rxlaboratory.org) scripts like [*Duik*](https://github.com/RxLaboratory/Duik), to make sure *After Effects* project are as sane as possible when using complex tools involving a lot of expressions.
 
 **Documentation:**  
-[![Website](https://img.shields.io/badge/website-RxLab-informational)](http://rxlaboratory.org/tools/dusan) [![Doc](https://img.shields.io/badge/documentation-dusan.rxlab.guide-informational)](http://dusan.rxlab.guide)
+[![Website](https://img.shields.io/badge/website-RxLab-informational)](http://rxlaboratory.org/tools/dusan) [![Doc](https://img.shields.io/badge/documentation-dusan.rxlab.guide-informational)](http://dusan.rxlab.guide) [![API Reference](https://img.shields.io/badge/API%20reference-dusan.rxlab.io-informational)](https://dusan.rxlab.io)
 
 <!-- join -->
 ## Join the community
@@ -44,3 +44,7 @@ We're always in need for translations, code, documentation, examples, tutorials,
 
 [![Discord](https://img.shields.io/discord/480782642825134100)](http://chat.rxlab.info) [![Contributing](https://img.shields.io/badge/contributing%20guide-docs.rxlab.io-informational.svg)](http://docs.rxlab.io) [![Contributor Covenant](https://img.shields.io/badge/contributor%20covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md) [![GitHub contributors](https://img.shields.io/github/contributors-anon/RxLaboratory/DuSan)](https://github.com/RxLaboratory/DuSan/graphs/contributors)
 <!-- end:contribution -->
+
+You can easily use DuSAN in your own tools (if you release them under a license compatible with the GNU-GPLv3) by including the DuSAN API.
+
+ [![API Reference](https://img.shields.io/badge/API%20reference-dusan.rxlab.io-informational)](https://dusan.rxlab.io)
