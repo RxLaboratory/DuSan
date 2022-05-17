@@ -110,6 +110,75 @@ DuSanity.UI.icon = function( container, addLabel, autoUpdate ) {
 }
 
 /**
+ * Creates a button to show the current sanity level
+ * @param {Group} container A ScriptUI group where to add the button
+ * @param {boolean} [addLabel=true] Adds a label next to the icon
+ * @param {boolean} [autoUpdate=true] If true, the button will be automatically updated according to the current sanity level. Otherwise, call setLevel to change the level.
+ * @return {DuButton} The DuButton
+ */
+DuSanity.UI.button = function( container, addLabel, autoUpdate ) {
+    addLabel = def(addLabel, true);
+    autoUpdate = def(autoUpdate, true);
+
+    var options = {};
+    if (addLabel) options.text = DuScriptUI.String.UNKNOWN;
+    else options.text = '';
+    options.image = w12_check;
+    options.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.UNKNOWN;
+
+    var button = DuScriptUI.button( container, options);
+
+    button.setLevel = function( level ) {
+        if (level == DuSanity.Level.UNKNOWN) {
+            button.setText( DuScriptUI.String.UNKNOWN );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.darker());
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.UNKNOWN );
+            button.setImage( w12_check );
+        }
+        else if (level == DuSanity.Level.OK) {
+            button.setText( DuScriptUI.String.OK );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.LIGHT_GREEN);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.OK );
+            button.setImage( w12_check_g );
+        }
+        else if (level == DuSanity.Level.INFO) {
+            button.setText( DuScriptUI.String.INFO );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.LIGHT_BLUE);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.INFO );
+            button.setImage( w12_information );
+        }
+        else if (level == DuSanity.Level.WARNING) {
+            button.setText( DuScriptUI.String.WARNING );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.YELLOW);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.WARNING );
+            button.setImage( w12_warning );
+        }
+        else if (level == DuSanity.Level.DANGER) {
+            button.setText( DuScriptUI.String.DANGER );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.ORANGE);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.DANGER );
+            button.setImage( w12_danger );
+        }
+        else if (level == DuSanity.Level.CRITICAL) {
+            button.setText( DuScriptUI.String.CRITICAL );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.RAINBOX_RED);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.CRITICAL );
+            button.setImage( w12_critical );
+        }
+        else if (level == DuSanity.Level.FATAL) {
+            button.setText( DuScriptUI.String.FATAL );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.RX_PURPLE);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.FATAL );
+            button.setImage( w12_fatal);
+        }
+    };
+
+    if (autoUpdate) DuSanity.UI.items.push(button);
+
+    return button;
+}
+
+/**
  * Creates a panel showing all tests and current status
  * @param {Group} container The ScriptUI Group containing the DuSanity panel
  * @return {Group} The panel
