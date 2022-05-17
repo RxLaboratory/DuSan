@@ -1,10 +1,13 @@
-![META](authors:Nicolas "Duduf" Dufresne;license:GNU-FDL;copyright:2022;updated:2022/05/16)
+![META](authors:Nicolas "Duduf" Dufresne;license:GNU-FDL;copyright:2022;updated:2022/05/17)
 
 # Use DuSan
 
 ![](img/screenshot.png)
 
 *DuSan* periodically runs the tests displayed in this list and shows the result there.
+
+!!! note
+    DuSan doesn't actually run the tests at regular intervals, but schedules them to run when the user interacts with its panel. This is a way to be sure to limit its impact on the performance of *After Effects*. You just have to move the mouse over the panel from time to time to update the test results.
 
 For each test:
 

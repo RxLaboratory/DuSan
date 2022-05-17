@@ -1,6 +1,6 @@
 ![META](authors:Nicolas "Duduf" Dufresne;license:GNU-FDL;copyright:2022;updated:2022/05/16)
 
-# DuSan - Sanity tests for *After Effects*
+# ![](img/icons/dusan-ico.png){: style="width: 32px" } DuSan - Sanity tests for *After Effects*
 
 DuSan periodically runs some tests during an *After Effects* session to detect anything which might go wrong or lead to poor performance (like the project size, memory in use, layers sharing the same name, number of essential properties...). It can be used as a stand-alone *ScriptUI Panel*, but it is also meant to be included in other [*RxLab.*](https://rxlaboratory.org) scripts like [*Duik*](https://rxlaboratory.org/tools/duik), to make sure *After Effects* project are as sane as possible when using complex tools involving a lot of expressions.
 

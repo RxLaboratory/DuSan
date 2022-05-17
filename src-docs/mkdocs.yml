@@ -36,6 +36,8 @@ nav:
     - API Reference: reference/index.html
     - ...:
         - Changelog: changelog.md
+        - Website: http://rxlaboratory.org/tools/dusan
+        - Source code: https://github.com/RxLaboratory/DuSan/
         - Contact: http://contact.rxlab.info
         - Chat: http://chat.rxlab.info
         - Donate: http://donate.rxlab.info
@@ -44,4 +46,3 @@ nav:
             - Documentation license: gnu-fdl.md
             - DuSan license: gnu-gpl.md
             - Graphics license: https://creativecommons.org/licenses/by-nc-sa/4.0/
-            - Documentation license: gnu-fdl.md
