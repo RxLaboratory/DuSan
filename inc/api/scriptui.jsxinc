@@ -199,7 +199,7 @@ DuSanity.UI.panel = function(container) {
         orientation: 'row'
     });
     runAllButton.alignment = ['fill', 'top'];
-    runAllButton.onCLick =  function() { DuSanity.run(true); };
+    runAllButton.onClick = function() { DuSanity.run(true); };
 }
 
 /**
@@ -287,7 +287,7 @@ DuSanity.UI.test = function (container, test) {
         helpTip: DuScriptUI.String.RUN_TEST_TIP
     });
     refreshButton.alignment = ['right', 'center'];
-    refreshButton.onClick = function() { test(undefined, true); updateUI(); };
+    refreshButton.onClick = function() { DuSanity.runTest( test, false, true ); updateUI(); };
 
     var optionsButton = DuScriptUI.button(group, {
         text: '',

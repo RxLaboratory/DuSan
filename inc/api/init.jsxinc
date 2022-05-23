@@ -17,9 +17,9 @@ DuSanity.run = function( force ) {
     for (var k in DuSanity.Test) {
         if (!DuSanity.Test.hasOwnProperty(k)) continue;
         var test = DuSanity.Test[k];
-        if (test.enabled) {
+        if (DuSanity.isEnabled(test)) {
             var testLevel = test.currentLevel;
-            if (force) testLevel = test();
+            testLevel = DuSanity.runTest(test, false, force);
             if (testLevel > level) level = testLevel;
         }
     }
@@ -38,7 +38,8 @@ DuSanity.run = function( force ) {
  */
 DuSanity.init = function() {
     // A single global variable to keep track of Ae Uptime
-    $.global.DuSan_AEStartTime = def($.global.DuSan_AEStartTime, Date.now());
+    $.global.DuSan = def($.global.DuSan, {});
+    $.global.DuSan.AEStartTime = def($.global.DuSan.AEStartTime, Date.now());
 
     // Defaults
     DuESF.settings.data.sanity = def(DuESF.settings.data.sanity, {});
