@@ -211,9 +211,30 @@ DuSanity.Test = {};
 /**
  * Checks if some compositions share the same name.
  * @param {boolean} [dontFix=false] If false, will automatically fix the issue.
+ * @param {boolean} [force=false] To improve performance, this test may be automatically paused. Set this to true to force it to run if calling this method.
  */
-DuSanity.Test.compNames = function ( dontFix ) {
+DuSanity.Test.compNames = function ( dontFix, force ) {
     dontFix = def(dontFix, false);
+    force = def(force, false);
+
+    if ( DuSanity.Test.projectSize.currentLevel > DuSanity.Level.WARNING ) {
+        DuSanity.Test.compNames.info = "Project too big";
+        DuSanity.Test.compNames.tip = "The project is too big to run this test automatically. Use the 'Refresh' button to run it now.";
+        DuSanity.Test.compNames.paused = true;
+    }
+    else if ( DuSanity.Test.projectItems.currentLevel > DuSanity.Level.WARNING ) {
+        DuSanity.Test.compNames.info = "Too many items";
+        DuSanity.Test.compNames.tip = "The project contains too many items to run this test automatically.\nUse the 'Refresh' button to run it now.";
+        DuSanity.Test.compNames.paused = true;
+    }
+    else {
+        DuSanity.Test.compNames.paused = false;
+    }
+
+    if (!force && DuSanity.Test.compNames.paused) {
+        DuSanity.Test.compNames.currentLevel = DuSanity.Level.UNKNOWN;
+        return DuSanity.Test.compNames.currentLevel;
+    }
 
     var duplicatedNames = DuAEProject.checkCompNames();
     if (duplicatedNames.length == 0)
@@ -251,6 +272,7 @@ DuSanity.Test.compNames.id = 0;
 DuSanity.Test.compNames.hasFix = true;
 DuSanity.Test.compNames.hasAutoFix = true;
 DuSanity.Test.compNames.timeOut = 600000;
+DuSanity.Test.compNames.paused = false;
 DuSanity.Test.compNames.fix = function() {
     DuAE.beginUndoGroup(DuScriptUI.String.FIX + ': ' + DuSanity.Test.compNames.testName);
 
@@ -414,7 +436,7 @@ DuSanity.Test.projectSize.enabled = true;
 DuSanity.Test.projectSize.id = 0;
 DuSanity.Test.projectSize.hasFix = false;
 DuSanity.Test.projectSize.hasAutoFix = false;
-DuSanity.Test.projectSize.timeOut = 1800000;
+DuSanity.Test.projectSize.timeOut = 60000;
 DuSanity.Test.projectSize.options = {
     sizeLimit: {
         value: 20,
@@ -459,9 +481,30 @@ DuSanity.Test.projectItems.options = {
 /**
  * Checks if some items have the same source file
  * @param {boolean} [dontFix=false] If false, will automatically fix the issue.
+ * @param {boolean} [force=false] To improve performance, this test may be automatically paused. Set this to true to force it to run if calling this method.
  */
-DuSanity.Test.itemSources = function ( dontFix ) {
+DuSanity.Test.itemSources = function ( dontFix, force ) {
     dontFix = def(dontFix, false);
+    force = def(force, false);
+
+    if ( DuSanity.Test.projectSize.currentLevel > DuSanity.Level.WARNING ) {
+        DuSanity.Test.itemSources.info = "Project too big";
+        DuSanity.Test.itemSources.tip = "The project is too big to run this test automatically. Use the 'Refresh' button to run it now.";
+        DuSanity.Test.itemSources.paused = true;
+    }
+    else if ( DuSanity.Test.projectItems.currentLevel > DuSanity.Level.WARNING ) {
+        DuSanity.Test.itemSources.info = "Too many items";
+        DuSanity.Test.itemSources.tip = "The project contains too many items to run this test automatically.\nUse the 'Refresh' button to run it now.";
+        DuSanity.Test.itemSources.paused = true;
+    }
+    else {
+        DuSanity.Test.itemSources.paused = false;
+    }
+
+    if (!force && DuSanity.Test.itemSources.paused) {
+        DuSanity.Test.itemSources.currentLevel = DuSanity.Level.UNKNOWN;
+        return DuSanity.Test.itemSources.currentLevel;
+    }
 
     var duplicatedSources = {};
     duplicatedSources.length = 0;
@@ -526,6 +569,7 @@ DuSanity.Test.itemSources.id = 0;
 DuSanity.Test.itemSources.hasFix = false;
 DuSanity.Test.itemSources.hasAutoFix = false;
 DuSanity.Test.itemSources.timeOut = 1800000;
+DuSanity.Test.itemSources.paused = false;
 
 /**
  * Checks if some items (footages) are not used
@@ -909,9 +953,11 @@ DuSanity.Test.upTime = function ( dontFix ) {
 
     var limit = DuESF.settings.data.sanity.options[DuSanity.Test.upTime.stringId].timeout * 60000;
 
-    $.global.DuSan_AEStartTime = def($.global.DuSan_AEStartTime, Date.now());
+    $.global.DuSan = def($.global.DuSan, {});
+
+    $.global.DuSan.AEStartTime = def($.global.DuSan.AEStartTime, Date.now());
     // Check time elapsed and convert to minutes
-    var elapsed = Date.now() - $.global.DuSan_AEStartTime;
+    var elapsed = Date.now() - $.global.DuSan.AEStartTime;
     elapsed /= 60000;
     elapsed = Math.round(elapsed);
     

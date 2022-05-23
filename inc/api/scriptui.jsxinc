@@ -287,7 +287,7 @@ DuSanity.UI.test = function (container, test) {
         helpTip: DuScriptUI.String.RUN_TEST_TIP
     });
     refreshButton.alignment = ['right', 'center'];
-    refreshButton.onClick = function() { test(); updateUI(); };
+    refreshButton.onClick = function() { test(undefined, true); updateUI(); };
 
     var optionsButton = DuScriptUI.button(group, {
         text: '',
