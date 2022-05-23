@@ -28833,7 +28833,7 @@ DuAEPseudoEffect.prototype.apply = function(layer,name)
  * @namespace
  * @author Nicolas Dufresne and contributors
  * @copyright 2022 Nicolas Dufresne, RxLaboratory
- * @version 2.0.0-Dev
+ * @version 2.0.1
  * @requires DuAEF>=1.0.0
  * @license GPL-3.0 &lt;br />
  * DuSan is free software: you can redistribute it and/or modify&lt;br />
@@ -29096,18 +29096,12 @@ DuSanity.setEnabled = function (test, enabled)
 {
     if (enabled) 
     {
-         //First run
+        //First run
         test();
-        var timeOut = parseInt(DuESF.settings.data.sanity.timeOut[test.stringId]);
-        if (DuESF.debug) timeOut = 3000;
-        //Event
-        test.id = DuScriptUI.addEvent(test, timeOut);
         test.enabled = true;
     }
     else 
     {
-        DuScriptUI.removeEvent(test.id);
-        test.id = 0;
         test.enabled = false;
     }
 }
@@ -29138,6 +29132,31 @@ DuSanity.setTimeOut = function (test, timeOut)
     DuESF.settings.data.sanity.timeOut[test.stringId] = timeOut;
     DuESF.settings.save();
     DuSanity.setEnabled(test, enabled);
+}
+
+/**
+ * Runs a test
+ * @param {boolean} [dontFix=false] If false, will automatically fix the issue.
+ * @param {boolean} [force=false] To improve performance, the test may be automatically paused. Set this to true to force it to run if calling this method.
+ * @return {DuSanity.Level} The level of the result of the test.
+ */
+DuSanity.runTest = function(test, dontFix, force) {
+    dontFix = def(dontFix, false);
+    force = def(force, false);
+
+    var elapsed = Date.now() - test.lastRun;
+    var timedOut = elapsed > test.timeOut;
+
+    var result = test.currentLevel;
+
+    if (force || timedOut) {
+        result = test(dontFix, force);
+        test.lastRun = Date.now();
+    }
+
+    if(DuSanity.currentLevel &lt; result) DuSanity.currentLevel = result;
+    
+    return result;
 }
 
 //low-level undocumented function: checks a value against a limit and sets the results in the UI
@@ -29177,9 +29196,30 @@ DuSanity.Test = {};
 /**
  * Checks if some compositions share the same name.
  * @param {boolean} [dontFix=false] If false, will automatically fix the issue.
+ * @param {boolean} [force=false] To improve performance, this test may be automatically paused. Set this to true to force it to run if calling this method.
  */
-DuSanity.Test.compNames = function ( dontFix ) {
+DuSanity.Test.compNames = function ( dontFix, force ) {
     dontFix = def(dontFix, false);
+    force = def(force, false);
+
+    if ( DuSanity.Test.projectSize.currentLevel > DuSanity.Level.WARNING ) {
+        DuSanity.Test.compNames.info = "Project too big";
+        DuSanity.Test.compNames.tip = "The project is too big to run this test automatically. Use the 'Refresh' button to run it now.";
+        DuSanity.Test.compNames.paused = true;
+    }
+    else if ( DuSanity.Test.projectItems.currentLevel > DuSanity.Level.WARNING ) {
+        DuSanity.Test.compNames.info = "Too many items";
+        DuSanity.Test.compNames.tip = "The project contains too many items to run this test automatically.\nUse the 'Refresh' button to run it now.";
+        DuSanity.Test.compNames.paused = true;
+    }
+    else {
+        DuSanity.Test.compNames.paused = false;
+    }
+
+    if (!force &amp;&amp; DuSanity.Test.compNames.paused) {
+        DuSanity.Test.compNames.currentLevel = DuSanity.Level.UNKNOWN;
+        return DuSanity.Test.compNames.currentLevel;
+    }
 
     var duplicatedNames = DuAEProject.checkCompNames();
     if (duplicatedNames.length == 0)
@@ -29207,6 +29247,7 @@ DuSanity.Test.compNames = function ( dontFix ) {
     return DuSanity.fix( DuSanity.Test.compNames );
 
 }
+DuSanity.Test.compNames.lastRun = 0;
 DuSanity.Test.compNames.stringId = 'compNames';
 DuSanity.Test.compNames.testName = 'Composition Names';
 DuSanity.Test.compNames.info = '';
@@ -29217,6 +29258,7 @@ DuSanity.Test.compNames.id = 0;
 DuSanity.Test.compNames.hasFix = true;
 DuSanity.Test.compNames.hasAutoFix = true;
 DuSanity.Test.compNames.timeOut = 600000;
+DuSanity.Test.compNames.paused = false;
 DuSanity.Test.compNames.fix = function() {
     DuAE.beginUndoGroup(DuScriptUI.String.FIX + ': ' + DuSanity.Test.compNames.testName);
 
@@ -29270,6 +29312,7 @@ DuSanity.Test.layerNames = function ( dontFix ) {
     return DuSanity.fix( DuSanity.Test.layerNames );
 
 }
+DuSanity.Test.layerNames.lastRun = 0;
 DuSanity.Test.layerNames.stringId = 'layerNames';
 DuSanity.Test.layerNames.testName = 'Layer Names';
 DuSanity.Test.layerNames.info = '';
@@ -29302,6 +29345,7 @@ DuSanity.Test.layerNames.fix = function() {
  */
 DuSanity.Test.expressionEngine = function ( dontFix ) {
     dontFix = def(dontFix, false);
+
     var e = DuAEProject.expressionEngine();
     if (e.indexOf("javascript") == 0)
     {
@@ -29320,6 +29364,7 @@ DuSanity.Test.expressionEngine = function ( dontFix ) {
     return DuSanity.fix( DuSanity.Test.expressionEngine );
 
 }
+DuSanity.Test.expressionEngine.lastRun = 0;
 DuSanity.Test.expressionEngine.stringId = 'expressionEngine';
 DuSanity.Test.expressionEngine.testName = 'Expression engine';
 DuSanity.Test.expressionEngine.info = '';
@@ -29371,6 +29416,7 @@ DuSanity.Test.projectSize = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.projectSize.currentLevel;
     return DuSanity.fix( DuSanity.Test.projectSize );
 }
+DuSanity.Test.projectSize.lastRun = 0;
 DuSanity.Test.projectSize.stringId = 'projectSize';
 DuSanity.Test.projectSize.testName = 'Project size';
 DuSanity.Test.projectSize.info = '';
@@ -29380,10 +29426,10 @@ DuSanity.Test.projectSize.enabled = true;
 DuSanity.Test.projectSize.id = 0;
 DuSanity.Test.projectSize.hasFix = false;
 DuSanity.Test.projectSize.hasAutoFix = false;
-DuSanity.Test.projectSize.timeOut = 1800000;
+DuSanity.Test.projectSize.timeOut = 60000;
 DuSanity.Test.projectSize.options = {
     sizeLimit: {
-        value: 20,
+        value: 100,
         description: DuScriptUI.String.SIZE_LIMIT
     }
 }
@@ -29405,6 +29451,7 @@ DuSanity.Test.projectItems = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.projectItems.currentLevel;
     return DuSanity.fix( DuSanity.Test.projectItems );
 }
+DuSanity.Test.projectItems.lastRun = 0;
 DuSanity.Test.projectItems.stringId = 'projectItems';
 DuSanity.Test.projectItems.testName = 'Project items';
 DuSanity.Test.projectItems.info = '';
@@ -29417,7 +29464,7 @@ DuSanity.Test.projectItems.hasAutoFix = false;
 DuSanity.Test.projectItems.timeOut = 600000;
 DuSanity.Test.projectItems.options = {
     itemsLimit: {
-        value: 400,
+        value: 1000,
         description: DuScriptUI.String.ITEMS_LIMIT
     }
 }
@@ -29425,9 +29472,30 @@ DuSanity.Test.projectItems.options = {
 /**
  * Checks if some items have the same source file
  * @param {boolean} [dontFix=false] If false, will automatically fix the issue.
+ * @param {boolean} [force=false] To improve performance, this test may be automatically paused. Set this to true to force it to run if calling this method.
  */
-DuSanity.Test.itemSources = function ( dontFix ) {
+DuSanity.Test.itemSources = function ( dontFix, force ) {
     dontFix = def(dontFix, false);
+    force = def(force, false);
+
+    if ( DuSanity.Test.projectSize.currentLevel > DuSanity.Level.WARNING ) {
+        DuSanity.Test.itemSources.info = "Project too big";
+        DuSanity.Test.itemSources.tip = "The project is too big to run this test automatically. Use the 'Refresh' button to run it now.";
+        DuSanity.Test.itemSources.paused = true;
+    }
+    else if ( DuSanity.Test.projectItems.currentLevel > DuSanity.Level.WARNING ) {
+        DuSanity.Test.itemSources.info = "Too many items";
+        DuSanity.Test.itemSources.tip = "The project contains too many items to run this test automatically.\nUse the 'Refresh' button to run it now.";
+        DuSanity.Test.itemSources.paused = true;
+    }
+    else {
+        DuSanity.Test.itemSources.paused = false;
+    }
+
+    if (!force &amp;&amp; DuSanity.Test.itemSources.paused) {
+        DuSanity.Test.itemSources.currentLevel = DuSanity.Level.UNKNOWN;
+        return DuSanity.Test.itemSources.currentLevel;
+    }
 
     var duplicatedSources = {};
     duplicatedSources.length = 0;
@@ -29482,6 +29550,7 @@ DuSanity.Test.itemSources = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.itemSources.currentLevel;
     return DuSanity.fix( DuSanity.Test.itemSources );
 }
+DuSanity.Test.itemSources.lastRun = 0;
 DuSanity.Test.itemSources.stringId = 'itemSources';
 DuSanity.Test.itemSources.testName = 'Duplicated footages';
 DuSanity.Test.itemSources.info = '';
@@ -29492,6 +29561,7 @@ DuSanity.Test.itemSources.id = 0;
 DuSanity.Test.itemSources.hasFix = false;
 DuSanity.Test.itemSources.hasAutoFix = false;
 DuSanity.Test.itemSources.timeOut = 1800000;
+DuSanity.Test.itemSources.paused = false;
 
 /**
  * Checks if some items (footages) are not used
@@ -29523,6 +29593,7 @@ DuSanity.Test.unusedItems = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.unusedItems.currentLevel;
     return DuSanity.fix( DuSanity.Test.unusedItems );
 }
+DuSanity.Test.unusedItems.lastRun = 0;
 DuSanity.Test.unusedItems.stringId = 'unusedItems';
 DuSanity.Test.unusedItems.testName = 'Unused footages';
 DuSanity.Test.unusedItems.info = '';
@@ -29573,6 +29644,7 @@ DuSanity.Test.precomps = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.precomps.currentLevel;
     return DuSanity.fix( DuSanity.Test.precomps );
 }
+DuSanity.Test.precomps.lastRun = 0;
 DuSanity.Test.precomps.stringId = 'precomps';
 DuSanity.Test.precomps.testName = 'Precompositions';
 DuSanity.Test.precomps.info = '';
@@ -29637,6 +29709,7 @@ DuSanity.Test.unusedComps = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.unusedComps.currentLevel;
     return DuSanity.fix( DuSanity.Test.unusedComps );
 }
+DuSanity.Test.unusedComps.lastRun = 0;
 DuSanity.Test.unusedComps.stringId = 'unusedComps';
 DuSanity.Test.unusedComps.testName = 'Main compositions';
 DuSanity.Test.unusedComps.info = '';
@@ -29731,6 +29804,7 @@ DuSanity.Test.memory = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.memory.currentLevel;
     return DuSanity.fix( DuSanity.Test.memory );
 }
+DuSanity.Test.memory.lastRun = 0;
 DuSanity.Test.memory.stringId = 'memory';
 DuSanity.Test.memory.testName = 'Memory in use';
 DuSanity.Test.memory.info = '';
@@ -29777,6 +29851,7 @@ DuSanity.Test.essentialProperties = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.essentialProperties.currentLevel;
     return DuSanity.fix( DuSanity.Test.essentialProperties );
 }
+DuSanity.Test.essentialProperties.lastRun = 0;
 DuSanity.Test.essentialProperties.stringId = 'essentialProperties';
 DuSanity.Test.essentialProperties.testName = 'Essential properties';
 DuSanity.Test.essentialProperties.info = '';
@@ -29846,6 +29921,7 @@ DuSanity.Test.save = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.save.currentLevel;
     return DuSanity.fix( DuSanity.Test.save );
 }
+DuSanity.Test.save.lastRun = 0;
 DuSanity.Test.save.stringId = 'save';
 DuSanity.Test.save.testName = 'Time since last save';
 DuSanity.Test.save.info = '';
@@ -29875,9 +29951,11 @@ DuSanity.Test.upTime = function ( dontFix ) {
 
     var limit = DuESF.settings.data.sanity.options[DuSanity.Test.upTime.stringId].timeout * 60000;
 
-    $.global.DuSan_AEStartTime = def($.global.DuSan_AEStartTime, Date.now());
+    $.global.DuSan = def($.global.DuSan, {});
+
+    $.global.DuSan.AEStartTime = def($.global.DuSan.AEStartTime, Date.now());
     // Check time elapsed and convert to minutes
-    var elapsed = Date.now() - $.global.DuSan_AEStartTime;
+    var elapsed = Date.now() - $.global.DuSan.AEStartTime;
     elapsed /= 60000;
     elapsed = Math.round(elapsed);
     
@@ -29889,6 +29967,7 @@ DuSanity.Test.upTime = function ( dontFix ) {
     if (dontFix) return  DuSanity.Test.upTime.currentLevel;
     return DuSanity.fix( DuSanity.Test.upTime );
 }
+DuSanity.Test.upTime.lastRun = 0;
 DuSanity.Test.upTime.stringId = 'upTime';
 DuSanity.Test.upTime.testName = 'Up time';
 DuSanity.Test.upTime.info = '';
@@ -30023,6 +30102,75 @@ DuSanity.UI.icon = function( container, addLabel, autoUpdate ) {
 }
 
 /**
+ * Creates a button to show the current sanity level
+ * @param {Group} container A ScriptUI group where to add the button
+ * @param {boolean} [addLabel=true] Adds a label next to the icon
+ * @param {boolean} [autoUpdate=true] If true, the button will be automatically updated according to the current sanity level. Otherwise, call setLevel to change the level.
+ * @return {DuButton} The DuButton
+ */
+DuSanity.UI.button = function( container, addLabel, autoUpdate ) {
+    addLabel = def(addLabel, true);
+    autoUpdate = def(autoUpdate, true);
+
+    var options = {};
+    if (addLabel) options.text = DuScriptUI.String.UNKNOWN;
+    else options.text = '';
+    options.image = w12_check;
+    options.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.UNKNOWN;
+
+    var button = DuScriptUI.button( container, options);
+
+    button.setLevel = function( level ) {
+        if (level == DuSanity.Level.UNKNOWN) {
+            button.setText( DuScriptUI.String.UNKNOWN );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.darker());
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.UNKNOWN );
+            button.setImage( w12_check );
+        }
+        else if (level == DuSanity.Level.OK) {
+            button.setText( DuScriptUI.String.OK );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.LIGHT_GREEN);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.OK );
+            button.setImage( w12_check_g );
+        }
+        else if (level == DuSanity.Level.INFO) {
+            button.setText( DuScriptUI.String.INFO );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.LIGHT_BLUE);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.INFO );
+            button.setImage( w12_information );
+        }
+        else if (level == DuSanity.Level.WARNING) {
+            button.setText( DuScriptUI.String.WARNING );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.YELLOW);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.WARNING );
+            button.setImage( w12_warning );
+        }
+        else if (level == DuSanity.Level.DANGER) {
+            button.setText( DuScriptUI.String.DANGER );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.ORANGE);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.DANGER );
+            button.setImage( w12_danger );
+        }
+        else if (level == DuSanity.Level.CRITICAL) {
+            button.setText( DuScriptUI.String.CRITICAL );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.RAINBOX_RED);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.CRITICAL );
+            button.setImage( w12_critical );
+        }
+        else if (level == DuSanity.Level.FATAL) {
+            button.setText( DuScriptUI.String.FATAL );
+            button.setTextColor( DuColor.Color.APP_TEXT_COLOR.RX_PURPLE);
+            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.FATAL );
+            button.setImage( w12_fatal);
+        }
+    };
+
+    if (autoUpdate) DuSanity.UI.items.push(button);
+
+    return button;
+}
+
+/**
  * Creates a panel showing all tests and current status
  * @param {Group} container The ScriptUI Group containing the DuSanity panel
  * @return {Group} The panel
@@ -30043,7 +30191,7 @@ DuSanity.UI.panel = function(container) {
         orientation: 'row'
     });
     runAllButton.alignment = ['fill', 'top'];
-    runAllButton.onCLick =  function() { DuSanity.run(true); };
+    runAllButton.onClick = function() { DuSanity.run(true); };
 }
 
 /**
@@ -30131,7 +30279,7 @@ DuSanity.UI.test = function (container, test) {
         helpTip: DuScriptUI.String.RUN_TEST_TIP
     });
     refreshButton.alignment = ['right', 'center'];
-    refreshButton.onClick = function() { test(); updateUI(); };
+    refreshButton.onClick = function() { DuSanity.runTest( test, false, true ); updateUI(); };
 
     var optionsButton = DuScriptUI.button(group, {
         text: '',
@@ -30228,9 +30376,9 @@ DuSanity.run = function( force ) {
     for (var k in DuSanity.Test) {
         if (!DuSanity.Test.hasOwnProperty(k)) continue;
         var test = DuSanity.Test[k];
-        if (test.enabled) {
+        if (DuSanity.isEnabled(test)) {
             var testLevel = test.currentLevel;
-            if (force) testLevel = test();
+            testLevel = DuSanity.runTest(test, false, force);
             if (testLevel > level) level = testLevel;
         }
     }
@@ -30249,7 +30397,8 @@ DuSanity.run = function( force ) {
  */
 DuSanity.init = function() {
     // A single global variable to keep track of Ae Uptime
-    $.global.DuSan_AEStartTime = def($.global.DuSan_AEStartTime, Date.now());
+    $.global.DuSan = def($.global.DuSan, {});
+    $.global.DuSan.AEStartTime = def($.global.DuSan.AEStartTime, Date.now());
 
     // Defaults
     DuESF.settings.data.sanity = def(DuESF.settings.data.sanity, {});

@@ -30,7 +30,7 @@ extra_javascript:
 site_dir: ../docs/
 dev_addr: '127.0.0.1:8001'
 nav:
-    - v2.0.0: index.md
+    - v2.0.1: index.md
     - Installation: install.md
     - Usage: use.md
     - API Reference: reference/index.html
