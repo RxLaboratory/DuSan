@@ -1,6 +1,6 @@
 var isPreRelease = true;
 var scriptName = "DuSan";
-var scriptVersion = "2.0.1";
+var scriptVersion = "2.0.2";
 var scriptAbout = 'Sanity tests.';
 var companyName = "RxLaboratory";
 
