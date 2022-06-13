@@ -300,7 +300,7 @@ DuSanity.UI.test = function (container, test) {
 
     var timeG = DuScriptUI.group(optionsPopup.content, 'row');
     DuScriptUI.staticText(timeG, DuScriptUI.String.TEST_EVERY + ':');
-    var timeOut = def ( DuESF.settings.data.sanity.timeOut[test.stringId], test.timeOut );
+    var timeOut = DuESF.settings.get("sanity/timeOut" + test.stringId, test.timeOut);
     var timeOutStr = timeOut.toString();
     var unit = "ms";
     if (timeOut > 1000)
@@ -334,11 +334,11 @@ DuSanity.UI.test = function (container, test) {
             DuScriptUI.staticText(optG, option.description + ':');
             if (jstype(option.value) == 'number' || jstype(option.value) == 'string' ) {
                 var optB = DuScriptUI.editText( optG, {
-                    text: DuESF.settings.data.sanity.options[test.stringId][o].toString(),
+                    text: DuESF.settings.get("sanity/options" + test.stringId + "/" + o, option.value).toString(),
                     placeHolder: DuScriptUI.String.DEFAULT
                 });
                 optB.onChange = function () {
-                    DuESF.settings.data.sanity.options[test.stringId][o] = optB.text;
+                    DuESF.settings.set("sanity/options" + test.stringId + "/" + o, optB.text);
                     DuESF.settings.save();
                     test();
                 }
@@ -347,7 +347,7 @@ DuSanity.UI.test = function (container, test) {
             {
                 var optB = DuScriptUI.simpleCheckBox(  optG );
                 optB.onClick = function () {
-                    DuESF.settings.data.sanity.options[test.stringId][o] = optB.checked;
+                    DuESF.settings.set("sanity/options" + test.stringId + "/" + o, optB.checked);
                     DuESF.settings.save();
                     test();
                 }

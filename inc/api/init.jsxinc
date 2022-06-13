@@ -39,36 +39,13 @@ DuSanity.run = function( force ) {
 DuSanity.init = function() {
     // A single global variable to keep track of Ae Uptime
     $.global.DuSan = def($.global.DuSan, {});
-    $.global.DuSan.AEStartTime = def($.global.DuSan.AEStartTime, Date.now());
-
-    // Defaults
-    DuESF.settings.data.sanity = def(DuESF.settings.data.sanity, {});
-    DuESF.settings.data.sanity.fix = def(DuESF.settings.data.sanity.fix, {});
-    DuESF.settings.data.sanity.timeOut = def(DuESF.settings.data.sanity.timeOut, {});
-    DuESF.settings.data.sanity.options = def(DuESF.settings.data.sanity.options, {});
-
-    // Add default options
-    for (var k in DuSanity.Test) {
-        if (!DuSanity.Test.hasOwnProperty(k)) continue;
-        var test = DuSanity.Test[k];
-        // Add option
-        if (typeof test.options !== 'undefined') {
-            DuESF.settings.data.sanity.options[test.stringId] = def(DuESF.settings.data.sanity.options[test.stringId], {});
-            for (var o in test.options) {
-                if (!test.options.hasOwnProperty(o)) continue;
-                DuESF.settings.data.sanity.options[test.stringId][o] = def(DuESF.settings.data.sanity.options[test.stringId][o], test.options[o].value);
-            }
-        }
-    }
-    
+    $.global.DuSan.AEStartTime = def($.global.DuSan.AEStartTime, Date.now());   
 };
 DuESF.initMethods.push( DuSanity.init );
 
 DuSanity.enterRunTime = function() {
     
     if (DuSanity.initialized) return;
-
-    DuESF.settings.data.sanity.options[DuSanity.Test.projectSize.stringId] = def(DuESF.settings.data.sanity.options[DuSanity.Test.projectSize.stringId], {});
 
     // Enable tests
     for (var k in DuSanity.Test) {

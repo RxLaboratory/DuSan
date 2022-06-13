@@ -38,8 +38,8 @@ DuSanity.fix = function(test) {
  */
 DuSanity.isLiveFixEnabled = function (test)
 {
-    DuESF.settings.data.sanity.fix[test.stringId] = def(DuESF.settings.data.sanity.fix[test.stringId], false);
-    return DuESF.settings.data.sanity.fix[test.stringId] && test.hasAutoFix;
+    var fix = DuESF.settings.get("sanity/fix/" + test.stringId, false);
+    return fix && test.hasAutoFix;
 }
 
 /**
@@ -49,7 +49,7 @@ DuSanity.isLiveFixEnabled = function (test)
  */
 DuSanity.setLiveFixEnabled = function (test, enabled)
 {
-    DuESF.settings.data.sanity.fix[test.stringId] = enabled;
+    DuESF.settings.set("sanity/fix/" + test.stringId, enabled);
     DuESF.settings.save();
 }
 
@@ -60,7 +60,7 @@ DuSanity.setLiveFixEnabled = function (test, enabled)
  */
 DuSanity.needsFix = function ( test ) {
     
-    var liveFix = DuESF.settings.data.sanity.fix[test.stringId];
+    var liveFix = DuESF.settings.get("sanity/fix/" + test.stringId, false);
     return liveFix && test.currentLevel >= DuSanity.Level.DANGER && test.hasFix;
 }
 
@@ -84,8 +84,7 @@ DuSanity.isProjectEnabled = function( test ) {
  */
 DuSanity.isGloballyEnabled = function (test)
 {
-    DuESF.settings.data.sanity[test.stringId] = def(DuESF.settings.data.sanity[test.stringId], true);
-    return DuESF.settings.data.sanity[test.stringId];
+    return DuESF.settings.get("sanity/" + test.stringId, true);
 }
 
 /**
@@ -95,7 +94,7 @@ DuSanity.isGloballyEnabled = function (test)
  */
 DuSanity.setGloballyEnabled = function (test, enabled)
 {
-    DuESF.settings.data.sanity[test.stringId] = enabled;
+    DuESF.settings.set("sanity/" + test.stringId, enabled);
     DuESF.settings.save();
 }
 
@@ -163,7 +162,7 @@ DuSanity.setTimeOut = function (test, timeOut)
 {
     var enabled = test.enabled;
     DuSanity.setEnabled(test, false);
-    DuESF.settings.data.sanity.timeOut[test.stringId] = timeOut;
+    DuESF.settings.set("sanity/timeOut/" + test.stringId, timeOut);
     DuESF.settings.save();
     DuSanity.setEnabled(test, enabled);
 }
@@ -425,7 +424,8 @@ DuSanity.Test.projectSize = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
     var size = DuAEProject.getSize();
-    var sizeLimit = DuESF.settings.data.sanity.options[DuSanity.Test.projectSize.stringId].sizeLimit * 1000000;
+    
+    var sizeLimit = DuESF.settings.get("sanity/options/" + DuSanity.Test.projectSize.stringId + "/sizeLimit", 100) * 1000000;
 
     if (size < 0 && app.project.numItems > 0)
     {
@@ -476,7 +476,7 @@ DuSanity.Test.projectItems = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
     var n = app.project.numItems;
-    var limit = DuESF.settings.data.sanity.options[DuSanity.Test.projectItems.stringId].itemsLimit;
+    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.projectItems.stringId + "/itemsLimit", 1000);
 
     DuSanity.Test.projectItems.info = n + " items";
     DuSanity.Test.projectItems.tip = "Try to keep the project small (e.g. do not animate several shots in the same project).";
@@ -703,7 +703,7 @@ DuSanity.Test.precomps.fix = function () {
     DuAE.beginUndoGroup(DuScriptUI.String.FIX + ': ' + DuSanity.Test.precomps.testName);
 
     var precomps = DuAEProject.getPrecompsAtRoot();
-    var precompFolderName = DuESF.settings.data.sanity.options[DuSanity.Test.precomps.stringId].precompsFolder;
+    var precompFolderName = DuESF.settings.get("sanity/options/" + DuSanity.Test.precomps.stringId + "/precompsFolder", "Precomps");
     var precompFolder = DuAEProject.getFolderItem( precompFolderName );
     if (!precompFolder) precompFolder = app.project.items.addFolder(precompFolderName);
     for (var i = 0, n = precomps.length; i < n; i++)
@@ -723,7 +723,7 @@ DuSanity.Test.unusedComps = function ( dontFix ) {
 
     var unusedFolder = DuAEProject.getFolderItem( DuESF.settings.data.sanity.options[DuSanity.Test.unusedComps.stringId].mainCompsFolder );
     var comps = DuAEProject.getUnusedComps(unusedFolder);
-    var limit = DuESF.settings.data.sanity.options[DuSanity.Test.unusedComps.stringId].maxUnusedComps;
+    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "/maxUnusedComps", 1);
 
     DuSanity.Test.unusedComps.currentLevel = DuSanity.checkLevel(comps.length, limit);
     DuSanity.Test.unusedComps.tip = "";
@@ -766,7 +766,7 @@ DuSanity.Test.unusedComps.options = {
 DuSanity.Test.unusedComps.timeOut = 1800000;
 DuSanity.Test.unusedComps.fix = function () {
     
-    var unusedFolderName = DuESF.settings.data.sanity.options[DuSanity.Test.unusedComps.stringId].mainCompsFolder;
+    var unusedFolderName = DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "/mainCompsFolder", "Project root");
     var unusedFolder = DuAEProject.getFolderItem( unusedFolderName );
     var comps = DuAEProject.getUnusedComps(unusedFolder);
     if (comps.length > 0)
@@ -829,7 +829,7 @@ DuSanity.Test.memory = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
     var mem = app.memoryInUse ;
-    var limit = DuESF.settings.data.sanity.options[DuSanity.Test.memory.stringId].memoryLimit * 1073741824 ;
+    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.memory.stringId + "/memoryLimit", 8) * 1073741824;
 
     DuSanity.Test.memory.info = DuString.fromSize(mem);
     DuSanity.Test.memory.tip = "If the memory used gets too high, it may be good to purge the cache and free some space.";
@@ -876,7 +876,7 @@ DuSanity.Test.essentialProperties = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
     var n = DuAEComp.numMasterProperties();
-    var limit = DuESF.settings.data.sanity.options[DuSanity.Test.essentialProperties.stringId].maxEssentialProps;
+    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.essentialProperties.stringId + "/maxEssentialProps", 40);
 
     DuSanity.Test.essentialProperties.info = n;
     DuSanity.Test.essentialProperties.tip = "Having a lot of Master Properties in the current composition has a very bad impact on performance.";
@@ -912,7 +912,7 @@ DuSanity.Test.save = function ( dontFix ) {
 
     var proj = app.project;
     var f = app.project.file;
-    var limit = DuESF.settings.data.sanity.options[DuSanity.Test.save.stringId].timeout * 60000;
+    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.save.stringId + "/timeout", 30) * 60000;
 
     if (!app.project.dirty) {
         DuSanity.Test.save.info = "";
