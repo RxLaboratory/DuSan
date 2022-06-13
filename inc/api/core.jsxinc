@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The sanity levels.
  * @enum {int}
  * @readonly
@@ -658,7 +658,7 @@ DuSanity.Test.precomps = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
     var precomps = DuAEProject.getPrecompsAtRoot();
-    var limit = DuESF.settings.data.sanity.options[DuSanity.Test.precomps.stringId].maxPrecompsAtRoot;
+    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.precomps.stringId + "/maxPrecompsAtRoot", 1);
 
     DuSanity.Test.precomps.currentLevel = DuSanity.checkLevel(precomps.length, limit);
     DuSanity.Test.precomps.tip = "";
@@ -721,7 +721,7 @@ DuSanity.Test.precomps.fix = function () {
 DuSanity.Test.unusedComps = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
-    var unusedFolder = DuAEProject.getFolderItem( DuESF.settings.data.sanity.options[DuSanity.Test.unusedComps.stringId].mainCompsFolder );
+    var unusedFolder = DuAEProject.getFolderItem( DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "mainCompsFolder", "Project root" ) );
     var comps = DuAEProject.getUnusedComps(unusedFolder);
     var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "/maxUnusedComps", 1);
 
@@ -983,7 +983,7 @@ DuSanity.Test.save.fix = function() {
 DuSanity.Test.upTime = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
-    var limit = DuESF.settings.data.sanity.options[DuSanity.Test.upTime.stringId].timeout * 60000;
+    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.upTime.stringId +"/timeout", 180) * 60000;
 
     $.global.DuSan = def($.global.DuSan, {});
 
