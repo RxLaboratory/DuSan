@@ -28,15 +28,12 @@ xcopy /Y items\LICENSE.txt "output\DuSan_API\LICENSE.txt"
 xcopy /Y items\README.txt "output\DuSan\README.txt"
 cd jsdoc
 cmd /c build-jsdoc.bat
+xcopy /Y ..\..\..\docs\reference\DuSanity.html ..\..\..\docs\reference\index.html
 cd ..
 cd ..
 cd ..
 cd docs
-echo " " > 404.md
-xcopy /Y "..\tools\build-tools\items\404.md" 404.md
 cd ..
 xcopy /S /I /Y docs\reference tools\build-tools\output\DuSan_API\docs
 xcopy /S /I /Y docs\ tools\build-tools\output\DuSan\Help
-del tools\build-tools\output\DuSan\Help\CNAME
-del tools\build-tools\output\DuSan\Help\404.md
 pause

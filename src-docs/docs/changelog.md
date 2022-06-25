@@ -1,5 +1,10 @@
 # DuSan changelog
 
+## ▹ 2.0.2
+
+- Fixed some settings not loading correctly
+- Improved the API reference
+
 ## ▹ 2.0.1
 
 - Improved performance. Some tests may be paused when the project is too big; they can still be run manually.
