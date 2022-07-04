@@ -22,10 +22,12 @@ echo " " > "output\DuSan\LICENSE.md"
 echo " " > "output\DuSan\LICENSE.txt"
 echo " " > "output\DuSan_API\LICENSE.txt"
 echo " " > "output\DuSan\README.txt"
+echo " " > "output\DuSan\Tools\DuSI.jsx"
 xcopy /Y items\LICENSE.md "output\DuSan\LICENSE.md"
 xcopy /Y items\LICENSE.txt "output\DuSan\LICENSE.txt"
 xcopy /Y items\LICENSE.txt "output\DuSan_API\LICENSE.txt"
 xcopy /Y items\README.txt "output\DuSan\README.txt"
+xcopy /Y items\DuSI.jsx "output\DuSan\Tools\DuSI.jsx"
 cd jsdoc
 cmd /c build-jsdoc.bat
 xcopy /Y ..\..\..\docs\reference\DuSanity.html ..\..\..\docs\reference\index.html

@@ -1,5 +1,9 @@
 # DuSan changelog
 
+## ▹ 2.0.3
+
+- Fixed crash with duplicated footages
+
 ## ▹ 2.0.2
 
 - Fixed some settings not loading correctly

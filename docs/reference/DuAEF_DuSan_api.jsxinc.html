@@ -7787,14 +7787,22 @@ DuProcess.prototype.startCmd = function ( cmd ) {
     * @static
     * @param {string|File} process - The process or a path to the process.
     * @param {string[]} [args=[]] - The arguments to pass to the command.
+    * @param {bool} [detached=false] - The script won't wait for the command to finish.
     * @return {string}	The output from the command.
     */
-DuProcess.run = function( process, args ) {
+DuProcess.run = function( process, args, detached ) {
+    detached = def(detached, false);
     var p;
-    if (process instanceof File) p = new DuProcess(process.absoluteURI);
-    else p = new DuProcess(process);
-    var cmd = p.buildCmd(args);
-    return system.callSystem( cmd );
+    if (process instanceof File) p = new DuProcess(process.absoluteURI, args);
+    else p = new DuProcess(process, args);
+
+    var output = "";
+    if (detached) p.start();
+    else {
+        var cmd = p.buildCmd();
+        output = system.callSystem( cmd );
+    }
+    return output;
 }
 
 /**
@@ -8321,7 +8329,7 @@ DuScriptUI.String = {
     EXPORT_TRANSLATION_TIP: "Export a translation file to be edited with DuTranslator.",
     EYE: "Eye",
     EYES: "Eyes",
-    EYEBROW: "Eye",
+    EYEBROW: "Eyebrow",
     FEATHER: "Feather",
     FEATHERS: "Feathers",
     FEATURE_REQUEST: "Feature request",
@@ -15675,13 +15683,14 @@ DuOCODoc.prototype.newFishSpine = function( head, spine, position )
 
 /**
  * Creates a new fin.
+ * @param {DuOCO.Side} [side=DuOCO.Side.LEFT] The side
  * @param {int} [fishbones=5]  Number of feathers
  * @param {float[]} [position] The position of the first bone of the arm.&lt;br />
  * If omitted, computed automatically according to the current character in the doc.
  * @param {DuOCO.View} [view=DuOCO.View.RIGHT] The view
  * @returns {DuOCOLimb} The fin
  */
-DuOCODoc.prototype.newFin = function( side, fishbones, view )
+DuOCODoc.prototype.newFin = function( side, fishbones, view, position )
 {
     side = def(side, DuOCO.Side.LEFT);
     view = def(view, DuOCO.View.RIGHT);
@@ -15707,7 +15716,7 @@ DuOCODoc.prototype.newFin = function( side, fishbones, view )
     var oy = 0;
 
     // offset
-    if (isdef( position ) )
+    if ( isdef(position) )
     {
         ox = position[0] - x;
         oy = position[1] - y;
@@ -29079,7 +29088,7 @@ DuAEPseudoEffect.prototype.apply = function(layer,name)
  * @namespace
  * @author Nicolas Dufresne and contributors
  * @copyright 2022 Nicolas Dufresne, RxLaboratory
- * @version 2.0.2
+ * @version 2.0.3
  * @requires DuAEF>=1.0.0
  * @license GPL-3.0 &lt;br />
  * DuSan is free software: you can redistribute it and/or modify&lt;br />
@@ -29790,7 +29799,7 @@ DuSanity.Test.itemSources = function ( dontFix, force ) {
                 DuSanity.Test.itemSources.tip += "\n- " + file;
             }
         }
-        DuSanity.Test.itemSources.currentLevel = DuAEF.DuSanity.Levels.DANGER;
+        DuSanity.Test.itemSources.currentLevel = DuSanity.Level.DANGER;
     }
 
     if (dontFix) return  DuSanity.Test.itemSources.currentLevel;
