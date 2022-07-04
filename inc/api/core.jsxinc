@@ -578,7 +578,7 @@ DuSanity.Test.itemSources = function ( dontFix, force ) {
                 DuSanity.Test.itemSources.tip += "\n- " + file;
             }
         }
-        DuSanity.Test.itemSources.currentLevel = DuAEF.DuSanity.Levels.DANGER;
+        DuSanity.Test.itemSources.currentLevel = DuSanity.Level.DANGER;
     }
 
     if (dontFix) return  DuSanity.Test.itemSources.currentLevel;
