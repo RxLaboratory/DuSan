@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-10 20:32\n"
+"PO-Revision-Date: 2022-08-10 21:37\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -75,130 +75,130 @@ msgstr ""
 #: scriptui.jsxinc:30
 #, qt-format
 msgid "Sanity status: Unknown"
-msgstr ""
+msgstr "Estado de sanidad: Desconocido"
 
 #: scriptui.jsxinc:32
 #, qt-format
 msgid "Sanity status: OK"
-msgstr ""
+msgstr "Estado de sanidad: OK"
 
 #: scriptui.jsxinc:34
 #, qt-format
 msgid "Sanity status: Information"
-msgstr ""
+msgstr "Estado de sanidad: Información"
 
 #: scriptui.jsxinc:36
 #, qt-format
 msgid "Sanity status: Warning"
-msgstr ""
+msgstr "Estado de sanidad: Advertencia"
 
 #: scriptui.jsxinc:38
 #, qt-format
 msgid "Sanity status: Danger"
-msgstr ""
+msgstr "Estado de sanidad: Peligro"
 
 #: scriptui.jsxinc:40
 #, qt-format
 msgid "Sanity status: Critical"
-msgstr ""
+msgstr "Estado de sanidad: Crítico"
 
 #: scriptui.jsxinc:42
 #, qt-format
 msgid "Sanity status: Fatal"
-msgstr ""
+msgstr "Estado de sanidad: Fatal"
 
 #: scriptui.jsxinc:56
 #, qt-format
 msgid "OK"
-msgstr "OK"
+msgstr "Ok"
 
 #: scriptui.jsxinc:62
 #, qt-format
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: scriptui.jsxinc:70
 #, qt-format
 msgid "Information"
-msgstr ""
+msgstr "Información"
 
 #: scriptui.jsxinc:74
 #, qt-format
 msgid "Warning"
-msgstr ""
+msgstr "Advertencia"
 
 #: scriptui.jsxinc:78
 #, qt-format
 msgid "Danger"
-msgstr ""
+msgstr "Peligro"
 
 #: scriptui.jsxinc:82
 #, qt-format
 msgid "Critical"
-msgstr ""
+msgstr "Crítico"
 
 #: scriptui.jsxinc:86
 #, qt-format
 msgid "Fatal"
-msgstr ""
+msgstr "Fatal"
 
 #. "sanity test"
 #: scriptui.jsxinc:194
 #, qt-format
 msgid "Run all tests"
-msgstr ""
+msgstr "Ejecutar todas las pruebas"
 
 #. "sanity test"
 #: scriptui.jsxinc:195
 #, qt-format
 msgid "Run all the tests and displays the results."
-msgstr ""
+msgstr "Ejecutar todas las pruebas y mostrar los resultados."
 
 #. "sanity test"
 #: scriptui.jsxinc:245
 #, qt-format
 msgid "Toggle this test for the current project only."
-msgstr ""
+msgstr "Cambiar esta prueba sólo para el proyecto actual."
 
 #. "(automatic)live fix for a sanity test"
 #: scriptui.jsxinc:259
 #, qt-format
 msgid "Enable or disable automatic live-fix."
-msgstr ""
+msgstr "Activar o desactivar la corrección automática en vivo."
 
 #. "fix an issue detected by sanity tests"
 #: scriptui.jsxinc:270
 #, qt-format
 msgid "Fix now."
-msgstr ""
+msgstr "Solucionar ahora."
 
 #. "sanity test"
 #: scriptui.jsxinc:286
 #, qt-format
 msgid "Run the current test."
-msgstr ""
+msgstr "Ejecutar la prueba actual."
 
 #. "sanity test"
 #: scriptui.jsxinc:294
 #, qt-format
 msgid "Change the test settings."
-msgstr ""
+msgstr "Cambiar la configuración de la prueba."
 
 #: scriptui.jsxinc:298
 #, qt-format
 msgid "Options"
-msgstr ""
+msgstr "Opciones"
 
 #. "sanity test, label for duration between two tests"
 #: scriptui.jsxinc:301
 #, qt-format
 msgid "Test every:"
-msgstr ""
+msgstr "Probar cada:"
 
 #: scriptui.jsxinc:337
 #, qt-format
 msgid "Default"
-msgstr "Por defecto"
+msgstr "Predeterminado"
 
 #: comp.jsxinc:588
 #, qt-format
@@ -218,7 +218,7 @@ msgstr ""
 #: comp.jsxinc:695
 #, qt-format
 msgid "Shape"
-msgstr ""
+msgstr "Forma"
 
 #: comp.jsxinc:705
 #, qt-format
@@ -243,7 +243,7 @@ msgstr "Polígono"
 #: comp.jsxinc:727
 #, qt-format
 msgid "Star"
-msgstr ""
+msgstr "Estrella"
 
 #: duscriptui_extension.jsxinc:161
 #, qt-format
@@ -280,12 +280,12 @@ msgstr "Modo edición"
 #: layer.jsxinc:1505
 #, qt-format
 msgid "Locator"
-msgstr ""
+msgstr "Localizador"
 
 #: project.jsxinc:466
 #, qt-format
 msgid "Project Root"
-msgstr ""
+msgstr "Raíz del Proyecto"
 
 #. "short for Left, must be short enough to be used as a tag in layer names"
 #: oco.jsxinc:98
@@ -371,7 +371,7 @@ msgstr "Garras"
 #: oco.jsxinc:560
 #, qt-format
 msgid "Tip"
-msgstr ""
+msgstr "Extremo"
 
 #: oco.jsxinc:601
 #, qt-format
@@ -386,7 +386,7 @@ msgstr "Pierna"
 #: oco.jsxinc:702
 #, qt-format
 msgid "Thigh"
-msgstr ""
+msgstr "Muslo"
 
 #: oco.jsxinc:710
 #, qt-format
@@ -401,7 +401,7 @@ msgstr "Pie"
 #: oco.jsxinc:753
 #, qt-format
 msgid "Toes"
-msgstr ""
+msgstr "Dedos de los Pies"
 
 #: oco.jsxinc:767
 #, qt-format
@@ -411,7 +411,7 @@ msgstr "Pezuña"
 #: oco.jsxinc:838
 #, qt-format
 msgid "Spine"
-msgstr ""
+msgstr "Espina"
 
 #: oco.jsxinc:856
 #, qt-format
@@ -421,7 +421,7 @@ msgstr "Caderas"
 #: oco.jsxinc:877
 #, qt-format
 msgid "Torso"
-msgstr ""
+msgstr "Torso"
 
 #: oco.jsxinc:898
 #, qt-format
@@ -446,7 +446,7 @@ msgstr "Pelo"
 #: oco.jsxinc:1044
 #, qt-format
 msgid "Wing"
-msgstr ""
+msgstr "Ala"
 
 #: oco.jsxinc:1126
 #, qt-format
