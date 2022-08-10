@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-10 12:25\n"
+"PO-Revision-Date: 2022-08-10 20:32\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -20,42 +20,42 @@ msgstr ""
 #: core.jsxinc:295
 #, qt-format
 msgid "Fix"
-msgstr ""
+msgstr "Solucionar"
 
 #: core.jsxinc:466
 #, qt-format
 msgid "Size limit (MB)"
-msgstr ""
+msgstr "Límite de tamaño (MB)"
 
 #: core.jsxinc:501
 #, qt-format
 msgid "Maximum number of items"
-msgstr ""
+msgstr "Número máximo de elementos"
 
 #: core.jsxinc:693
 #, qt-format
 msgid "Maximum number of precompositions in the root folder"
-msgstr ""
+msgstr "Cantidad máxima de precomposiciones en la carpeta raíz"
 
 #: core.jsxinc:697
 #, qt-format
 msgid "Default folder for precompositions"
-msgstr ""
+msgstr "Carpeta predeterminada para precomposiciones"
 
 #: core.jsxinc:758
 #, qt-format
 msgid "Maximum unused comps in the project"
-msgstr ""
+msgstr "Máximo de comps no utilizados en el proyecto"
 
 #: core.jsxinc:762
 #, qt-format
 msgid "Folder for main comps (leave empty for project root)"
-msgstr ""
+msgstr "Carpeta para los comps principales (dejar vacío para la raíz del proyecto)"
 
 #: core.jsxinc:853
 #, qt-format
 msgid "Maximum memory (GB)"
-msgstr ""
+msgstr "Memoria máxima (GB)"
 
 #: core.jsxinc:900
 #, qt-format
@@ -65,7 +65,7 @@ msgstr ""
 #: core.jsxinc:970
 #, qt-format
 msgid "Time limit before saving the project (mn)"
-msgstr ""
+msgstr "Límite de tiempo antes de guardar el proyecto (mn)"
 
 #: core.jsxinc:1016
 #, qt-format
