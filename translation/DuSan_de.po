@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-10 10:55\n"
+"PO-Revision-Date: 2022-08-10 12:25\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -20,62 +20,62 @@ msgstr ""
 #: core.jsxinc:295
 #, qt-format
 msgid "Fix"
-msgstr ""
+msgstr "Reparieren"
 
 #: core.jsxinc:466
 #, qt-format
 msgid "Size limit (MB)"
-msgstr ""
+msgstr "Größen-Limit (MB)"
 
 #: core.jsxinc:501
 #, qt-format
 msgid "Maximum number of items"
-msgstr ""
+msgstr "Maximale Anzahl an Elementen"
 
 #: core.jsxinc:693
 #, qt-format
 msgid "Maximum number of precompositions in the root folder"
-msgstr ""
+msgstr "Maximale Anzahl an Unterkompositionen im Stammverzeichnis"
 
 #: core.jsxinc:697
 #, qt-format
 msgid "Default folder for precompositions"
-msgstr ""
+msgstr "Standardordner für Unterkompositionen"
 
 #: core.jsxinc:758
 #, qt-format
 msgid "Maximum unused comps in the project"
-msgstr ""
+msgstr "Maximale nicht verwendete Kompositionen im Projekt"
 
 #: core.jsxinc:762
 #, qt-format
 msgid "Folder for main comps (leave empty for project root)"
-msgstr ""
+msgstr "Ordner für Hauptkompositionen (für Projekt-Stammverzeichnis leer lassen)"
 
 #: core.jsxinc:853
 #, qt-format
 msgid "Maximum memory (GB)"
-msgstr ""
+msgstr "Maximaler Speicher (GB)"
 
 #: core.jsxinc:900
 #, qt-format
 msgid "Maximum number of essential properties in a comp"
-msgstr ""
+msgstr "Maximale Anzahl an notwendigen Eigenschaften in einer Komposition"
 
 #: core.jsxinc:970
 #, qt-format
 msgid "Time limit before saving the project (mn)"
-msgstr ""
+msgstr "Zeitlimit vor dem Speichern des Projekts (min)"
 
 #: core.jsxinc:1016
 #, qt-format
 msgid "Up time limit (mn)"
-msgstr ""
+msgstr "Zeitlimit erhöhen (min)"
 
 #: scriptui.jsxinc:30
 #, qt-format
 msgid "Sanity status: Unknown"
-msgstr ""
+msgstr "Gesundheits-Status: Unbekannt"
 
 #: scriptui.jsxinc:32
 #, qt-format
@@ -110,43 +110,43 @@ msgstr ""
 #: scriptui.jsxinc:56
 #, qt-format
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #: scriptui.jsxinc:62
 #, qt-format
 msgid "Unknown"
-msgstr ""
+msgstr "Unbekannt"
 
 #: scriptui.jsxinc:70
 #, qt-format
 msgid "Information"
-msgstr ""
+msgstr "Hinweis"
 
 #: scriptui.jsxinc:74
 #, qt-format
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: scriptui.jsxinc:78
 #, qt-format
 msgid "Danger"
-msgstr ""
+msgstr "Gefahr"
 
 #: scriptui.jsxinc:82
 #, qt-format
 msgid "Critical"
-msgstr ""
+msgstr "Kritisch"
 
 #: scriptui.jsxinc:86
 #, qt-format
 msgid "Fatal"
-msgstr ""
+msgstr "Ein kritischer Fehler"
 
 #. "sanity test"
 #: scriptui.jsxinc:194
 #, qt-format
 msgid "Run all tests"
-msgstr ""
+msgstr "Alle Tests durchführen"
 
 #. "sanity test"
 #: scriptui.jsxinc:195
@@ -170,7 +170,7 @@ msgstr ""
 #: scriptui.jsxinc:270
 #, qt-format
 msgid "Fix now."
-msgstr ""
+msgstr "Jetzt reparieren."
 
 #. "sanity test"
 #: scriptui.jsxinc:286
@@ -182,299 +182,299 @@ msgstr ""
 #: scriptui.jsxinc:294
 #, qt-format
 msgid "Change the test settings."
-msgstr ""
+msgstr "Test-Einstellungen ändern."
 
 #: scriptui.jsxinc:298
 #, qt-format
 msgid "Options"
-msgstr ""
+msgstr "Optionen"
 
 #. "sanity test, label for duration between two tests"
 #: scriptui.jsxinc:301
 #, qt-format
 msgid "Test every:"
-msgstr ""
+msgstr "Testintervall:"
 
 #: scriptui.jsxinc:337
 #, qt-format
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: comp.jsxinc:588
 #, qt-format
 msgid "Null"
-msgstr ""
+msgstr "Nullobjekt"
 
 #: comp.jsxinc:637
 #, qt-format
 msgid "Adjustment layer"
-msgstr ""
+msgstr "Einstellungsebene"
 
 #: comp.jsxinc:666
 #, qt-format
 msgid "Solid"
-msgstr ""
+msgstr "Farbebene"
 
 #: comp.jsxinc:695
 #, qt-format
 msgid "Shape"
-msgstr ""
+msgstr "Formebene"
 
 #: comp.jsxinc:705
 #, qt-format
 msgid "Rectangle"
-msgstr ""
+msgstr "Rechteck"
 
 #: comp.jsxinc:710
 #, qt-format
 msgid "Rounded rectangle"
-msgstr ""
+msgstr "Abgerundetes Rechteck"
 
 #: comp.jsxinc:716
 #, qt-format
 msgid "Circle"
-msgstr ""
+msgstr "Kreis"
 
 #: comp.jsxinc:721
 #, qt-format
 msgid "Polygon"
-msgstr ""
+msgstr "Polygon"
 
 #: comp.jsxinc:727
 #, qt-format
 msgid "Star"
-msgstr ""
+msgstr "Stern"
 
 #: duscriptui_extension.jsxinc:161
 #, qt-format
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: duscriptui_extension.jsxinc:203
 #, qt-format
 msgctxt "Select"
 msgid "None"
-msgstr ""
+msgstr "Keine"
 
 #: duscriptui_extension.jsxinc:663
 #, qt-format
 msgid "Select layers"
-msgstr ""
+msgstr "Ebenen auswählen"
 
 #: layer.jsxinc:477
 #, qt-format
 msgid "The pseudo effect file does not exist."
-msgstr ""
+msgstr "Die Pseudo-Effekt-Datei existiert nicht."
 
 #: layer.jsxinc:537
 #, qt-format
 msgid "Invalid pseudo effect file or match name."
-msgstr ""
+msgstr "Ungültige Pseudo-Effekt-Datei oder Namens-Entsprechung."
 
 #: layer.jsxinc:707
 #, qt-format
 msgctxt "in layer name"
 msgid "Edit mode"
-msgstr ""
+msgstr "Bearbeitungs-Modus"
 
 #: layer.jsxinc:1505
 #, qt-format
 msgid "Locator"
-msgstr ""
+msgstr "Ortungshilfe"
 
 #: project.jsxinc:466
 #, qt-format
 msgid "Project Root"
-msgstr ""
+msgstr "Projekt-Stammverzeichnis"
 
 #. "short for Left, must be short enough to be used as a tag in layer names"
 #: oco.jsxinc:98
 #, qt-format
 msgctxt "in layer name, left"
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #. "short for Right, must be short enough to be used as a tag in layer names"
 #: oco.jsxinc:99
 #, qt-format
 msgctxt "in layer name, right"
 msgid "R"
-msgstr ""
+msgstr "R"
 
 #. "short for Front, must be short enough to be used as a tag in layer names"
 #: oco.jsxinc:109
 #, qt-format
 msgctxt "in layer name, front"
 msgid "Fr"
-msgstr ""
+msgstr "Vorne"
 
 #. "short for Back, must be short enough to be used as a tag in layer names"
 #: oco.jsxinc:110
 #, qt-format
 msgctxt "in layer name, back"
 msgid "Bk"
-msgstr ""
+msgstr "Hinten"
 
 #. "short for Tail, must be short enough to be used as a tag in layer names"
 #: oco.jsxinc:111
 #, qt-format
 msgctxt "in layer name, tail"
 msgid "Tl"
-msgstr ""
+msgstr "Schwanz"
 
 #. "short for Middle, must be short enough to be used as a tag in layer names"
 #: oco.jsxinc:112
 #, qt-format
 msgctxt "in layer name, middle"
 msgid "Md"
-msgstr ""
+msgstr "M"
 
 #. "short for Above, must be short enough to be used as a tag in layer names"
 #: oco.jsxinc:113
 #, qt-format
 msgctxt "in layer name, above"
 msgid "Ab"
-msgstr ""
+msgstr "Oben"
 
 #. "short for Under, must be short enough to be used as a tag in layer names"
 #: oco.jsxinc:114
 #, qt-format
 msgctxt "in layer name, under"
 msgid "Un"
-msgstr ""
+msgstr "Unten"
 
 #: oco.jsxinc:335
 #, qt-format
 msgid "Arm"
-msgstr ""
+msgstr "Arm"
 
 #: oco.jsxinc:393
 #, qt-format
 msgid "Shoulder"
-msgstr ""
+msgstr "Schulter"
 
 #: oco.jsxinc:442
 #, qt-format
 msgid "Forearm"
-msgstr ""
+msgstr "Unterarm"
 
 #: oco.jsxinc:483
 #, qt-format
 msgid "Hand"
-msgstr ""
+msgstr "Hand"
 
 #: oco.jsxinc:524
 #, qt-format
 msgid "Claws"
-msgstr ""
+msgstr "Klauen"
 
 #: oco.jsxinc:560
 #, qt-format
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: oco.jsxinc:601
 #, qt-format
 msgid "Heel"
-msgstr ""
+msgstr "Ferse"
 
 #: oco.jsxinc:663
 #, qt-format
 msgid "Leg"
-msgstr ""
+msgstr "Bein"
 
 #: oco.jsxinc:702
 #, qt-format
 msgid "Thigh"
-msgstr ""
+msgstr "Oberschenkel"
 
 #: oco.jsxinc:710
 #, qt-format
 msgid "Calf"
-msgstr ""
+msgstr "Unterschenkel"
 
 #: oco.jsxinc:731
 #, qt-format
 msgid "Foot"
-msgstr ""
+msgstr "Fuß"
 
 #: oco.jsxinc:753
 #, qt-format
 msgid "Toes"
-msgstr ""
+msgstr "Zehen"
 
 #: oco.jsxinc:767
 #, qt-format
 msgid "Hoof"
-msgstr ""
+msgstr "Huf"
 
 #: oco.jsxinc:838
 #, qt-format
 msgid "Spine"
-msgstr ""
+msgstr "Wirbelsäule"
 
 #: oco.jsxinc:856
 #, qt-format
 msgid "Hips"
-msgstr ""
+msgstr "Hüfte"
 
 #: oco.jsxinc:877
 #, qt-format
 msgid "Torso"
-msgstr ""
+msgstr "Oberkörper"
 
 #: oco.jsxinc:898
 #, qt-format
 msgid "Neck"
-msgstr ""
+msgstr "Nacken"
 
 #: oco.jsxinc:907
 #, qt-format
 msgid "Head"
-msgstr ""
+msgstr "Kopf"
 
 #: oco.jsxinc:943
 #, qt-format
 msgid "Tail"
-msgstr ""
+msgstr "Schweif"
 
 #: oco.jsxinc:982
 #, qt-format
 msgid "Hair"
-msgstr ""
+msgstr "Haare"
 
 #: oco.jsxinc:1044
 #, qt-format
 msgid "Wing"
-msgstr ""
+msgstr "Flügel"
 
 #: oco.jsxinc:1126
 #, qt-format
 msgid "Feather"
-msgstr ""
+msgstr "Feder"
 
 #: oco.jsxinc:1388
 #, qt-format
 msgid "Fin"
-msgstr ""
+msgstr "Flosse"
 
 #: oco.jsxinc:1409
 #, qt-format
 msgid "Fishbone"
-msgstr ""
+msgstr "Fischgräte"
 
 #: panel.jsxinc:567
 #, qt-format
 msgid "%1 Settings"
-msgstr ""
+msgstr "%1 Einstellungen"
 
 #: panel.jsxinc:591
 #, qt-format
 msgid "Set the language of the interface."
-msgstr ""
+msgstr "Anzeigesprache einstellen."
 
 #: panel.jsxinc:610
 #, qt-format
 msgid "Settings file"
-msgstr ""
+msgstr "Einstellungs-Datei"
 
