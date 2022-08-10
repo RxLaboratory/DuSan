@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-10 10:55\n"
+"PO-Revision-Date: 2022-08-10 12:25\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -248,7 +248,7 @@ msgstr ""
 #: duscriptui_extension.jsxinc:161
 #, qt-format
 msgid "Cancel"
-msgstr ""
+msgstr "Отменить"
 
 #: duscriptui_extension.jsxinc:203
 #, qt-format
@@ -259,17 +259,17 @@ msgstr ""
 #: duscriptui_extension.jsxinc:663
 #, qt-format
 msgid "Select layers"
-msgstr ""
+msgstr "Вуделить слои"
 
 #: layer.jsxinc:477
 #, qt-format
 msgid "The pseudo effect file does not exist."
-msgstr ""
+msgstr "Файл псевдо эффектов не найден."
 
 #: layer.jsxinc:537
 #, qt-format
 msgid "Invalid pseudo effect file or match name."
-msgstr ""
+msgstr "Ошибочный файл псеводо эффектов или сонаиминований."
 
 #: layer.jsxinc:707
 #, qt-format
@@ -466,15 +466,15 @@ msgstr ""
 #: panel.jsxinc:567
 #, qt-format
 msgid "%1 Settings"
-msgstr ""
+msgstr "%1 Настройки"
 
 #: panel.jsxinc:591
 #, qt-format
 msgid "Set the language of the interface."
-msgstr ""
+msgstr "Установить язык интерфейса."
 
 #: panel.jsxinc:610
 #, qt-format
 msgid "Settings file"
-msgstr ""
+msgstr "Файл настроек"
 
