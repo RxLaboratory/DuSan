@@ -461,12 +461,6 @@ DuSanity.Test.projectSize.id = 0;
 DuSanity.Test.projectSize.hasFix = false;
 DuSanity.Test.projectSize.hasAutoFix = false;
 DuSanity.Test.projectSize.timeOut = 60000;
-DuSanity.Test.projectSize.options = {
-    sizeLimit: {
-        value: 100,
-        description: i18n._("Size limit (MB)")
-    }
-}
 
 /**
  * Checks the project size
@@ -496,12 +490,6 @@ DuSanity.Test.projectItems.id = 0;
 DuSanity.Test.projectItems.hasFix = false;
 DuSanity.Test.projectItems.hasAutoFix = false;
 DuSanity.Test.projectItems.timeOut = 600000;
-DuSanity.Test.projectItems.options = {
-    itemsLimit: {
-        value: 1000,
-        description: i18n._("Maximum number of items")
-    }
-}
 
 /**
  * Checks if some items have the same source file
@@ -688,16 +676,6 @@ DuSanity.Test.precomps.enabled = true;
 DuSanity.Test.precomps.id = 0;
 DuSanity.Test.precomps.hasFix = true;
 DuSanity.Test.precomps.hasAutoFix = true;
-DuSanity.Test.precomps.options = {
-    maxPrecompsAtRoot: {
-        value: 1,
-        description: i18n._("Maximum number of precompositions in the root folder")
-    },
-    precompsFolder: {
-        value: "Precomps",
-        description: i18n._("Default folder for precompositions")
-    }
-};
 DuSanity.Test.precomps.timeOut = 600000;
 DuSanity.Test.precomps.fix = function () {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.precomps.testName);
@@ -753,16 +731,6 @@ DuSanity.Test.unusedComps.enabled = true;
 DuSanity.Test.unusedComps.id = 0;
 DuSanity.Test.unusedComps.hasFix = true;
 DuSanity.Test.unusedComps.hasAutoFix = false;
-DuSanity.Test.unusedComps.options = {
-    maxUnusedComps: {
-        value: 1,
-        description: i18n._("Maximum unused comps in the project")
-    },
-    mainCompsFolder: {
-        value: "Project root",
-        description: i18n._("Folder for main comps (leave empty for project root)")
-    }
-};
 DuSanity.Test.unusedComps.timeOut = 1800000;
 DuSanity.Test.unusedComps.fix = function () {
     
@@ -848,12 +816,6 @@ DuSanity.Test.memory.enabled = true;
 DuSanity.Test.memory.id = 0;
 DuSanity.Test.memory.hasFix = true;
 DuSanity.Test.memory.hasAutoFix = false;
-DuSanity.Test.memory.options = {
-    memoryLimit: {
-        value: 8,
-        description: i18n._("Maximum memory (GB)")
-    }
-};
 DuSanity.Test.memory.timeOut = 300000;
 DuSanity.Test.memory.fix = function() {
     app.purge(PurgeTarget.SNAPSHOT_CACHES);
@@ -895,12 +857,6 @@ DuSanity.Test.essentialProperties.enabled = true;
 DuSanity.Test.essentialProperties.id = 0;
 DuSanity.Test.essentialProperties.hasFix = false;
 DuSanity.Test.essentialProperties.hasAutoFix = false;
-DuSanity.Test.essentialProperties.options = {
-    maxEssentialProps: {
-        value: 40,
-        description: i18n._("Maximum number of essential properties in a comp")
-    }
-};
 DuSanity.Test.essentialProperties.timeOut = 300000;
 
 /**
@@ -965,12 +921,6 @@ DuSanity.Test.save.enabled = true;
 DuSanity.Test.save.id = 0;
 DuSanity.Test.save.hasFix = true;
 DuSanity.Test.save.hasAutoFix = true;
-DuSanity.Test.save.options = {
-    timeout: {
-        value: 30,
-        description: i18n._("Time limit before saving the project (mn)")
-    }
-};
 DuSanity.Test.save.timeOut = 900000;
 DuSanity.Test.save.fix = function() {
     app.project.save();
@@ -1011,12 +961,6 @@ DuSanity.Test.upTime.enabled = true;
 DuSanity.Test.upTime.id = 0;
 DuSanity.Test.upTime.hasFix = true;
 DuSanity.Test.upTime.hasAutoFix = false;
-DuSanity.Test.upTime.options = {
-    timeout: {
-        value: 180,
-        description: i18n._("Up time limit (mn)")
-    }
-};
 DuSanity.Test.upTime.timeOut = 900000;
 DuSanity.Test.upTime.fix = function() {
     app.quit();

@@ -39,11 +39,78 @@ DuSanity.run = function( force ) {
 DuSanity.init = function() {
     // A single global variable to keep track of Ae Uptime
     $.global.DuSan = def($.global.DuSan, {});
-    $.global.DuSan.AEStartTime = def($.global.DuSan.AEStartTime, Date.now());   
+    $.global.DuSan.AEStartTime = def($.global.DuSan.AEStartTime, Date.now());
+
+    // Add options (just now to translate the description)
+    DuSanity.Test.projectSize.options = {
+        sizeLimit: {
+            value: 100,
+            description: i18n._("Size limit (MB)")
+        }
+    };
+
+    DuSanity.Test.projectItems.options = {
+        itemsLimit: {
+            value: 1000,
+            description: i18n._("Maximum number of items")
+        }
+    };
+
+    DuSanity.Test.precomps.options = {
+        maxPrecompsAtRoot: {
+            value: 1,
+            description: i18n._("Maximum number of precompositions in the root folder")
+        },
+        precompsFolder: {
+            value: "Precomps",
+            description: i18n._("Default folder for precompositions")
+        }
+    };
+
+    DuSanity.Test.unusedComps.options = {
+        maxUnusedComps: {
+            value: 1,
+            description: i18n._("Maximum unused comps in the project")
+        },
+        mainCompsFolder: {
+            value: "Project root",
+            description: i18n._("Folder for main comps (leave empty for project root)")
+        }
+    };
+
+    DuSanity.Test.memory.options = {
+        memoryLimit: {
+            value: 8,
+            description: i18n._("Maximum memory (GB)")
+        }
+    };
+
+    DuSanity.Test.essentialProperties.options = {
+        maxEssentialProps: {
+            value: 40,
+            description: i18n._("Maximum number of essential properties in a comp")
+        }
+    };
+
+    DuSanity.Test.save.options = {
+        timeout: {
+            value: 30,
+            description: i18n._("Time limit before saving the project (mn)")
+        }
+    };
+
+    DuSanity.Test.upTime.options = {
+        timeout: {
+            value: 180,
+            description: i18n._("Up time limit (mn)")
+        }
+    };
 };
 DuESF.initMethods.push( DuSanity.init );
 
 DuSanity.enterRunTime = function() {
+
+    DuDebug.log( "DuSanity: entering runtime..." );
     
     if (DuSanity.initialized) return;
 
@@ -55,10 +122,14 @@ DuSanity.enterRunTime = function() {
     }
 
     // first run
+    DuDebug.log( "DuSanity: First run" );
     DuSanity.run(true);
     // Add event
+    DuDebug.log( "DuSanity: Adding event..." );
     DuScriptUI.addEvent(DuSanity.run);
 
     DuSanity.initialized = true;
+
+    DuDebug.log( "DuSanity: Runtime!" );
 };
 DuESF.enterRunTimeMethods.push( DuSanity.enterRunTime );

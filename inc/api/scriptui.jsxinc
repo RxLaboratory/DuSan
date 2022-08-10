@@ -138,7 +138,7 @@ DuSanity.UI.button = function( container, addLabel, autoUpdate ) {
         else if (level == DuSanity.Level.OK) {
             button.setText( i18n._("OK") );
             button.setTextColor( DuColor.Color.APP_TEXT_COLOR.LIGHT_GREEN);
-            button.setHelpTip( i18n._("Sanity status: OK");
+            button.setHelpTip( i18n._("Sanity status: OK") );
             button.setImage( w12_check_g );
         }
         else if (level == DuSanity.Level.INFO) {
