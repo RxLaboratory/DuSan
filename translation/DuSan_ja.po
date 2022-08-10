@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-10 10:55\n"
+"PO-Revision-Date: 2022-08-10 12:25\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -198,7 +198,7 @@ msgstr ""
 #: scriptui.jsxinc:337
 #, qt-format
 msgid "Default"
-msgstr ""
+msgstr "デフォルト"
 
 #: comp.jsxinc:588
 #, qt-format
@@ -248,7 +248,7 @@ msgstr ""
 #: duscriptui_extension.jsxinc:161
 #, qt-format
 msgid "Cancel"
-msgstr ""
+msgstr "キャンセル"
 
 #: duscriptui_extension.jsxinc:203
 #, qt-format
@@ -259,7 +259,7 @@ msgstr ""
 #: duscriptui_extension.jsxinc:663
 #, qt-format
 msgid "Select layers"
-msgstr ""
+msgstr "レイヤーを選択"
 
 #: layer.jsxinc:477
 #, qt-format
@@ -466,15 +466,15 @@ msgstr ""
 #: panel.jsxinc:567
 #, qt-format
 msgid "%1 Settings"
-msgstr ""
+msgstr "%1 設定"
 
 #: panel.jsxinc:591
 #, qt-format
 msgid "Set the language of the interface."
-msgstr ""
+msgstr "インターフェースの言語を設定"
 
 #: panel.jsxinc:610
 #, qt-format
 msgid "Settings file"
-msgstr ""
+msgstr "設定ファイル"
 
