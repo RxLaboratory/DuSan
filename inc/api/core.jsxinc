@@ -293,7 +293,7 @@ DuSanity.Test.compNames.hasAutoFix = true;
 DuSanity.Test.compNames.timeOut = 600000;
 DuSanity.Test.compNames.paused = false;
 DuSanity.Test.compNames.fix = function() {
-    DuAE.beginUndoGroup(DuScriptUI.String.FIX + ': ' + DuSanity.Test.compNames.testName);
+    DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.compNames.testName);
 
     var duplicatedNames = DuAEProject.checkCompNames();
     for (name in duplicatedNames)
@@ -357,7 +357,7 @@ DuSanity.Test.layerNames.hasFix = true;
 DuSanity.Test.layerNames.hasAutoFix = true;
 DuSanity.Test.layerNames.timeOut = 60000;
 DuSanity.Test.layerNames.fix = function() {
-    DuAE.beginUndoGroup(DuScriptUI.String.FIX + ': ' + DuSanity.Test.layerNames.testName);
+    DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.layerNames.testName);
 
     var duplicatedNames = DuAEComp.checkLayerNames();
     for (name in duplicatedNames)
@@ -409,7 +409,7 @@ DuSanity.Test.expressionEngine.hasFix = true;
 DuSanity.Test.expressionEngine.hasAutoFix = true;
 DuSanity.Test.expressionEngine.timeOut = 1800000;
 DuSanity.Test.expressionEngine.fix = function() {
-    DuAE.beginUndoGroup(DuScriptUI.String.FIX + ': ' + DuSanity.Test.expressionEngine.testName);
+    DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.expressionEngine.testName);
 
     app.project.expressionEngine = 'javascript-1.0';
 
@@ -464,7 +464,7 @@ DuSanity.Test.projectSize.timeOut = 60000;
 DuSanity.Test.projectSize.options = {
     sizeLimit: {
         value: 100,
-        description: DuScriptUI.String.SIZE_LIMIT
+        description: i18n._("Size limit (MB)")
     }
 }
 
@@ -499,7 +499,7 @@ DuSanity.Test.projectItems.timeOut = 600000;
 DuSanity.Test.projectItems.options = {
     itemsLimit: {
         value: 1000,
-        description: DuScriptUI.String.ITEMS_LIMIT
+        description: i18n._("Maximum number of items")
     }
 }
 
@@ -639,7 +639,7 @@ DuSanity.Test.unusedItems.hasFix = true;
 DuSanity.Test.unusedItems.hasAutoFix = true;
 DuSanity.Test.unusedItems.timeOut = 1800000;
 DuSanity.Test.unusedItems.fix = function () {
-    DuAE.beginUndoGroup(DuScriptUI.String.FIX + ': ' + DuSanity.Test.unusedItems.testName);
+    DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.unusedItems.testName);
 
     var unused = DuAEProject.getUnusedFootages();
     for (var i = unused.length-1; i >= 0; i--)
@@ -691,16 +691,16 @@ DuSanity.Test.precomps.hasAutoFix = true;
 DuSanity.Test.precomps.options = {
     maxPrecompsAtRoot: {
         value: 1,
-        description: DuScriptUI.String.MAX_PRECOMPS_AT_ROOT
+        description: i18n._("Maximum number of precompositions in the root folder")
     },
     precompsFolder: {
         value: "Precomps",
-        description: DuScriptUI.String.FOLDER_FOR_PRECOMPS
+        description: i18n._("Default folder for precompositions")
     }
 };
 DuSanity.Test.precomps.timeOut = 600000;
 DuSanity.Test.precomps.fix = function () {
-    DuAE.beginUndoGroup(DuScriptUI.String.FIX + ': ' + DuSanity.Test.precomps.testName);
+    DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.precomps.testName);
 
     var precomps = DuAEProject.getPrecompsAtRoot();
     var precompFolderName = DuESF.settings.get("sanity/options/" + DuSanity.Test.precomps.stringId + "/precompsFolder", "Precomps");
@@ -756,11 +756,11 @@ DuSanity.Test.unusedComps.hasAutoFix = false;
 DuSanity.Test.unusedComps.options = {
     maxUnusedComps: {
         value: 1,
-        description: DuScriptUI.String.MAX_UNUSED_COMPS
+        description: i18n._("Maximum unused comps in the project")
     },
     mainCompsFolder: {
         value: "Project root",
-        description: DuScriptUI.String.FOLDER_FOR_MAIN_COMPS
+        description: i18n._("Folder for main comps (leave empty for project root)")
     }
 };
 DuSanity.Test.unusedComps.timeOut = 1800000;
@@ -789,7 +789,7 @@ DuSanity.Test.unusedComps.fix = function () {
         cnclBtn.onClick = dlg.cancel;
         okBtn.onClick = function() {
 
-            DuAE.beginUndoGroup(DuScriptUI.String.FIX + ': ' + DuSanity.Test.unusedComps.testName);
+            DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.unusedComps.testName);
             
             if (slctr.index == 1)
             {
@@ -851,7 +851,7 @@ DuSanity.Test.memory.hasAutoFix = false;
 DuSanity.Test.memory.options = {
     memoryLimit: {
         value: 8,
-        description: DuScriptUI.String.MAX_MEMORY
+        description: i18n._("Maximum memory (GB)")
     }
 };
 DuSanity.Test.memory.timeOut = 300000;
@@ -898,7 +898,7 @@ DuSanity.Test.essentialProperties.hasAutoFix = false;
 DuSanity.Test.essentialProperties.options = {
     maxEssentialProps: {
         value: 40,
-        description: DuScriptUI.String.MAX_ESSENTIAL_PROPERTIES
+        description: i18n._("Maximum number of essential properties in a comp")
     }
 };
 DuSanity.Test.essentialProperties.timeOut = 300000;
@@ -968,7 +968,7 @@ DuSanity.Test.save.hasAutoFix = true;
 DuSanity.Test.save.options = {
     timeout: {
         value: 30,
-        description: DuScriptUI.String.TIME_LIMIT_BEFORE_SAVE
+        description: i18n._("Time limit before saving the project (mn)")
     }
 };
 DuSanity.Test.save.timeOut = 900000;
@@ -1014,7 +1014,7 @@ DuSanity.Test.upTime.hasAutoFix = false;
 DuSanity.Test.upTime.options = {
     timeout: {
         value: 180,
-        description: DuScriptUI.String.UP_TIME_LIMIT
+        description: i18n._("Up time limit (mn)")
     }
 };
 DuSanity.Test.upTime.timeOut = 900000;

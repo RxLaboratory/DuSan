@@ -28,19 +28,19 @@ DuSanity.UI.icon = function( container, addLabel, autoUpdate ) {
     statusIconGroup.alignment = ['left', 'center'];
 
     var statusUnknownIcon = statusIconGroup.add('image', undefined, w12_check.binAsString );
-    statusUnknownIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.UNKNOWN;
+    statusUnknownIcon.helpTip = i18n._("Sanity status: Unknown");
     var statusOKIcon = statusIconGroup.add('image', undefined, w12_check_g.binAsString );
-    statusOKIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.OK;
+    statusOKIcon.helpTip = i18n._("Sanity status: OK");
     var statusInfoIcon = statusIconGroup.add('image', undefined, w12_information.binAsString );
-    statusInfoIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.INFO;
+    statusInfoIcon.helpTip = i18n._("Sanity status: Information");
     var statusWarningIcon = statusIconGroup.add('image', undefined, w12_warning.binAsString );
-    statusWarningIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.WARNING;
+    statusWarningIcon.helpTip = i18n._("Sanity status: Warning");
     var statusDangerIcon = statusIconGroup.add('image', undefined, w12_danger.binAsString );
-    statusDangerIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.DANGER;
+    statusDangerIcon.helpTip = i18n._("Sanity status: Danger");
     var statusCriticalIcon = statusIconGroup.add('image', undefined, w12_critical.binAsString );
-    statusCriticalIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.CRITICAL;
+    statusCriticalIcon.helpTip = i18n._("Sanity status: Critical");
     var statusFatalIcon = statusIconGroup.add('image', undefined, w12_fatal.binAsString );
-    statusFatalIcon.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.FATAL;
+    statusFatalIcon.helpTip = i18n._("Sanity status: Fatal");
 
     statusIconGroup.setLevel = function( level ) {
         statusUnknownIcon.visible = level == DuSanity.Level.UNKNOWN;
@@ -54,37 +54,37 @@ DuSanity.UI.icon = function( container, addLabel, autoUpdate ) {
 
     if (addLabel) {
         var statusLabel = DuScriptUI.staticText( statusGroup, {
-            text: DuScriptUI.String.OK,
+            text: i18n._("OK"),
             color: DuColor.Color.LIGHT_GREEN
         });
         statusLabel.alignment = ['fill', 'center'];
         statusLabel.setLevel = function( level ) {
             if (level == DuSanity.Level.UNKNOWN) {
-                statusLabel.text = DuScriptUI.String.UNKNOWN;
+                statusLabel.text = i18n._("Unknown");
                 DuScriptUI.setTextColor( statusLabel, DuColor.Color.APP_TEXT_COLOR.darker());
             }
             else if (level == DuSanity.Level.OK) {
-                statusLabel.text = DuScriptUI.String.OK;
+                statusLabel.text = i18n._("OK");
                 DuScriptUI.setTextColor( statusLabel, DuColor.Color.LIGHT_GREEN);
             }
             else if (level == DuSanity.Level.INFO) {
-                statusLabel.text = DuScriptUI.String.INFO;
+                statusLabel.text = i18n._("Information");
                 DuScriptUI.setTextColor( statusLabel, DuColor.Color.LIGHT_BLUE);
             }
             else if (level == DuSanity.Level.WARNING) {
-                statusLabel.text = DuScriptUI.String.WARNING;
+                statusLabel.text = i18n._("Warning");
                 DuScriptUI.setTextColor( statusLabel, DuColor.Color.YELLOW);
             }
             else if (level == DuSanity.Level.DANGER) {
-                statusLabel.text = DuScriptUI.String.DANGER;
+                statusLabel.text = i18n._("Danger");
                 DuScriptUI.setTextColor( statusLabel, DuColor.Color.ORANGE);
             }
             else if (level == DuSanity.Level.CRITICAL) {
-                statusLabel.text = DuScriptUI.String.CRITICAL;
+                statusLabel.text = i18n._("Critical");
                 DuScriptUI.setTextColor( statusLabel, DuColor.Color.RAINBOX_RED);
             }
             else if (level == DuSanity.Level.FATAL) {
-                statusLabel.text = DuScriptUI.String.FATAL;
+                statusLabel.text = i18n._("Fatal");
                 DuScriptUI.setTextColor( statusLabel, DuColor.Color.RX_PURPLE);
             }
         };
@@ -121,54 +121,54 @@ DuSanity.UI.button = function( container, addLabel, autoUpdate ) {
     autoUpdate = def(autoUpdate, true);
 
     var options = {};
-    if (addLabel) options.text = DuScriptUI.String.UNKNOWN;
+    if (addLabel) options.text = i18n._("Unknown");
     else options.text = '';
     options.image = w12_check;
-    options.helpTip = DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.UNKNOWN;
+    options.helpTip = i18n._("Sanity status: Unknown");
 
     var button = DuScriptUI.button( container, options);
 
     button.setLevel = function( level ) {
         if (level == DuSanity.Level.UNKNOWN) {
-            button.setText( DuScriptUI.String.UNKNOWN );
+            button.setText( i18n._("Unknown") );
             button.setTextColor( DuColor.Color.APP_TEXT_COLOR.darker());
-            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.UNKNOWN );
+            button.setHelpTip( i18n._("Sanity status: Unknown") );
             button.setImage( w12_check );
         }
         else if (level == DuSanity.Level.OK) {
-            button.setText( DuScriptUI.String.OK );
+            button.setText( i18n._("OK") );
             button.setTextColor( DuColor.Color.APP_TEXT_COLOR.LIGHT_GREEN);
-            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.OK );
+            button.setHelpTip( i18n._("Sanity status: OK");
             button.setImage( w12_check_g );
         }
         else if (level == DuSanity.Level.INFO) {
-            button.setText( DuScriptUI.String.INFO );
+            button.setText( i18n._("Information") );
             button.setTextColor( DuColor.Color.APP_TEXT_COLOR.LIGHT_BLUE);
-            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.INFO );
+            button.setHelpTip( i18n._("Sanity status: Information") );
             button.setImage( w12_information );
         }
         else if (level == DuSanity.Level.WARNING) {
-            button.setText( DuScriptUI.String.WARNING );
+            button.setText( i18n._("Warning") );
             button.setTextColor( DuColor.Color.APP_TEXT_COLOR.YELLOW);
-            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.WARNING );
+            button.setHelpTip( i18n._("Sanity status: Warning") );
             button.setImage( w12_warning );
         }
         else if (level == DuSanity.Level.DANGER) {
-            button.setText( DuScriptUI.String.DANGER );
+            button.setText( i18n._("Danger") );
             button.setTextColor( DuColor.Color.APP_TEXT_COLOR.ORANGE);
-            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.DANGER );
+            button.setHelpTip( i18n._("Sanity status: Danger") );
             button.setImage( w12_danger );
         }
         else if (level == DuSanity.Level.CRITICAL) {
-            button.setText( DuScriptUI.String.CRITICAL );
+            button.setText( i18n._("Critical") );
             button.setTextColor( DuColor.Color.APP_TEXT_COLOR.RAINBOX_RED);
-            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.CRITICAL );
+            button.setHelpTip( i18n._("Sanity status: Critical"));
             button.setImage( w12_critical );
         }
         else if (level == DuSanity.Level.FATAL) {
-            button.setText( DuScriptUI.String.FATAL );
+            button.setText( i18n._("Fatal") );
             button.setTextColor( DuColor.Color.APP_TEXT_COLOR.RX_PURPLE);
-            button.setHelpTip( DuScriptUI.String.SANITY_STATUS + ': ' + DuScriptUI.String.FATAL );
+            button.setHelpTip( i18n._("Sanity status: Fatal") );
             button.setImage( w12_fatal);
         }
     };
@@ -192,8 +192,8 @@ DuSanity.UI.panel = function(container) {
     DuScriptUI.separator(container);
     // Run all button
     var runAllButton = DuScriptUI.button( container, {
-        text: DuScriptUI.String.RUN_ALL,
-        helpTip: DuScriptUI.String.RUN_ALL_TESTS_TIP,
+        text: i18n._("Run all tests"),  /// TRANSLATORS: sanity test
+        helpTip: i18n._("Run all the tests and displays the results."), /// TRANSLATORS: sanity test
         image: DuScriptUI.Icon.UPDATE,
         alignment: 'center',
         orientation: 'row'
@@ -243,7 +243,7 @@ DuSanity.UI.test = function (container, test) {
         text: '',
         image: w16_file_d,
         imageChecked: w16_file,
-        helpTip: DuScriptUI.String.PROJECT_ENABLE_TIP
+        helpTip: i18n._("Toggle this test for the current project only.") /// TRANSLATORS: sanity test
     });
     projectEnableButton.alignment = ['left', 'center'];
     projectEnableButton.onClick = function () {
@@ -257,7 +257,7 @@ DuSanity.UI.test = function (container, test) {
         text: '',
         image: w16_live_fix_d,
         imageChecked: w16_live_fix,
-        helpTip: DuScriptUI.String.LIVE_FIX_TIP
+        helpTip: i18n._("Enable or disable automatic live-fix.") /// TRANSLATORS: (automatic)live fix for a sanity test
     });
     liveFixButton.alignment = ['left', 'center'];
     liveFixButton.visible = test.hasAutoFix;
@@ -268,7 +268,7 @@ DuSanity.UI.test = function (container, test) {
     var fixButton = DuScriptUI.button(group, {
         text: '',
         image: w16_fix,
-        helpTip: DuScriptUI.String.FIX_TIP
+        helpTip: i18n._("Fix now.") /// TRANSLATORS: fix an issue detected by sanity tests
     });
     fixButton.alignment = ['left', 'center'];
     fixButton.visible = test.hasFix;
@@ -284,7 +284,7 @@ DuSanity.UI.test = function (container, test) {
     var refreshButton = DuScriptUI.button( group, {
         text: '',
         image: DuScriptUI.Icon.UPDATE,
-        helpTip: DuScriptUI.String.RUN_TEST_TIP
+        helpTip: i18n._("Run the current test.") /// TRANSLATORS: sanity test
     });
     refreshButton.alignment = ['right', 'center'];
     refreshButton.onClick = function() { DuSanity.runTest( test, false, true ); updateUI(); };
@@ -292,14 +292,14 @@ DuSanity.UI.test = function (container, test) {
     var optionsButton = DuScriptUI.button(group, {
         text: '',
         image: DuScriptUI.Icon.OPTIONS,
-        helpTip: DuScriptUI.String.TEST_OPTIONS_TIP
+        helpTip: i18n._("Change the test settings.") /// TRANSLATORS: sanity test
     });
     optionsButton.alignment = ['right', 'center'];
 
-    var optionsPopup = DuScriptUI.popUp(DuScriptUI.String.OPTIONS + ' (' + test.testName + ')');
+    var optionsPopup = DuScriptUI.popUp( i18n._("Options") + ' (' + test.testName + ')');
 
     var timeG = DuScriptUI.group(optionsPopup.content, 'row');
-    DuScriptUI.staticText(timeG, DuScriptUI.String.TEST_EVERY + ':');
+    DuScriptUI.staticText(timeG, i18n._("Test every:")); /// TRANSLATORS: sanity test, label for duration between two tests
     var timeOut = DuESF.settings.get("sanity/timeOut" + test.stringId, test.timeOut);
     var timeOutStr = timeOut.toString();
     var unit = "ms";
@@ -335,7 +335,7 @@ DuSanity.UI.test = function (container, test) {
             if (jstype(option.value) == 'number' || jstype(option.value) == 'string' ) {
                 var optB = DuScriptUI.editText( optG, {
                     text: DuESF.settings.get("sanity/options" + test.stringId + "/" + o, option.value).toString(),
-                    placeHolder: DuScriptUI.String.DEFAULT
+                    placeHolder: i18n._("Default")
                 });
                 optB.onChange = function () {
                     DuESF.settings.set("sanity/options" + test.stringId + "/" + o, optB.text);
