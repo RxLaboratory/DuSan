@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-10 12:25\n"
+"PO-Revision-Date: 2022-08-11 09:41\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -80,32 +80,32 @@ msgstr "Gesundheits-Status: Unbekannt"
 #: scriptui.jsxinc:32
 #, qt-format
 msgid "Sanity status: OK"
-msgstr ""
+msgstr "Gesundheits-Status: OK"
 
 #: scriptui.jsxinc:34
 #, qt-format
 msgid "Sanity status: Information"
-msgstr ""
+msgstr "Gesundheits-Status: Information"
 
 #: scriptui.jsxinc:36
 #, qt-format
 msgid "Sanity status: Warning"
-msgstr ""
+msgstr "Gesundheits-Status: Gefahr"
 
 #: scriptui.jsxinc:38
 #, qt-format
 msgid "Sanity status: Danger"
-msgstr ""
+msgstr "Gesundheits-Status: Gefahr"
 
 #: scriptui.jsxinc:40
 #, qt-format
 msgid "Sanity status: Critical"
-msgstr ""
+msgstr "Gesundheits-Status: Kritisch"
 
 #: scriptui.jsxinc:42
 #, qt-format
 msgid "Sanity status: Fatal"
-msgstr ""
+msgstr "Gesundheits-Status: Fatal"
 
 #: scriptui.jsxinc:56
 #, qt-format
@@ -152,19 +152,19 @@ msgstr "Alle Tests durchführen"
 #: scriptui.jsxinc:195
 #, qt-format
 msgid "Run all the tests and displays the results."
-msgstr ""
+msgstr "Führt alle Tests durch und zeigt die Ergebnisse an."
 
 #. "sanity test"
 #: scriptui.jsxinc:245
 #, qt-format
 msgid "Toggle this test for the current project only."
-msgstr ""
+msgstr "Aktiviere diesen Test nur für das aktuelle Projekt."
 
 #. "(automatic)live fix for a sanity test"
 #: scriptui.jsxinc:259
 #, qt-format
 msgid "Enable or disable automatic live-fix."
-msgstr ""
+msgstr "Aktiviert oder deaktiviert die automatische Live-Reparatur."
 
 #. "fix an issue detected by sanity tests"
 #: scriptui.jsxinc:270
@@ -176,7 +176,7 @@ msgstr "Jetzt reparieren."
 #: scriptui.jsxinc:286
 #, qt-format
 msgid "Run the current test."
-msgstr ""
+msgstr "Führe den aktuellen Test durch."
 
 #. "sanity test"
 #: scriptui.jsxinc:294
