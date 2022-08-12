@@ -69,7 +69,7 @@ msgstr ""
 
 #: core.jsxinc:1016
 #, qt-format
-msgid "Up time limit (mn)"
+msgid "Uptime limit (mn)"
 msgstr ""
 
 #: scriptui.jsxinc:30
