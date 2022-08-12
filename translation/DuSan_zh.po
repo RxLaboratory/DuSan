@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-10 12:25\n"
+"PO-Revision-Date: 2022-08-12 18:02\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr ""
 
 #: core.jsxinc:1016
 #, qt-format
-msgid "Up time limit (mn)"
+msgid "Uptime limit (mn)"
 msgstr ""
 
 #: scriptui.jsxinc:30
