@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-10 21:37\n"
+"PO-Revision-Date: 2022-08-12 16:54\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Memoria máxima (GB)"
 #: core.jsxinc:900
 #, qt-format
 msgid "Maximum number of essential properties in a comp"
-msgstr ""
+msgstr "Número máximo de propiedades esenciales en un comp"
 
 #: core.jsxinc:970
 #, qt-format
