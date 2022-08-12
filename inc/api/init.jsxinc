@@ -102,7 +102,7 @@ DuSanity.init = function() {
     DuSanity.Test.upTime.options = {
         timeout: {
             value: 180,
-            description: i18n._("Up time limit (mn)")
+            description: i18n._("Uptime limit (mn)")
         }
     };
 };
