@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-12 16:54\n"
+"PO-Revision-Date: 2022-08-12 18:02\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -69,8 +69,8 @@ msgstr "Límite de tiempo antes de guardar el proyecto (mn)"
 
 #: core.jsxinc:1016
 #, qt-format
-msgid "Up time limit (mn)"
-msgstr ""
+msgid "Uptime limit (mn)"
+msgstr "Límite de tiempo de funcionamiento (mn)"
 
 #: scriptui.jsxinc:30
 #, qt-format
@@ -208,12 +208,12 @@ msgstr "Nulo"
 #: comp.jsxinc:637
 #, qt-format
 msgid "Adjustment layer"
-msgstr ""
+msgstr "Capa de ajuste"
 
 #: comp.jsxinc:666
 #, qt-format
 msgid "Solid"
-msgstr ""
+msgstr "Sólido"
 
 #: comp.jsxinc:695
 #, qt-format
