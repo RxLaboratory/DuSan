@@ -1,5 +1,10 @@
 # DuSan changelog
 
+## ▹ 2.0.4
+
+- UI Tweaks
+- Now available in: Deutsch, English, Español, Français, 中文, and Ch'ti
+
 ## ▹ 2.0.3
 
 - Fixed crash with duplicated footages
