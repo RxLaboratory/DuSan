@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-10 11:30\n"
-"PO-Revision-Date: 2022-08-14 15:12\n"
+"PO-Revision-Date: 2022-08-14 15:45\n"
 "Last-Translator: \n"
 "Language-Team: Chti-Picard\n"
 "MIME-Version: 1.0\n"
@@ -30,175 +30,175 @@ msgstr "Limite ed taille (Mo)"
 #: core.jsxinc:501
 #, qt-format
 msgid "Maximum number of items"
-msgstr ""
+msgstr "Nombr maximome ed élémins"
 
 #: core.jsxinc:693
 #, qt-format
 msgid "Maximum number of precompositions in the root folder"
-msgstr ""
+msgstr "Nombr maximome ed precompositions din l'dossier rachénn"
 
 #: core.jsxinc:697
 #, qt-format
 msgid "Default folder for precompositions"
-msgstr ""
+msgstr "Dossier par défaut pour el précompositions"
 
 #: core.jsxinc:758
 #, qt-format
 msgid "Maximum unused comps in the project"
-msgstr ""
+msgstr "Nombr maximome ed compos pas utilisées din l'projet"
 
 #: core.jsxinc:762
 #, qt-format
 msgid "Folder for main comps (leave empty for project root)"
-msgstr ""
+msgstr "Dossier pour el compos principales (laichez vite pour el rachenn del projet)"
 
 #: core.jsxinc:853
 #, qt-format
 msgid "Maximum memory (GB)"
-msgstr ""
+msgstr "Mémoire maximome (Go)"
 
 #: core.jsxinc:900
 #, qt-format
 msgid "Maximum number of essential properties in a comp"
-msgstr ""
+msgstr "Nombr maximome ed propriétés essentielles din l'compo"
 
 #: core.jsxinc:970
 #, qt-format
 msgid "Time limit before saving the project (mn)"
-msgstr ""
+msgstr "Limite ed timps avant d'inrgistrer el projet (mn)"
 
 #: core.jsxinc:1016
 #, qt-format
 msgid "Uptime limit (mn)"
-msgstr ""
+msgstr "Limite ed timps d'usache (mn)"
 
 #: scriptui.jsxinc:30
 #, qt-format
 msgid "Sanity status: Unknown"
-msgstr ""
+msgstr "État ed santé : inconnu"
 
 #: scriptui.jsxinc:32
 #, qt-format
 msgid "Sanity status: OK"
-msgstr ""
+msgstr "État ed santé : OK"
 
 #: scriptui.jsxinc:34
 #, qt-format
 msgid "Sanity status: Information"
-msgstr ""
+msgstr "État ed santé : information"
 
 #: scriptui.jsxinc:36
 #, qt-format
 msgid "Sanity status: Warning"
-msgstr ""
+msgstr "État ed santé : attention"
 
 #: scriptui.jsxinc:38
 #, qt-format
 msgid "Sanity status: Danger"
-msgstr ""
+msgstr "État ed santé : dangeu"
 
 #: scriptui.jsxinc:40
 #, qt-format
 msgid "Sanity status: Critical"
-msgstr ""
+msgstr "État ed santé : critique"
 
 #: scriptui.jsxinc:42
 #, qt-format
 msgid "Sanity status: Fatal"
-msgstr ""
+msgstr "État ed santé : fatal"
 
 #: scriptui.jsxinc:56
 #, qt-format
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: scriptui.jsxinc:62
 #, qt-format
 msgid "Unknown"
-msgstr ""
+msgstr "Inconnu"
 
 #: scriptui.jsxinc:70
 #, qt-format
 msgid "Information"
-msgstr ""
+msgstr "Information"
 
 #: scriptui.jsxinc:74
 #, qt-format
 msgid "Warning"
-msgstr ""
+msgstr "Atintion"
 
 #: scriptui.jsxinc:78
 #, qt-format
 msgid "Danger"
-msgstr ""
+msgstr "Dangeu"
 
 #: scriptui.jsxinc:82
 #, qt-format
 msgid "Critical"
-msgstr ""
+msgstr "Critique"
 
 #: scriptui.jsxinc:86
 #, qt-format
 msgid "Fatal"
-msgstr ""
+msgstr "Fatal"
 
 #. "sanity test"
 #: scriptui.jsxinc:194
 #, qt-format
 msgid "Run all tests"
-msgstr ""
+msgstr "Lancher tous les essais"
 
 #. "sanity test"
 #: scriptui.jsxinc:195
 #, qt-format
 msgid "Run all the tests and displays the results."
-msgstr ""
+msgstr "Lancher tous les essais pi afficher l'résultat."
 
 #. "sanity test"
 #: scriptui.jsxinc:245
 #, qt-format
 msgid "Toggle this test for the current project only."
-msgstr ""
+msgstr "Activer ou désactiver l'essai pour el projet actif uniqmin."
 
 #. "(automatic)live fix for a sanity test"
 #: scriptui.jsxinc:259
 #, qt-format
 msgid "Enable or disable automatic live-fix."
-msgstr ""
+msgstr "Activer ou désactiver el rabloquache automatique."
 
 #. "fix an issue detected by sanity tests"
 #: scriptui.jsxinc:270
 #, qt-format
 msgid "Fix now."
-msgstr ""
+msgstr "Rabloquer mintnant."
 
 #. "sanity test"
 #: scriptui.jsxinc:286
 #, qt-format
 msgid "Run the current test."
-msgstr ""
+msgstr "Lancher l'essai actif."
 
 #. "sanity test"
 #: scriptui.jsxinc:294
 #, qt-format
 msgid "Change the test settings."
-msgstr ""
+msgstr "Canger el réglache del essai."
 
 #: scriptui.jsxinc:298
 #, qt-format
 msgid "Options"
-msgstr ""
+msgstr "Préférinches"
 
 #. "sanity test, label for duration between two tests"
 #: scriptui.jsxinc:301
 #, qt-format
 msgid "Test every:"
-msgstr ""
+msgstr "Essai chaque :"
 
 #: scriptui.jsxinc:337
 #, qt-format
 msgid "Default"
-msgstr ""
+msgstr "Défaut"
 
 #: comp.jsxinc:588
 #, qt-format
