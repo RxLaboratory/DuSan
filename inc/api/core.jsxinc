@@ -282,7 +282,6 @@ DuSanity.Test.compNames = function ( dontFix, force ) {
 }
 DuSanity.Test.compNames.lastRun = 0;
 DuSanity.Test.compNames.stringId = 'compNames';
-DuSanity.Test.compNames.testName = 'Composition Names';
 DuSanity.Test.compNames.info = '';
 DuSanity.Test.compNames.tip = '';
 DuSanity.Test.compNames.currentLevel = DuSanity.Level.UNKNOWN;
@@ -347,7 +346,6 @@ DuSanity.Test.layerNames = function ( dontFix ) {
 }
 DuSanity.Test.layerNames.lastRun = 0;
 DuSanity.Test.layerNames.stringId = 'layerNames';
-DuSanity.Test.layerNames.testName = 'Layer Names';
 DuSanity.Test.layerNames.info = '';
 DuSanity.Test.layerNames.tip = '';
 DuSanity.Test.layerNames.currentLevel = DuSanity.Level.UNKNOWN;
@@ -399,7 +397,6 @@ DuSanity.Test.expressionEngine = function ( dontFix ) {
 }
 DuSanity.Test.expressionEngine.lastRun = 0;
 DuSanity.Test.expressionEngine.stringId = 'expressionEngine';
-DuSanity.Test.expressionEngine.testName = 'Expression engine';
 DuSanity.Test.expressionEngine.info = '';
 DuSanity.Test.expressionEngine.tip = '';
 DuSanity.Test.expressionEngine.currentLevel = DuSanity.Level.UNKNOWN;
@@ -452,7 +449,6 @@ DuSanity.Test.projectSize = function ( dontFix ) {
 }
 DuSanity.Test.projectSize.lastRun = 0;
 DuSanity.Test.projectSize.stringId = 'projectSize';
-DuSanity.Test.projectSize.testName = 'Project size';
 DuSanity.Test.projectSize.info = '';
 DuSanity.Test.projectSize.tip = '';
 DuSanity.Test.projectSize.currentLevel = DuSanity.Level.UNKNOWN;
@@ -481,7 +477,6 @@ DuSanity.Test.projectItems = function ( dontFix ) {
 }
 DuSanity.Test.projectItems.lastRun = 0;
 DuSanity.Test.projectItems.stringId = 'projectItems';
-DuSanity.Test.projectItems.testName = 'Project items';
 DuSanity.Test.projectItems.info = '';
 DuSanity.Test.projectItems.tip = '';
 DuSanity.Test.projectItems.currentLevel = DuSanity.Level.UNKNOWN;
@@ -574,7 +569,6 @@ DuSanity.Test.itemSources = function ( dontFix, force ) {
 }
 DuSanity.Test.itemSources.lastRun = 0;
 DuSanity.Test.itemSources.stringId = 'itemSources';
-DuSanity.Test.itemSources.testName = 'Duplicated footages';
 DuSanity.Test.itemSources.info = '';
 DuSanity.Test.itemSources.tip = '';
 DuSanity.Test.itemSources.currentLevel = DuSanity.Level.UNKNOWN;
@@ -617,7 +611,6 @@ DuSanity.Test.unusedItems = function ( dontFix ) {
 }
 DuSanity.Test.unusedItems.lastRun = 0;
 DuSanity.Test.unusedItems.stringId = 'unusedItems';
-DuSanity.Test.unusedItems.testName = 'Unused footages';
 DuSanity.Test.unusedItems.info = '';
 DuSanity.Test.unusedItems.tip = '';
 DuSanity.Test.unusedItems.currentLevel = DuSanity.Level.UNKNOWN;
@@ -668,7 +661,6 @@ DuSanity.Test.precomps = function ( dontFix ) {
 }
 DuSanity.Test.precomps.lastRun = 0;
 DuSanity.Test.precomps.stringId = 'precomps';
-DuSanity.Test.precomps.testName = 'Precompositions';
 DuSanity.Test.precomps.info = '';
 DuSanity.Test.precomps.tip = '';
 DuSanity.Test.precomps.currentLevel = DuSanity.Level.UNKNOWN;
@@ -723,7 +715,6 @@ DuSanity.Test.unusedComps = function ( dontFix ) {
 }
 DuSanity.Test.unusedComps.lastRun = 0;
 DuSanity.Test.unusedComps.stringId = 'unusedComps';
-DuSanity.Test.unusedComps.testName = 'Main compositions';
 DuSanity.Test.unusedComps.info = '';
 DuSanity.Test.unusedComps.tip = '';
 DuSanity.Test.unusedComps.currentLevel = DuSanity.Level.UNKNOWN;
@@ -808,7 +799,6 @@ DuSanity.Test.memory = function ( dontFix ) {
 }
 DuSanity.Test.memory.lastRun = 0;
 DuSanity.Test.memory.stringId = 'memory';
-DuSanity.Test.memory.testName = 'Memory in use';
 DuSanity.Test.memory.info = '';
 DuSanity.Test.memory.tip = '';
 DuSanity.Test.memory.currentLevel = DuSanity.Level.UNKNOWN;
@@ -849,7 +839,6 @@ DuSanity.Test.essentialProperties = function ( dontFix ) {
 }
 DuSanity.Test.essentialProperties.lastRun = 0;
 DuSanity.Test.essentialProperties.stringId = 'essentialProperties';
-DuSanity.Test.essentialProperties.testName = 'Essential properties';
 DuSanity.Test.essentialProperties.info = '';
 DuSanity.Test.essentialProperties.tip = '';
 DuSanity.Test.essentialProperties.currentLevel = DuSanity.Level.UNKNOWN;
@@ -913,7 +902,6 @@ DuSanity.Test.save = function ( dontFix ) {
 }
 DuSanity.Test.save.lastRun = 0;
 DuSanity.Test.save.stringId = 'save';
-DuSanity.Test.save.testName = 'Time since last save';
 DuSanity.Test.save.info = '';
 DuSanity.Test.save.tip = '';
 DuSanity.Test.save.currentLevel = DuSanity.Level.UNKNOWN;
@@ -953,7 +941,6 @@ DuSanity.Test.upTime = function ( dontFix ) {
 }
 DuSanity.Test.upTime.lastRun = 0;
 DuSanity.Test.upTime.stringId = 'upTime';
-DuSanity.Test.upTime.testName = 'Up time';
 DuSanity.Test.upTime.info = '';
 DuSanity.Test.upTime.tip = '';
 DuSanity.Test.upTime.currentLevel = DuSanity.Level.UNKNOWN;

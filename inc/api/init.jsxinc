@@ -105,6 +105,21 @@ DuSanity.init = function() {
             description: i18n._("Uptime limit (mn)")
         }
     };
+
+    // Add names
+    DuSanity.Test.compNames.testName = i18n._('Composition Names');
+    DuSanity.Test.layerNames.testName = i18n._('Layer Names');
+    DuSanity.Test.expressionEngine.testName = i18n._('Expression engine');
+    DuSanity.Test.projectSize.testName = i18n._('Project size');
+    DuSanity.Test.projectItems.testName = i18n._('Project items');
+    DuSanity.Test.itemSources.testName = i18n._('Duplicated footages');
+    DuSanity.Test.unusedItems.testName = i18n._('Unused footages');
+    DuSanity.Test.precomps.testName = i18n._('Precompositions');
+    DuSanity.Test.unusedComps.testName = i18n._('Main compositions');
+    DuSanity.Test.memory.testName = i18n._('Memory in use');
+    DuSanity.Test.essentialProperties.testName = i18n._('Essential properties');
+    DuSanity.Test.save.testName = i18n._('Time since last save');
+    DuSanity.Test.upTime.testName = i18n._('Up time');
 };
 DuESF.initMethods.push( DuSanity.init );
 
