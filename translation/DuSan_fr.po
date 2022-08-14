@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-14 18:00\n"
-"PO-Revision-Date: 2022-08-14 15:56\n"
+"PO-Revision-Date: 2022-08-14 16:11\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File-ID: 18\n"
 "Language: fr_FR\n"
 
-#: core.jsxinc:296
+#: core.jsxinc:295
 #, qt-format
 msgid "Fix"
 msgstr "Réparer"
@@ -71,6 +71,71 @@ msgstr "Limite de temps avant d'enregistrer le projet (mn)"
 #, qt-format
 msgid "Uptime limit (mn)"
 msgstr "Limite de temps d'activité (mn)"
+
+#: init.jsxinc:110
+#, qt-format
+msgid "Composition Names"
+msgstr "Noms des compositions"
+
+#: init.jsxinc:111
+#, qt-format
+msgid "Layer Names"
+msgstr "Noms des calques"
+
+#: init.jsxinc:112
+#, qt-format
+msgid "Expression engine"
+msgstr "Moteur d'expressions"
+
+#: init.jsxinc:113
+#, qt-format
+msgid "Project size"
+msgstr "Taille du projet"
+
+#: init.jsxinc:114
+#, qt-format
+msgid "Project items"
+msgstr "Éléments du projet"
+
+#: init.jsxinc:115
+#, qt-format
+msgid "Duplicated footages"
+msgstr "Métrages dupliqués"
+
+#: init.jsxinc:116
+#, qt-format
+msgid "Unused footages"
+msgstr "Métrages inutilisés"
+
+#: init.jsxinc:117
+#, qt-format
+msgid "Precompositions"
+msgstr "Pré-compositions"
+
+#: init.jsxinc:118
+#, qt-format
+msgid "Main compositions"
+msgstr "Compositions principales"
+
+#: init.jsxinc:119
+#, qt-format
+msgid "Memory in use"
+msgstr "Mémoire utilisée"
+
+#: init.jsxinc:120
+#, qt-format
+msgid "Essential properties"
+msgstr "Propriétés essentielles"
+
+#: init.jsxinc:121
+#, qt-format
+msgid "Time since last save"
+msgstr "Temps écoulé depuis la dernière sauvegarde"
+
+#: init.jsxinc:122
+#, qt-format
+msgid "Up time"
+msgstr "Temps d'activité"
 
 #: scriptui.jsxinc:31
 #, qt-format
