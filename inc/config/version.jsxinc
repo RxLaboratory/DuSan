@@ -1,6 +1,6 @@
 var isPreRelease = true;
 var scriptName = "DuSan";
-var scriptVersion = "2.0.3";
+var scriptVersion = "2.0.4";
 var scriptAbout = 'Sanity tests.';
 var companyName = "RxLaboratory";
 
@@ -10,3 +10,4 @@ var aboutURL = 'http://rxlaboratory.org/tools/dusan/';
 var docURL = 'http://dusan.rxlab.guide';
 var companyURL = 'https://rxlaboratory.org';
 var rxVersionURL = 'http://api.rxlab.io';
+var translateURL = 'http://translate-dusan.rxlab.io';
