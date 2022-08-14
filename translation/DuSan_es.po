@@ -1,0 +1,480 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: dusan\n"
+"POT-Creation-Date: 2022-08-10 11:30\n"
+"PO-Revision-Date: 2022-08-12 18:02\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Genereated-By: gettext.jsxinc\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: dusan\n"
+"X-Crowdin-Project-ID: 531634\n"
+"X-Crowdin-Language: es-ES\n"
+"X-Crowdin-File: /main/translation/DuSan.pot\n"
+"X-Crowdin-File-ID: 18\n"
+
+#: core.jsxinc:295
+#, qt-format
+msgid "Fix"
+msgstr "Solucionar"
+
+#: core.jsxinc:466
+#, qt-format
+msgid "Size limit (MB)"
+msgstr "Límite de tamaño (MB)"
+
+#: core.jsxinc:501
+#, qt-format
+msgid "Maximum number of items"
+msgstr "Número máximo de elementos"
+
+#: core.jsxinc:693
+#, qt-format
+msgid "Maximum number of precompositions in the root folder"
+msgstr "Cantidad máxima de precomposiciones en la carpeta raíz"
+
+#: core.jsxinc:697
+#, qt-format
+msgid "Default folder for precompositions"
+msgstr "Carpeta predeterminada para precomposiciones"
+
+#: core.jsxinc:758
+#, qt-format
+msgid "Maximum unused comps in the project"
+msgstr "Máximo de comps no utilizados en el proyecto"
+
+#: core.jsxinc:762
+#, qt-format
+msgid "Folder for main comps (leave empty for project root)"
+msgstr "Carpeta para los comps principales (dejar vacío para la raíz del proyecto)"
+
+#: core.jsxinc:853
+#, qt-format
+msgid "Maximum memory (GB)"
+msgstr "Memoria máxima (GB)"
+
+#: core.jsxinc:900
+#, qt-format
+msgid "Maximum number of essential properties in a comp"
+msgstr "Número máximo de propiedades esenciales en un comp"
+
+#: core.jsxinc:970
+#, qt-format
+msgid "Time limit before saving the project (mn)"
+msgstr "Límite de tiempo antes de guardar el proyecto (mn)"
+
+#: core.jsxinc:1016
+#, qt-format
+msgid "Uptime limit (mn)"
+msgstr "Límite de tiempo de funcionamiento (mn)"
+
+#: scriptui.jsxinc:30
+#, qt-format
+msgid "Sanity status: Unknown"
+msgstr "Estado de sanidad: Desconocido"
+
+#: scriptui.jsxinc:32
+#, qt-format
+msgid "Sanity status: OK"
+msgstr "Estado de sanidad: OK"
+
+#: scriptui.jsxinc:34
+#, qt-format
+msgid "Sanity status: Information"
+msgstr "Estado de sanidad: Información"
+
+#: scriptui.jsxinc:36
+#, qt-format
+msgid "Sanity status: Warning"
+msgstr "Estado de sanidad: Advertencia"
+
+#: scriptui.jsxinc:38
+#, qt-format
+msgid "Sanity status: Danger"
+msgstr "Estado de sanidad: Peligro"
+
+#: scriptui.jsxinc:40
+#, qt-format
+msgid "Sanity status: Critical"
+msgstr "Estado de sanidad: Crítico"
+
+#: scriptui.jsxinc:42
+#, qt-format
+msgid "Sanity status: Fatal"
+msgstr "Estado de sanidad: Fatal"
+
+#: scriptui.jsxinc:56
+#, qt-format
+msgid "OK"
+msgstr "Ok"
+
+#: scriptui.jsxinc:62
+#, qt-format
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: scriptui.jsxinc:70
+#, qt-format
+msgid "Information"
+msgstr "Información"
+
+#: scriptui.jsxinc:74
+#, qt-format
+msgid "Warning"
+msgstr "Advertencia"
+
+#: scriptui.jsxinc:78
+#, qt-format
+msgid "Danger"
+msgstr "Peligro"
+
+#: scriptui.jsxinc:82
+#, qt-format
+msgid "Critical"
+msgstr "Crítico"
+
+#: scriptui.jsxinc:86
+#, qt-format
+msgid "Fatal"
+msgstr "Fatal"
+
+#. "sanity test"
+#: scriptui.jsxinc:194
+#, qt-format
+msgid "Run all tests"
+msgstr "Ejecutar todas las pruebas"
+
+#. "sanity test"
+#: scriptui.jsxinc:195
+#, qt-format
+msgid "Run all the tests and displays the results."
+msgstr "Ejecutar todas las pruebas y mostrar los resultados."
+
+#. "sanity test"
+#: scriptui.jsxinc:245
+#, qt-format
+msgid "Toggle this test for the current project only."
+msgstr "Cambiar esta prueba sólo para el proyecto actual."
+
+#. "(automatic)live fix for a sanity test"
+#: scriptui.jsxinc:259
+#, qt-format
+msgid "Enable or disable automatic live-fix."
+msgstr "Activar o desactivar la corrección automática en vivo."
+
+#. "fix an issue detected by sanity tests"
+#: scriptui.jsxinc:270
+#, qt-format
+msgid "Fix now."
+msgstr "Solucionar ahora."
+
+#. "sanity test"
+#: scriptui.jsxinc:286
+#, qt-format
+msgid "Run the current test."
+msgstr "Ejecutar la prueba actual."
+
+#. "sanity test"
+#: scriptui.jsxinc:294
+#, qt-format
+msgid "Change the test settings."
+msgstr "Cambiar la configuración de la prueba."
+
+#: scriptui.jsxinc:298
+#, qt-format
+msgid "Options"
+msgstr "Opciones"
+
+#. "sanity test, label for duration between two tests"
+#: scriptui.jsxinc:301
+#, qt-format
+msgid "Test every:"
+msgstr "Probar cada:"
+
+#: scriptui.jsxinc:337
+#, qt-format
+msgid "Default"
+msgstr "Predeterminado"
+
+#: comp.jsxinc:588
+#, qt-format
+msgid "Null"
+msgstr "Nulo"
+
+#: comp.jsxinc:637
+#, qt-format
+msgid "Adjustment layer"
+msgstr "Capa de ajuste"
+
+#: comp.jsxinc:666
+#, qt-format
+msgid "Solid"
+msgstr "Sólido"
+
+#: comp.jsxinc:695
+#, qt-format
+msgid "Shape"
+msgstr "Forma"
+
+#: comp.jsxinc:705
+#, qt-format
+msgid "Rectangle"
+msgstr "Rectángulo"
+
+#: comp.jsxinc:710
+#, qt-format
+msgid "Rounded rectangle"
+msgstr "Rectángulo redondeado"
+
+#: comp.jsxinc:716
+#, qt-format
+msgid "Circle"
+msgstr "Círculo"
+
+#: comp.jsxinc:721
+#, qt-format
+msgid "Polygon"
+msgstr "Polígono"
+
+#: comp.jsxinc:727
+#, qt-format
+msgid "Star"
+msgstr "Estrella"
+
+#: duscriptui_extension.jsxinc:161
+#, qt-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: duscriptui_extension.jsxinc:203
+#, qt-format
+msgctxt "Select"
+msgid "None"
+msgstr "Ninguno"
+
+#: duscriptui_extension.jsxinc:663
+#, qt-format
+msgid "Select layers"
+msgstr "Seleccionar las capas"
+
+#: layer.jsxinc:477
+#, qt-format
+msgid "The pseudo effect file does not exist."
+msgstr "El archivo del pseudo efecto no existe."
+
+#: layer.jsxinc:537
+#, qt-format
+msgid "Invalid pseudo effect file or match name."
+msgstr "Archivo o \"matchName\" del pseudo efecto incorrecto."
+
+#: layer.jsxinc:707
+#, qt-format
+msgctxt "in layer name"
+msgid "Edit mode"
+msgstr "Modo edición"
+
+#: layer.jsxinc:1505
+#, qt-format
+msgid "Locator"
+msgstr "Localizador"
+
+#: project.jsxinc:466
+#, qt-format
+msgid "Project Root"
+msgstr "Raíz del Proyecto"
+
+#. "short for Left, must be short enough to be used as a tag in layer names"
+#: oco.jsxinc:98
+#, qt-format
+msgctxt "in layer name, left"
+msgid "L"
+msgstr "I"
+
+#. "short for Right, must be short enough to be used as a tag in layer names"
+#: oco.jsxinc:99
+#, qt-format
+msgctxt "in layer name, right"
+msgid "R"
+msgstr "D"
+
+#. "short for Front, must be short enough to be used as a tag in layer names"
+#: oco.jsxinc:109
+#, qt-format
+msgctxt "in layer name, front"
+msgid "Fr"
+msgstr "Del"
+
+#. "short for Back, must be short enough to be used as a tag in layer names"
+#: oco.jsxinc:110
+#, qt-format
+msgctxt "in layer name, back"
+msgid "Bk"
+msgstr "Det"
+
+#. "short for Tail, must be short enough to be used as a tag in layer names"
+#: oco.jsxinc:111
+#, qt-format
+msgctxt "in layer name, tail"
+msgid "Tl"
+msgstr "C"
+
+#. "short for Middle, must be short enough to be used as a tag in layer names"
+#: oco.jsxinc:112
+#, qt-format
+msgctxt "in layer name, middle"
+msgid "Md"
+msgstr "M"
+
+#. "short for Above, must be short enough to be used as a tag in layer names"
+#: oco.jsxinc:113
+#, qt-format
+msgctxt "in layer name, above"
+msgid "Ab"
+msgstr "Arr"
+
+#. "short for Under, must be short enough to be used as a tag in layer names"
+#: oco.jsxinc:114
+#, qt-format
+msgctxt "in layer name, under"
+msgid "Un"
+msgstr "Deb"
+
+#: oco.jsxinc:335
+#, qt-format
+msgid "Arm"
+msgstr "Brazo"
+
+#: oco.jsxinc:393
+#, qt-format
+msgid "Shoulder"
+msgstr "Hombro"
+
+#: oco.jsxinc:442
+#, qt-format
+msgid "Forearm"
+msgstr "Antebrazo"
+
+#: oco.jsxinc:483
+#, qt-format
+msgid "Hand"
+msgstr "Mano"
+
+#: oco.jsxinc:524
+#, qt-format
+msgid "Claws"
+msgstr "Garras"
+
+#: oco.jsxinc:560
+#, qt-format
+msgid "Tip"
+msgstr "Extremo"
+
+#: oco.jsxinc:601
+#, qt-format
+msgid "Heel"
+msgstr "Talón"
+
+#: oco.jsxinc:663
+#, qt-format
+msgid "Leg"
+msgstr "Pierna"
+
+#: oco.jsxinc:702
+#, qt-format
+msgid "Thigh"
+msgstr "Muslo"
+
+#: oco.jsxinc:710
+#, qt-format
+msgid "Calf"
+msgstr "Pantorrilla"
+
+#: oco.jsxinc:731
+#, qt-format
+msgid "Foot"
+msgstr "Pie"
+
+#: oco.jsxinc:753
+#, qt-format
+msgid "Toes"
+msgstr "Dedos de los Pies"
+
+#: oco.jsxinc:767
+#, qt-format
+msgid "Hoof"
+msgstr "Pezuña"
+
+#: oco.jsxinc:838
+#, qt-format
+msgid "Spine"
+msgstr "Espina"
+
+#: oco.jsxinc:856
+#, qt-format
+msgid "Hips"
+msgstr "Caderas"
+
+#: oco.jsxinc:877
+#, qt-format
+msgid "Torso"
+msgstr "Torso"
+
+#: oco.jsxinc:898
+#, qt-format
+msgid "Neck"
+msgstr "Cuello"
+
+#: oco.jsxinc:907
+#, qt-format
+msgid "Head"
+msgstr "Cabeza"
+
+#: oco.jsxinc:943
+#, qt-format
+msgid "Tail"
+msgstr "Cola"
+
+#: oco.jsxinc:982
+#, qt-format
+msgid "Hair"
+msgstr "Pelo"
+
+#: oco.jsxinc:1044
+#, qt-format
+msgid "Wing"
+msgstr "Ala"
+
+#: oco.jsxinc:1126
+#, qt-format
+msgid "Feather"
+msgstr "Pluma"
+
+#: oco.jsxinc:1388
+#, qt-format
+msgid "Fin"
+msgstr "Aleta"
+
+#: oco.jsxinc:1409
+#, qt-format
+msgid "Fishbone"
+msgstr "Hueso de pez"
+
+#: panel.jsxinc:567
+#, qt-format
+msgid "%1 Settings"
+msgstr "Parámetros de %1"
+
+#: panel.jsxinc:591
+#, qt-format
+msgid "Set the language of the interface."
+msgstr "Seleccionar el idioma de la interfaz."
+
+#: panel.jsxinc:610
+#, qt-format
+msgid "Settings file"
+msgstr "Archivo de parámetros"
+
