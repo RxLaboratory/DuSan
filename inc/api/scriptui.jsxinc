@@ -226,7 +226,7 @@ DuSanity.UI.test = function (container, test) {
         statusIcon.setHelpTip( test.tip );
     }
 
-    var group = DuScriptUI.settingField( container, test.testName, 140 );
+    var group = DuScriptUI.settingField( container, test.testName, 250 );
     group.onClick = function() {
         var c = group.checked;
         
