@@ -1,5 +1,9 @@
 # DuSan changelog
 
+## ▹ 2.0.5
+
+- Fixed an issue where the settings would be saved in a Duik folder instead of a DuSan folder.
+
 ## ▹ 2.0.4
 
 - UI Tweaks
