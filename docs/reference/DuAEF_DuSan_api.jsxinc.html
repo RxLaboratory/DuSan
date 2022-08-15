@@ -456,6 +456,8 @@ DuESF.enterRunTime = function()
 {
     DuDebug.log( "DuESF: Entering runtime..." );
 
+    DuDebug.log( "DuESF: Language is set to: " + i18n.getLocale());
+
     DuDebug.log( "DuESF: Getting script version..." );
     DuESF.settings.data.version = DuESF.scriptVersion.fullVersion;
     DuESF.settings.save();
@@ -3492,10 +3494,9 @@ var translationEngine = function (options) {
 
       if (!jsonData[''] || !jsonData['']['language'] || !jsonData['']['plural-forms'])
       {
-        if (DuESF.debug) throw new Error('Wrong JSON, it must have an empty key ("") with "language" and "plural-forms" information');
-        else return;
+        DuDebug.log('gettext: Wrong JSON, it must have an empty key ("") with "language" and "plural-forms" information');
+        return;
       }
-        
 
       var headers = jsonData[''];
       delete jsonData[''];
@@ -10646,7 +10647,7 @@ DuScriptUI.askLanguage = function ( callback, ui )
 
     var languages = i18n.getAvailableLanguages();
 
-    if (currentLanguageName != '' || languages.count == 0)
+    if (currentLocale != '' || languages.count == 0)
     {
         callback()
         return;
@@ -10686,7 +10687,7 @@ DuScriptUI.askLanguage = function ( callback, ui )
         // Save settings
         DuESF.scriptSettings.set("common/language", languageSelector.currentData );
         DuESF.scriptSettings.set("common/currentLanguageName", languageSelector.text);
-        i18n.setLocale( languageSelector.currentData );
+        i18n.setLocale( languageSelector.currentData, true );
 
         DuESF.scriptSettings.save();
 

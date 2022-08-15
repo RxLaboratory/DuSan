@@ -3,6 +3,7 @@
 ## ▹ 2.0.5
 
 - Fixed an issue where the settings would be saved in a Duik folder instead of a DuSan folder.
+- Fixed an issue where the language would not be correctly set at first run.
 
 ## ▹ 2.0.4
 
