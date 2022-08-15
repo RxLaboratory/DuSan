@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-14 18:00\n"
-"PO-Revision-Date: 2022-08-14 16:06\n"
+"PO-Revision-Date: 2022-08-15 10:05\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -508,12 +508,12 @@ msgstr "Hilfe anfordern."
 #: help.jsxinc:131
 #, qt-format
 msgid "Translate %1"
-msgstr ""
+msgstr "Übersetzen %1"
 
 #: help.jsxinc:132
 #, qt-format
 msgid "Help translating %1 to make it available to more people."
-msgstr ""
+msgstr "Hilf dabei, %1 zu übersetzen, um es mehr Menschen zur Verfügung zu stellen."
 
 #: help.jsxinc:342
 #, qt-format
@@ -741,7 +741,7 @@ msgstr "Das Skript muss eventuell neu gestartet werden, damit alle Änderungen �
 #: panel.jsxinc:910
 #, qt-format
 msgid "Help and options"
-msgstr ""
+msgstr "Hilfe und Optionen"
 
 #: panel.jsxinc:924
 #, qt-format
