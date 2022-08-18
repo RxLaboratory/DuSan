@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-14 18:00\n"
-"PO-Revision-Date: 2022-08-14 16:06\n"
+"PO-Revision-Date: 2022-08-18 02:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -75,22 +75,22 @@ msgstr "运行时间限制（分钟）"
 #: init.jsxinc:110
 #, qt-format
 msgid "Composition Names"
-msgstr ""
+msgstr "合成名"
 
 #: init.jsxinc:111
 #, qt-format
 msgid "Layer Names"
-msgstr ""
+msgstr "图层名"
 
 #: init.jsxinc:112
 #, qt-format
 msgid "Expression engine"
-msgstr ""
+msgstr "表达式引擎"
 
 #: init.jsxinc:113
 #, qt-format
 msgid "Project size"
-msgstr ""
+msgstr "工程大小"
 
 #: init.jsxinc:114
 #, qt-format
@@ -100,42 +100,42 @@ msgstr "工程项目"
 #: init.jsxinc:115
 #, qt-format
 msgid "Duplicated footages"
-msgstr ""
+msgstr "重复的素材"
 
 #: init.jsxinc:116
 #, qt-format
 msgid "Unused footages"
-msgstr ""
+msgstr "未被使用的素材"
 
 #: init.jsxinc:117
 #, qt-format
 msgid "Precompositions"
-msgstr ""
+msgstr "预合成"
 
 #: init.jsxinc:118
 #, qt-format
 msgid "Main compositions"
-msgstr ""
+msgstr "主合成"
 
 #: init.jsxinc:119
 #, qt-format
 msgid "Memory in use"
-msgstr ""
+msgstr "内存使用量"
 
 #: init.jsxinc:120
 #, qt-format
 msgid "Essential properties"
-msgstr ""
+msgstr "基本属性"
 
 #: init.jsxinc:121
 #, qt-format
 msgid "Time since last save"
-msgstr ""
+msgstr "上次保存后的时间"
 
 #: init.jsxinc:122
 #, qt-format
 msgid "Up time"
-msgstr ""
+msgstr "运行时间"
 
 #: scriptui.jsxinc:31
 #, qt-format
@@ -311,7 +311,7 @@ msgstr "取消"
 #, qt-format
 msgctxt "Select"
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: duscriptui_extension.jsxinc:664
 #, qt-format
