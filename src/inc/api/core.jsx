@@ -947,7 +947,7 @@ DuSanity.Test.save.fix = function() {
 DuSanity.Test.upTime = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
-    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.upTime.stringId +"/timeout", 180) * 60000;
+    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.upTime.stringId +"/timeout", 180);
 
     $.global.DuSan = def($.global.DuSan, {});
 
