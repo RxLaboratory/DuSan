@@ -4,7 +4,7 @@
     ],
     "recurseDepth": 1,
     "source": {
-        "include": ["../output/DuSan_API/DuAEF_DuSan_api.jsxinc"],
+        "include": ["output/DuSan_API/DuAEF_DuSan_api.jsxinc"],
         "includePattern": ".+\\.jsxinc$",
         "excludePattern": "(^|\\/|\\\\)_"
     },
@@ -16,7 +16,7 @@
     "templates": {
         "cleverLinks": true,
         "monospaceLinks": false,
-        "copyright"             : "Copyright © 2022 Nicolas Dufresne and contributors",
+        "copyright"             : "Copyright © 2022-2023 Nicolas Dufresne and contributors",
         "includeDate"           : true,
         "search"                : true,
         "better-docs": {
@@ -53,6 +53,6 @@
     "opts": {
         "template": "node_modules/better-docs",
         "recurse": false,
-        "destination": "../../../docs/reference"
+        "destination": "../../docs/reference"
     }
 }

@@ -1,8 +1,10 @@
+
 // ==================== |-----| ====================
 // ==================== | api | ====================
 // ==================== |-----| ====================
 
 // API
+
 // ==================== |-------------| ====================
 // ==================== | api_version | ====================
 // ==================== |-------------| ====================
@@ -34,9 +36,12 @@
  * @category DuSanity
  */
 var DuSanity = {}
+
+
 // ==================== |-------| ====================
 // ==================== | icons | ====================
 // ==================== |-------| ====================
+
 
 // ==================== |-----------| ====================
 // ==================== | w12_check | ====================
@@ -44,36 +49,42 @@ var DuSanity = {}
 
 var w12_check = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\f\x00\x00\x00\f\b\x06\x00\x00\x00Vu\\\u00E7\x00\x00\x00\tpHYs\x00\x00\x05\u0089\x00\x00\x05\u0089\x01mh\u009D\u00FA\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x01;IDAT(\u0091}\u00CF;KCA\x10\u0086\u00E1wv\u00D7\u00A4\u00B0\x10T\x14+\u008Bt^j\u00AD\u00C5\u00C6\u00C2\u0080\u009D\u00A0\u0085U\b\u00EAo\u0090t\u00FE\u0089\x18Q\x14\u0084\u00ED\x04\x0BAP\x10/\u00C5Q\x0BE{\t\x16V\u00D9\u0080 \u00E6\u009CY\u009B\x13\u0090\u00A0~\u00DD\u00CC<30B\u009EJ\u00A5\u00D2\x17c\\\u008B1\u00AE\x02\x13\u0080\x01^\u0080\u00C3\x10\u00C2\u008E\u00F7\u00FE\x0B@\x00\u00AA\u00D5\u00EAH\u00A7\u00D39\x16\u0091\x19~\u00CF\u00BD\u00AA.6\x1A\u008D7\u00A9\u00D5j\u00AE\u00D9l^\x02\u00B3\x7F\u00E0n\x1EB\b\u00B3\u00B6T*\u00AD\u0089\u00C8\u00C6?0\x01\u00DA\u00C0t\u00B1X|7\"\u00B2\u00F2\x0F\u00BER\u00D59U]\x07\x10\u0091\x15\u0093?\b\u00F0\b\u009C\u00F6\u00E0\u0085B\u00A10d\u008C\u00D9\u00CD{\u0093\x0E\u0088\x001\u00C6-k\u00ED\u0089\u00AA\x1E\x01\u00A3]\u009C\u00A6\u00E9\x050\u00DE\u00BD\u00E2\u0080g`LDv\u00B2,\u009B\u00B7\u00D6.;\u00E7\u008A\u00AA:\u00DC\u008B\u0081'\x03\x1C\u00E6\u00C5\u00A0\u0088\u009CeY6\u00F5\x07FD\x0EL\ba\x1F\u00B8\u00FE\u00B1t\u009E\u00A6\u00E9m/\x06\u00EEZ\u00ADV\u00DDx\u00EF3\u00E7\u00DC\x12p\u0093\x0F\x06\u0080\u00D1\x1E\u009C\u00A8j\u00D9{\u00FFe\x01\u0092$\u00F9(\u0097\u00CB{\u00EDv\u00FB5_\u00E8\x07>\u0081\u00BB\x18\u00E3\u00B6\u00B5v\u00B3^\u00AF\x07\u0080o\u008E\u00F9\u008B\t\x16\x10\u00F0~\x00\x00\x00\x00IEND\u00AEB`\u0082", "w12_check.png", "icons" );
 w12_check;
+
 // ==================== |-------------| ====================
 // ==================== | w12_check_g | ====================
 // ==================== |-------------| ====================
 
 var w12_check_g = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\f\x00\x00\x00\f\b\x06\x00\x00\x00Vu\\\u00E7\x00\x00\x00\tpHYs\x00\x00\x05\u0089\x00\x00\x05\u0089\x01mh\u009D\u00FA\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x01FIDAT(\u0091}\u00D2\u00BF+\u00C4q\x1C\u00C7\u00F1\u00E7\u00EB\u00E3\u00B8\u00FC\u00BA\u00F3+b\u00B1\u00CAY\u0094\u00A2\x1BM\f\u0094E\u00CA\u00CF\u0089Rf\u009B\u00BE\u00BB?@\x06,n\u00B9\u00C1`S\u00EAD\u00B2\x1C\x06\"e\u00B1\u00B0\x11\u00CEq\u00A7\u00EF\u00F7m\u00F0\u00BD\x12\u0097\u00D7\u00F6y\u00BD\x1F\u00BD\u0087w\x1F\x11f=\u00BB^\u00F9R\u00FF>\x17\x04\u009A\u0092\u00E8\x06\x1C\u00D85\u00B8T\u00DE\x7F\u00DC\u00F0\x12^\x11@\x00\u00AB\u00B7k\u00AD\u00F6Y\u00DCE\u00F4S6:34\u00B2\u00DC\u00B5t//\u00E3Ej:\x1A\u008F0\x06\u00CA\u00E3\u00EF\u0098q\u00FE\x1E<\rDj\u00DA\u009Bf0\u00FB\x07[\x16T'\u00D1[\u00ED\x1A\u00E6\x1D\x04\u0093\u00FF\u00E0c\u00A30h\u00B0\b \u00A7I\x07\u00EA\x0E\u00A7\x17B{\u00BF\u00F0p`U\u00CD\u0082\u00AD\u00EF\u008A\u008430\x00S\u00B0\x12\u00CBEG$\u00DB\u00F9\u0089+\u00E4\x0E\u0080\u00CE\u00D2\x1A'\u00B8\x02\u0090\u00B9\u008D\\\u00BC\u00D0\x13{\u00AD\u009E\u00C8\u00FB\u0095C\u00E50\u00E8\u00D2\x19\u00A4\u00C2W\u0093\u00EF\u00DB~.^\u00E8\u0089\u00BAb\u00CB_\f\u00A6`[iKW\u00DC\u00DD<\x1C\x1A$\u00C3\u00FE\x19\u00F1\u0081\u00D1\u00F6\u00EB\x02\u00A7y\u00FF)\u00E9\u00C65\u00EE\x13\u00A9\x1A\x03\u009D\u0084\u0083\u00F8_lY\u00C3\u008Dz\t\u00AF\u00A8R\u00E5e\u00BCHm{\u00C3\u00AC\u00A1i(}\r\u00AEdJ\u00C5\u00DE\u00A2\u009B\x0B}\x0B\u009F\x00_\x01#\u0080\u00CF\u00FC\u0086\u00D2\u00B1\x00\x00\x00\x00IEND\u00AEB`\u0082", "w12_check_g.png", "icons" );
 w12_check_g;
+
 // ==================== |--------------| ====================
 // ==================== | w12_critical | ====================
 // ==================== |--------------| ====================
 
 var w12_critical = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\f\x00\x00\x00\f\b\x06\x00\x00\x00Vu\\\u00E7\x00\x00\x00\tpHYs\x00\x00\x05\u0089\x00\x00\x05\u0089\x01mh\u009D\u00FA\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x01\x03IDAT(\u0091m\u008F\u00B1J\x03Q\x10E\u00CFl^\x04\x15D0\u00F86/F[k\u00C1B\u008C\u009D\u00DF\u00A0\x06\u00EC\u00F4\x0F\u0084\u00F8\x0B\x16~\u0082\u009D\u0085~B\u00FEA\u00B0\u00B6U!,\u00B8\u00BB\u008A\u0085\u0085d\u00DFX$\u00CA\u00EE\u00F3M3\u00CC\u00BDs\u00EF\u00DC\u0081H\u00BDu:.\u00B3v=\u00C6\u0099\x10P\u0090\u00D2\u0098{\x01\u00A3\u00B0/\u00A0u>\t\x05\u00B9\u00B5C\u0085\x03`/\u00B7\u00F6$\u00E4\u00A5>L\u009C[Z\u00F0\u00FE\t\u00B8\u009BC\u00C3\u00EF$\u00D9v\u0093\u00C9W\u00F4B\u00DB\u00FBK\u00A0\u00AF0V\x18\x03\u00FD\u00B6\u00F7\u00A3h\u00A4\u00A2\u00D7\u00DB\x10\u00B8\u0088D\x18\u00BDw\u00BB[\u00FF\x04\u00BE\u00AA\u00AE\u0081\u00E5P\x00,z\u00D5\u00AB\u0086\u00A0tn p\u00F4\u00E7\u00AA\u00DA\x12\u00D5\u00D6\u00EF\u00ACp\\:7\u0098q\u0090\x14i\u00FA\x00\u00EC\u00D4\\_\u00E6}\u00B3\u0086=\u00AEe\u00D9\u00AE\x14\u00D6\u009E\u00A9\u00C8M=\u0083\u008A\u009C\n\b\u00AA\u00B7\u008D\x7FT\u00CF%O\u00D3\u00E7\u00C0\tT?f\x1B\u00B2\x1A\u00FC\u00F3j|U\x1D\u008A1+\rX\u0084X\u00E9t\u00FA\u00F9\x03\u0081\u008EM\u00EC\x18N\u00BBB\x00\x00\x00\x00IEND\u00AEB`\u0082", "w12_critical.png", "icons" );
 w12_critical;
+
 // ==================== |-----------| ====================
 // ==================== | w12_fatal | ====================
 // ==================== |-----------| ====================
 
 var w12_fatal = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\f\x00\x00\x00\f\b\x06\x00\x00\x00Vu\\\u00E7\x00\x00\x00\tpHYs\x00\x00\x05\u0089\x00\x00\x05\u0089\x01mh\u009D\u00FA\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x00\u00F7IDAT(\u0091\u008D\u008F\u00B1N\x02\x01\x10D\u00DFl\x0ECaa\u00E1'\u0098\u00F3\x1B\u008C\u00A7\t\u0089\u0095\r\u0095\u00C6 ~\x04\u009DFCB\u00FC\x06\x1Bb\t\u009D\u0091\u0086\u00C4\u0082\u00C2\u00C2\u008B\u00BD\u0085\t\x02\x7F \u0085\u008D\x16\u00A2\u00B7\x16x\x06\u00BD\u00C30\u00D5\u00EE\u00EC\u00EC\u00CC\u00AE\u00DA\u00EBq\t|\u0095\u0085\u00A0q\u0080\u00D3\x04\u00AD\u00CD\u00D2\u008E\u00DFK\x12\u00CE\u00C6/\u00BDkh.\u009Dd|\u00A43\u00E04\u009B\u00E0\u00C7V}\u00DA\u00BC\x02z\x0B\u00DCs{8\u008C\u00AE\r@\t5\u00E0\u00E3\x1F\u00F1g\u0082\u00D7\x00\f\u00A02\u008A\x1Eq.\u00E7\u00CA\u009D\u00E6\u00D1`\u00EB\x01 H\u00B9\u0082'\u00F5\u0089\u00EC\x00X\u00C19\u009F\u0091\u00BFH\u0093z\u00DAXZ\u00EC\u008F\u00B6\u009F]4\u00A6\u0086\u00DEq\u00BC\x03\u00E0\u00A2Q\x19\u0094\u00C6\u0099\x05\u0080\u00D7\u00E5\u00E2\x05\u00D07T6T\x06\u00FA\u00DF\u00DC\x0F\u00F4\u00F7\u00DCvx\u00B7\x03\u00EAM\u0093\u00D8\u00AD\x0E\u00A2\u009B\u00B9\u00BF\u00A5h\u0085q\u00B7\x15\u00C6\u00DD\u00BCY\u0090G.\u00BD\u00D9\u00DE{\u00D1\ny\u00B3/\u00ECZJ\x18\u00D9\u009A'\x17\x00\x00\x00\x00IEND\u00AEB`\u0082", "w12_fatal.png", "icons" );
 w12_fatal;
+
 // ==================== |-----------------| ====================
 // ==================== | w12_information | ====================
 // ==================== |-----------------| ====================
 
 var w12_information = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\f\x00\x00\x00\f\b\x06\x00\x00\x00Vu\\\u00E7\x00\x00\x00\tpHYs\x00\x00\x05\u0089\x00\x00\x05\u0089\x01mh\u009D\u00FA\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x01\"IDAT(\u0091\u008D\u0092;NBa\x10\u0085\u00BF\u00F3\u00FF\x17\x03X\u00AB[\u00E0\u00D5\u0098X`\u00E9\x024\u00C6\u0082\x061\u00B1\u00D1m\u00DC-hE\u00D4X\u0081\x056\u00BA\x02\x0B\u00EC4\x1A\x13Q\u00D8\u0080\x1D\u0095\t\x10\u00E1\u00DE\u00B1\u00F0\x06\u0085h\u00E2iNr\x1E\u0093\u00C9dD\u0082\u00F0\u00C6\x02\u00BF4\u00D8\u00C7\u00B4\x0B\x14\x00\x07\u00BC\u009A\u00EC\"V\u00F6,,\u00EA\x03@\x00\u00E1\u00D3\u00FB\u00B2w\u00FE\x1A('\u00FD\u00AB\u0084\u00B7\x13~\u0088R\u00B6\x19\u00E6\x16\u00DF\u00D4j\u0099\u00EF\u00E5\u0087m`=1\u00C7Q)\u0093.\\\u00A2^~8\x02\x02\x00\u008C\u00C7\u00C8g\u00CAA77\u00AA\u00E9;\f\u0090\u00F2\u00CF\u0083\u0093^\x1E@\u00C1T\x15\u00AB.\x1A\x1E\x04R\\M6\u009B\u00C2L}\x00\u00CD\u00CAHT\x1D\u00A8\u00C8\x1C\\\u00CCq\u00BC`G\u00F3:Pr\x18\u00F6\u008B\u00F1\x07,v\u0092u\u00FE_P\u00C7\u00C5r\u008D\x7F\u00CF\u00975\\\u00EE%\u00DDD\u00B4g\x1C\u008F\x0B\u00C6\u00F2s\u00F9\u00FB\u0095Q\u00F6\u00D4U*\u008A\u00A2\u00D4d\x07\u00B8\u009DNBuC\u00F5\x1F\u00E1;\u00E7m\u00EBpM\u00E3\u00E9\u00E1Z-\u00F3\u00DD\u00DC\u00A8\u00E6d{\u00F6\u00F5\x1A\x02\u00BAf\u00D6\u008C\u00FB\u00D9\u00F3pC\x13\u0080O\u00DA\u00B9a\u00B0+\x13\u00D1O\x00\x00\x00\x00IEND\u00AEB`\u0082", "w12_information.png", "icons" );
 w12_information;
+
 // ==================== |-------------| ====================
 // ==================== | w12_warning | ====================
 // ==================== |-------------| ====================
 
 var w12_warning = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\f\x00\x00\x00\f\b\x06\x00\x00\x00Vu\\\u00E7\x00\x00\x00\tpHYs\x00\x00\x05\u0089\x00\x00\x05\u0089\x01mh\u009D\u00FA\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x01\x05IDAT(\u0091\u008D\u008F\u00BF/\x03q\x18\u00C6?\u00CF7W\u008B\u00CD\u00A1\u00ADYB\u00B4\x06\x12!$&\u00B1\x19\u00ACr1\u00E1_\u00F1?\u0088A\u009A\u00F6\x0F\u0090\u00D8\f$\x12]\u00DAI\u00DA\x1A\u00BA;\u00EAl\x16\u00CE\u00BD\x06\x17\u00B9\u00D3J\u00FA\u008C\u00CF\u00FB>\u00BFD\n\u00BB\u00C1{+\x17\x0F\u00CD\x14\x00\u008B)\u00DD\u0093\u00A8O-\u00845\u0089/\x00\x01\u0084\u00FD\u00E2\u00AC\u00F7\u00A9K`\u0083\u0091\u00D0}\\H\u00F6K\u00F3\u00CF/\u00B2\x16\u0085h\u00B2t\x07\u00ACg\x1E\u00AE!1\u00D0nF\u00D5\u00F4\u00C3p[\u0083^\u00F9X\u00D8Y\u00CE0\u00B1\x1Ds\u008A\x05\u00B7\u00B9\x1C\u00B3#\u00E7\u00B0`t\u008Da\u0098\x148\u0083\u00EA\u00D8\x02\u00A8:\u00D2\u00E1\u00E3@ \u00CF\u00B0\u00AE\u00D0V\u00EE\u00E2t*H\u0086\x04\u00A2\u00EB$5F\u0098\u00D5L\u00BA\u00F8K&\u00A6\u0086\u00ACS\u0099\u0088\\\u00D4\x04V3\u00B76?\tk\x19\u00AE\u00E5\u00BF\u0087\u009B\x02\x18<N\u00CF\u00C9\u00BC+`\u00E5\u009F\u00FAm\u00B3xof\u00E9\u00F5\u00E9wp\u009At\x02\x1C\x00\u00CB)\u00FD\u0080Q\u00F7\u00CD?W\u00A5\u00F3\x01\u00F0\r\u00D4FV\u00F60\u00B8l\u00C2\x00\x00\x00\x00IEND\u00AEB`\u0082", "w12_warning.png", "icons" );
 w12_warning;
+
 // ==================== |------------| ====================
 // ==================== | w12_danger | ====================
 // ==================== |------------| ====================
@@ -81,36 +92,42 @@ w12_warning;
 var w12_danger = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\f\x00\x00\x00\f\b\x06\x00\x00\x00Vu\\\u00E7\x00\x00\x00\tpHYs\x00\x00\x05\u0089\x00\x00\x05\u0089\x01mh\u009D\u00FA\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x01\x1CIDAT(\u0091\u008D\u0091=K\u00C3P\x14\u0086\u009Fs\u009B,\u0081B\x03\u00C9hGu\x11\n\"\u00FE\x01\u00F1'8\u008B 86\u00BB\x1F\u00E0 \bb\x1D\n\"8\u0088\u00A3\x7F\u00C1\u00C5]\u0087\u00A2S\x1D\u00AB[\x02\x06\n\x19L\u009A\u00E3\u00D04\u00DCJ\x05\u00DF\u00E9\u00DE\u00F7>\u00EF\u00F9\u00E0\n\u0095\u00F4\u0081F2\u00F2:,P\u00D0\u00CE\x06\u00B2\u00C3\x04\u00C0\u0099\u0099\u00C9\u00A7\u00B7/F\u00AE\x17\x05\u0092\x0F\u00EF\x00\u00B2\x1B\x00\x01\u00F8\u00EA\u00B5Z\x13\u00CD\u00DF\u0081\u0090\u00A9\u00FB\u0088\u00A2\u00C0v\u0095\u0089\x1B\u00E2.\u00FBQ\u009A\x1A\u0080\u0082\u00FC\u00A4\u0086\x01J\u00CE\x159\u00B3\u009A\u0084\u0085\u00E6\u00C7\x00\u0092\\4W1\u00E5+\u00E0\u00D6\u00CF\u00CA\u0096\u008A\x14\u0082>Y\u00A1B\u0090\u008EQS^\u00CE\u00C1\x7F\u00CBQ\u00D1\u009E1\u00A0\u00FF\u0080\u00A7\u00AB)\u00DF\x12_5W\u00A4,\u00DF~\u008D\u00F4\u008CP\x02\u009B\x16\u009F\u00AB1k&\u00EC\u008E\u0087\n\u00FD\u00F9Rr\u00AF\u00E8\u009Dm)\u00F4\u00C3\u00EExh\x00\x1CqO\u0081\u00D8\u00EA\u00BD+*{\x16\x1FW\f\x06\u00C0\u008F\u00D2TU\u008F\u00ACr\u00EB\b\x1B\u00F5U\u00F4\u00D0\u008F\u00D2\x14\u00AC\u009F\x0E\u0096\u00B2\u00DBd\u00E4\u00BD,Z6hg\u0083\u00D9\u00F9\x07\u00C1Ia\u009F\u00C3$\u00BB\u00CC\x00\x00\x00\x00IEND\u00AEB`\u0082", "w12_danger.png", "icons" );
 w12_danger;
 
+
 // ==================== |----------| ====================
 // ==================== | w16_file | ====================
 // ==================== |----------| ====================
 
 var w16_file = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\x10\x00\x00\x00\x10\b\x06\x00\x00\x00\x1F\u00F3\u00FFa\x00\x00\x00\tpHYs\x00\x00\x07k\x00\x00\x07k\x01\u00CE\u00B7sZ\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x00\u0090IDAT8\u008Dc\u00DC\u00B8q\u00E3Q\x06\x06\x06+\x06\u00FC \fJg\u00FF\u00FC\u00F9\u00D3?,,\u00EC#L\u0082\u0089\b\u00CD\u00C8\u00C0\u009E\u0083\u0083c\u00EF\u0096-[\x04\u0091\r \t\u00FC\u00FF\u00FF\u00DF\u00F8\u00DF\u00BF\x7F\u00BBW\u00ADZ%D\u0096\x010C\u00D8\u00D9\u00D9w\u00AFZ\u00B5J\u0088,\x03\u00A0\u00C0\u0088\u009D\u009D}\x1D\x0B\u0091\u008A\u0099\u00FF\u00FC\u00F9s\u0084\u0085\u0085%\f]\u0082(\x03\u00FE\u00FF\u00FF\u009F\u00C7\u00CA\u00CA\u00CA\u00F8\u00FF\u00FF\u00FF?d\x19\u00C0\u00C8\u00C8h\u00F9\u00FF\u00FF\x7FKlr\u0094\u0084\u00C1\u00A8\x01\u0083\u00CA\u0080\u00A3\x14\u00E8?\x02\x00\u008B\u00BC-'\u00FCN\u00B0\u00CA\x00\x00\x00\x00IEND\u00AEB`\u0082", "w16_file.png", "icons" );
 w16_file;
+
 // ==================== |------------| ====================
 // ==================== | w16_file_d | ====================
 // ==================== |------------| ====================
 
 var w16_file_d = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\x10\x00\x00\x00\x10\b\x06\x00\x00\x00\x1F\u00F3\u00FFa\x00\x00\x00\tpHYs\x00\x00\x07k\x00\x00\x07k\x01\u00CE\u00B7sZ\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x00\u0092IDAT8\u008D\u00ED\u00D0\u00B1\r\u00C20\x10F\u00E1\u00F7\x1F,@F!Uh\x18\u0081\u008E\x05\u009C&Bb\u00A0\f\u00C1\x02\x11]2\x10\u00B5\u0091\u008F*R\x14\x04\x04W\x14\u00BC\u00F6|\u009FNV]\u00D7\x03\u00B0\u00E3M\u00EE~\x04\u0090t2\u00B3C\u00DB\u00B6\u00B7qf\u009F\u0096g\u00EDSJ\u00D7\u00A6i6S\u00E0\u00DB\u00CA\x18c\x17B(r\x01\u0080RR\x17B(r\x01\u0080\u00AD\u00A4\u00CBz\u00C9K3[\u00B9{?~\u00E6\u00B4E\u0080\u00BB\u009F\x01\x01\u00F7,\x00\u00A8\u0080J\u00D2\u00F3u\x0B\u0081\u0097\u00FD\u0081_\x01\u0086\u00DCew\u00EF\x1F\u00FB\u00F1'KC\u00B6\u0093\u0086\x00\x00\x00\x00IEND\u00AEB`\u0082", "w16_file_d.png", "icons" );
 w16_file_d;
+
 // ==================== |---------| ====================
 // ==================== | w16_fix | ====================
 // ==================== |---------| ====================
 
 var w16_fix = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\x10\x00\x00\x00\x10\b\x06\x00\x00\x00\x1F\u00F3\u00FFa\x00\x00\x00\tpHYs\x00\x00\x07a\x00\x00\x07a\x01\u0095\u00C3\u00B8\u00B6\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x01\x1EIDAT8\u008D\u0095\u0091\u00B1J\x041\x10\u0086\u00FF\t\x07a\u00F1\x01|\x05\x11\x05[+\u00AFK\u00E3&\x0B\u00C2\u00956\u00B6W\u00A8\u008D\u00F7\bg\u00E5\u00E1\x1B\u00D8\u00AE\u0088\u0091h\u00B1\u009D\x07\u0096\u0082\u00D5\u00F9\x1A\u0082\u00B0\u00904\x13\u009B\x13\u00D6\u00F5n7\u00F7\u00973\u00F9\u00BE\x19&\u0084\rS\u0096e&\u00A5\u009C\u00C5\x18\u00BF\u008A\u00A2\u0098\u00D0&\u00B0sn\u0087\u0099K\x00\u00FB\x00\x10c\u00BC\x16\u00A9\u00B0\u00B5\u00F6\u0094\u0099\u00DF\x7F\u00E1e\u00B6\x07\u00A9\x02\"\u00BAk\u0095>\u00B3,\x1B'o\u00D0JMD#\u00A5T\u009D$\u00B0\u00D6N[\u00DB\u008C\u00B5\u00D6\x0B\x00\u00E8=\u00A2\u00B5vJDW\x00f\u00C6\u0098\u008Bv\u00BFS\u00E0\u009C+\u0098\u00F9\u0091\u0088n\u00B4\u00D6\u0097\u00AB\u00DE\u00FC\x11TU\u00B5\u00E5\u00BD\u00BF\x05`\x00,\x00\u009C\t!\u00F6\u00F2<\u00B7\u00EB\u0086P\x13\x0E!<\u00C7\x18\u0087\u008D\u00FE\u00DC\x183\u00FCG52hL~\x01p\u00D4\u00EA\u00EFv\u00C1\x00 :`\x10\u00D1S\u00AF\u00C0{\x7F\u00BF\x06~\u0095R\u009E\u00F7\n\x00\x1C\u00AC\u00A8\u00CF\u00A5\u0094\u00C7J\u00A9\u00BAW \u00848\x01\u00F0\u00DD\u00A8\u00BD\u0085\x10\u0092``\u00F9\x0B\u00CE\u00B9Cf~ \u00A2\x0F)\u00E5(\x15\x06\u0080\x1F\u00A1\u00D8hU\u00F50k\u0098\x00\x00\x00\x00IEND\u00AEB`\u0082", "w16_fix.png", "icons" );
 w16_fix;
+
 // ==================== |--------------| ====================
 // ==================== | w16_live_fix | ====================
 // ==================== |--------------| ====================
 
 var w16_live_fix = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\x10\x00\x00\x00\x10\b\x06\x00\x00\x00\x1F\u00F3\u00FFa\x00\x00\x00\tpHYs\x00\x00\x07a\x00\x00\x07a\x01\u0095\u00C3\u00B8\u00B6\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x01\u009DIDAT8\u008D\u008D\u0093=k\x14Q\x14\u0086\u009F\u00F7\x06\u00C6\u00D4\u0082\u00B5\u009D\u009D\u00C5\x0E\u00F8\x07\u00ACd\u00C3\u009D\x19\u008B@\x1AE$\u00A0\"h0\u00A2\u008D\u00E0h\n\u0083\x1FlH\u0097F\u0089V\x11\\\u00E7\u00CE\u00C8v\u00B2\x7F\u00C2? \u0096b\u00B3\u00D5\u00EA\u00C2\x1C\u009B\u0099e\u00D8(\u00BB\u00A7\u00B9\u0097\u00F7\u00DC\u00E7=\u00E7^\u00CE\u0085\u0085\u00C8\u00F3\u00DC\u0085\x10n/\u00EAf\u00A6\x10\u00C2\u00EB\u00B2,\x7F\u0085\x106Z\u00DD-\x1E\u008C\u00E3\u00F8:0\x18\x0E\u0087\x17\u00BApUU\x07\u00C0\u00AE\u0099\u009D\x05>\x15E\u00D1\x07P\u00B7r\x1C\u00C7Gf\u00B6\u00DDH\x7F$\u00DD\u00F2\u00DE\x1FWUu`f\u00F7\u00CC\u00EC\u009Bsn\u00CF\u00CC\u00DE\x01k\u0092\u00AE\u00BA\u008EA=\u009DN\u00EF\x02/\u0081\x1A\u00D8\u00F4\u00DE\x1F\u0097e9h\u00E1(\u008A.'I\u00F2\x11\u00B8\x01\u009C1\u00B3\x0F\u00F3\x0E\u00DA\x18\u008F\u00C7\u00EB\u0093\u00C9\u00E4E\u0092$\x0F\u00CA\u00B2\x1C\x00\u00F7\u00CD\u00EC{\x14E\u0097\u00FA\u00FD\u00FE\u00CF\u00D1htn6\u009B}\x05.\x02oN\x19\u00B4wn\u00E1F\u00AA\u00CDl;\u008A\u00A2/-,\u00E9\u00D0{\u00BFs\u00CA\u00E0\x1F0\x1D\u0093\x1F\u0092\u00CE\u00CFa\u00C9\u00B4\"<\x0FIG\u00DE\u00FB;\u0092\f`\u00AD\u009B\u00EC\u00F5z\u00FB\u0092vW\u0085\u00A13\x07EQ\u00ECKz\u00BC\n\x1CB\u00D8\u009B\x1B4\x136X\x02\x1Fv\u00E0M\u00E0I\u00B3\u00A2\u00A2(^Iz\u00B8\x04\u00DEi\u00E0\x1Cx\u00DAI?s\u00CE\u00B9\u009B\u00AB\u00C0\x00i\u009A\u00E6f\u00B6\x05`f[i\u009A\u00E6\u00AE\u00AE\u00EBk\u00C0\u00EFep\x1BY\u0096\u009DHz\u009Ee\u00D9\t4\x7F!\u0084p\x05\u00F8\f\u00AC/>\u00D8\u00FF\u00BA\u009B\x17j7!\u0084\rI\u00EF\u00EB\u00BA~\u009B\u00A6\u00E9\u00A3U`\u0080\u00BFqE\u00D9\u00BCQ\x18\u00D39\x00\x00\x00\x00IEND\u00AEB`\u0082", "w16_live_fix.png", "icons" );
 w16_live_fix;
+
 // ==================== |----------------| ====================
 // ==================== | w16_live_fix_d | ====================
 // ==================== |----------------| ====================
 
 var w16_live_fix_d = new DuBinary( "\u0089PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\x10\x00\x00\x00\x10\b\x06\x00\x00\x00\x1F\u00F3\u00FFa\x00\x00\x00\tpHYs\x00\x00\x07a\x00\x00\x07a\x01\u0095\u00C3\u00B8\u00B6\x00\x00\x00\x19tEXtSoftware\x00www.inkscape.org\u009B\u00EE<\x1A\x00\x00\x01\u00A8IDAT8\u008D\u0095\u0093\u00BF\u008B\x13A\x18\u0086\u009Fw\u00B7\u00D0\x14\u00D7\bbi\u0091X\x1A\u0098t\u0082\u0095U\u00B0\x13\x11\u00CE\u00E2\u008A8\x1B\u0083\u0085z\u00A0`\u00E9\u00EA\x15\n\nwx\u0088\u00CAL\bVr\u0082\\cc!\u00A4\u00B0\x13\x19\u008B3\u00CD\u00D9\u00C8\u0096\u00FE\x05\n{cq\x1B\u008Dk\u00C2\u009DO\u00F9}\u00F3\u00BC\x1F\u00F3+\u00A5F\u009E\u00E7I\u00B3\u00D9\u00BC\x1AB\u00F8Tk)\u00CB\u00B2\u00C7\u009DN\u00E7\u00951\u00E6K\ba\x17 \u00A9\x07\x14E\u00B1\"ic0\x18\u009C\u00AA\u00C9\x1B\u00C0-\u00E0\u0098\u00A47Y\u0096\u009D\x07\u00D0\u00EC\u00E4\u00A2(\u009EK\u00EAW\u00A5\u009F\u0092\x06\u00CE\u00B9\u0097\u0095|\x03\u00D8\u0091\u00B4\x16c\x1C\x01\u00A9\u00A4\x0B\u00E94`<\x1E\u00C7V\u00AB\u00F5\u00AE\u00D1h\x1C\x01\u00CEH\u00BA\u00E8\u009C{m\u00AD]\u0097t\x13\u00D8)\u00CB\u00F2\u00DCp8\u00FCh\u008C\u00D9\u0095t\x19\u00E8\u00FE\x0E\x00\u0098L&e\u00BB\u00DD\u00FE\u0090$\u00C9\u0092\u00F7~sF\u00FEV\u0096\u00E5\u00D9\u00D1h\u00F4\u00BD\u00D7\u00EB\x1DO\u0092d\b\u009C\x00\u009E\u0089\u00F9hF\x06\u00D8\x03\u00B2\u00B2,\u00DF\u00A6i\u00FA\x1E8\r<\u00F1\u00DE\u00AF\u00CE\x0B\u00A8\u00CBS\u00F6\u0080\x0289\u0095\u0081X\x0FX$\u00FFY \u00BDp\u00CE]\x03\"\u00D4\u00AE\u00D1Z\u00FB\u00E0\x7F\u00E4\u00BF\x02\u00AC\u00B5\x0F%\u00DD9\u008Cl\u00AD]\u009B\u00D6S\u00F6\x1F\u00C9\u00BA\u00A4\u00DB\u008Bd\u00F6\u00F7|\u00BD\u0092/I\u00DA4\u00C6LB\b\x13\u00F5\u00FB\u00FDG1\u00C6\u0083\u00E4U fY\u0096\x03wgz\u00F7\u0092\x18\u00E3\u0095\u00C3\u00C8\x00\u00DE\u00FB\x1CX\u00AEz\u00CB\u00DE\u00FB<\x01V\u0080\x1F\x07\u00C9S\u00BC\u00F7[\u0092\u00EE{\u00EF\u00B7\u00A0\u00FA\x0B\u00D6\u00DA\u00AE\u00A4m\u00E0(\u00CC?\u00EDE\u00A4\x00!\u0084\u00AF\u00C6\u0098\u00CF\u0092\u00BA\u0092\u009E:\u00E7\u00FE\u0099\u00BC\u0088_X;\u00B1\u008F\teN\u00CC\x00\x00\x00\x00IEND\u00AEB`\u0082", "w16_live_fix_d.png", "icons" );
 w16_live_fix_d;
+
 // ==================== |------| ====================
 // ==================== | core | ====================
 // ==================== |------| ====================
@@ -1068,7 +1085,9 @@ DuSanity.Test.upTime.hasAutoFix = false;
 DuSanity.Test.upTime.timeOut = 900000;
 DuSanity.Test.upTime.fix = function() {
     app.quit();
-}// ==================== |----------| ====================
+}
+
+// ==================== |----------| ====================
 // ==================== | scriptui | ====================
 // ==================== |----------| ====================
 
@@ -1435,7 +1454,9 @@ DuSanity.UI.test = function (container, test) {
     updateUI();
     //add to events
     DuScriptUI.addEvent(updateUI, 1000);
-}// ==================== |------| ====================
+}
+
+// ==================== |------| ====================
 // ==================== | init | ====================
 // ==================== |------| ====================
 
