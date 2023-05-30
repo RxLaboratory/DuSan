@@ -291,6 +291,8 @@ DuSanity.Test.compNames.hasFix = true;
 DuSanity.Test.compNames.hasAutoFix = true;
 DuSanity.Test.compNames.timeOut = 600000;
 DuSanity.Test.compNames.paused = false;
+DuSanity.Test.compNames.testName = ""; // Added during init
+DuSanity.Test.compNames.options = {}; // Added during init
 DuSanity.Test.compNames.fix = function() {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.compNames.testName);
 
@@ -354,6 +356,8 @@ DuSanity.Test.layerNames.id = 0;
 DuSanity.Test.layerNames.hasFix = true;
 DuSanity.Test.layerNames.hasAutoFix = true;
 DuSanity.Test.layerNames.timeOut = 60000;
+DuSanity.Test.layerNames.testName = ""; // Added during init
+DuSanity.Test.layerNames.options = {}; // Added during init
 DuSanity.Test.layerNames.fix = function() {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.layerNames.testName);
 
@@ -405,6 +409,8 @@ DuSanity.Test.expressionEngine.id = 0;
 DuSanity.Test.expressionEngine.hasFix = true;
 DuSanity.Test.expressionEngine.hasAutoFix = true;
 DuSanity.Test.expressionEngine.timeOut = 1800000;
+DuSanity.Test.expressionEngine.testName = ""; // Added during init
+DuSanity.Test.expressionEngine.options = {}; // Added during init
 DuSanity.Test.expressionEngine.fix = function() {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.expressionEngine.testName);
 
@@ -456,6 +462,8 @@ DuSanity.Test.projectSize.enabled = true;
 DuSanity.Test.projectSize.id = 0;
 DuSanity.Test.projectSize.hasFix = false;
 DuSanity.Test.projectSize.hasAutoFix = false;
+DuSanity.Test.projectSize.testName = ""; // Added during init
+DuSanity.Test.projectSize.options = {}; // Added during init
 DuSanity.Test.projectSize.timeOut = 60000;
 
 /**
@@ -484,6 +492,8 @@ DuSanity.Test.projectItems.enabled = true;
 DuSanity.Test.projectItems.id = 0;
 DuSanity.Test.projectItems.hasFix = false;
 DuSanity.Test.projectItems.hasAutoFix = false;
+DuSanity.Test.projectItems.testName = ""; // Added during init
+DuSanity.Test.projectItems.options = {}; // Added during init
 DuSanity.Test.projectItems.timeOut = 600000;
 
 /**
@@ -577,6 +587,8 @@ DuSanity.Test.itemSources.id = 0;
 DuSanity.Test.itemSources.hasFix = false;
 DuSanity.Test.itemSources.hasAutoFix = false;
 DuSanity.Test.itemSources.timeOut = 1800000;
+DuSanity.Test.itemSources.testName = ""; // Added during init
+DuSanity.Test.itemSources.options = {}; // Added during init
 DuSanity.Test.itemSources.paused = false;
 
 /**
@@ -619,6 +631,8 @@ DuSanity.Test.unusedItems.id = 0;
 DuSanity.Test.unusedItems.hasFix = true;
 DuSanity.Test.unusedItems.hasAutoFix = true;
 DuSanity.Test.unusedItems.timeOut = 1800000;
+DuSanity.Test.unusedItems.testName = ""; // Added during init
+DuSanity.Test.unusedItems.options = {}; // Added during init
 DuSanity.Test.unusedItems.fix = function () {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.unusedItems.testName);
 
@@ -669,6 +683,8 @@ DuSanity.Test.precomps.id = 0;
 DuSanity.Test.precomps.hasFix = true;
 DuSanity.Test.precomps.hasAutoFix = true;
 DuSanity.Test.precomps.timeOut = 600000;
+DuSanity.Test.precomps.testName = ""; // Added during init
+DuSanity.Test.precomps.options = {}; // Added during init
 DuSanity.Test.precomps.fix = function () {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.precomps.testName);
 
@@ -725,6 +741,8 @@ DuSanity.Test.unusedComps.id = 0;
 DuSanity.Test.unusedComps.hasFix = true;
 DuSanity.Test.unusedComps.hasAutoFix = false;
 DuSanity.Test.unusedComps.timeOut = 1800000;
+DuSanity.Test.unusedComps.testName = ""; // Added during init
+DuSanity.Test.unusedComps.options = {}; // Added during init
 DuSanity.Test.unusedComps.fix = function () {
     
     var unusedFolderName = DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "/mainCompsFolder", "Project root");
@@ -809,6 +827,8 @@ DuSanity.Test.memory.id = 0;
 DuSanity.Test.memory.hasFix = true;
 DuSanity.Test.memory.hasAutoFix = false;
 DuSanity.Test.memory.timeOut = 300000;
+DuSanity.Test.memory.testName = ""; // Added during init
+DuSanity.Test.memory.options = {}; // Added during init
 DuSanity.Test.memory.fix = function() {
     app.purge(PurgeTarget.SNAPSHOT_CACHES);
     app.purge(PurgeTarget.IMAGE_CACHES);
@@ -849,6 +869,8 @@ DuSanity.Test.essentialProperties.id = 0;
 DuSanity.Test.essentialProperties.hasFix = false;
 DuSanity.Test.essentialProperties.hasAutoFix = false;
 DuSanity.Test.essentialProperties.timeOut = 300000;
+DuSanity.Test.essentialProperties.testName = ""; // Added during init
+DuSanity.Test.essentialProperties.options = {}; // Added during init
 
 /**
  * Checks the elapsed time since last save
@@ -912,6 +934,8 @@ DuSanity.Test.save.id = 0;
 DuSanity.Test.save.hasFix = true;
 DuSanity.Test.save.hasAutoFix = true;
 DuSanity.Test.save.timeOut = 900000;
+DuSanity.Test.save.testName = ""; // Added during init
+DuSanity.Test.save.options = {}; // Added during init
 DuSanity.Test.save.fix = function() {
     app.project.save();
 }
@@ -951,6 +975,8 @@ DuSanity.Test.upTime.id = 0;
 DuSanity.Test.upTime.hasFix = true;
 DuSanity.Test.upTime.hasAutoFix = false;
 DuSanity.Test.upTime.timeOut = 900000;
+DuSanity.Test.upTime.testName = ""; // Added during init
+DuSanity.Test.upTime.options = {}; // Added during init
 DuSanity.Test.upTime.fix = function() {
     app.quit();
 }
