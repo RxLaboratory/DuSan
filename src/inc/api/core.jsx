@@ -1,6 +1,6 @@
 ﻿/**
  * The sanity levels.
- * @enum {int}
+ * @enum {number}
  * @readonly
  */
 DuSanity.Level = {

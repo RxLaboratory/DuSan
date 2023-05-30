@@ -54,7 +54,7 @@ var mainScriptFile = new File($.fileName);
 
 var isPreRelease = true;
 var scriptName = "DuSan";
-var scriptVersion = "2.0.5";
+var scriptVersion = "2.0.6-dev";
 var scriptAbout = 'Sanity tests.';
 var companyName = "RxLaboratory";
 
@@ -67,7 +67,123 @@ var rxVersionURL = 'http://api.rxlab.io';
 var translateURL = 'http://translate-dusan.rxlab.io';
 
 // Setup!
-#include "../DuAEF/setup.jsxinc";
+
+// ==================== |-------| ====================
+// ==================== | setup | ====================
+// ==================== |-------| ====================
+
+/**
+ * Returns the current After Effects version as a float<br />
+ * You have to <code>#include setup.jsxinc</code> in your script to make this method available; otherwise you can have more details with {@link DuAE.version}. 
+ * @return {float} The version
+ */
+function aeVersion()
+{
+    var reV = /^(\d+)\.?(\d*)\.?(\d*)\D?(\S*)/i;
+    var v = app.version.match( reV );
+
+    if (!v) return 0.0;
+
+    if (!v[ 1 ]) v[ 1 ]  = '0';
+	if (!v[ 2 ]) v[ 2 ]  = '0';
+	if (!v[ 3 ]) v[ 3 ]  = '0';
+	if (!v[ 4 ]) v[ 4 ]  = '';
+
+    var versionString = v[ 1 ] + '.' + v[ 2 ];
+    return parseFloat(versionString);
+}
+
+/**
+ * Has scripting file and network authorization<br />
+ * You have to <code>#include setup.jsxinc</code> in your script to make this method available.
+ * @return {Boolean} true if the preference for file and network access is enabled.
+ */
+function hasFileAndNetworkAccess()
+{
+    app.preferences.saveToDisk();
+    app.preferences.reload();
+    var ok = app.preferences.getPrefAsLong( "Main Pref Section v2", "Pref_SCRIPTING_FILE_NETWORK_SECURITY", PREFType.PREF_Type_MACHINE_SPECIFIC );
+	return ok == 1;
+}
+
+/**
+ * Displays an invitation to enable file and network access.<br />
+ * Won't do nothing if the script already has file and network access, just run the callback.<br />
+ * Use this method before loading any script which needs this authorization.<br />
+ * You have to <code>#include setup.jsxinc</code> in your script to make this method available.
+ * @param {string} scriptName - The name of the script, used in the UI.
+ * @param {boolean} [reInit=false] - Set to true to display to prompt to reinit/reinstall the script below the button to ask for file access.
+ * @param {function} [reInitMethod] - A function to run in order to reinit/reinstall the script as soon as we get file access, before running the callback
+ */
+function askFilesAndNetworkAccess(scriptName, reInit, reInitMethod )
+{
+    // Check if we already have file and network access
+    var hasAccess = hasFileAndNetworkAccess();
+    if ( hasAccess ) return true;
+
+
+    var ui = new Window('dialog', "File and network access");
+
+    reInit = def( reInit, false);
+
+    var ui_accessFileAndNetworkGroup = ui.add('group');
+    ui_accessFileAndNetworkGroup.orientation = 'column';
+
+    var accessExplanation = scriptName + " needs to be allowed to write files.\nPlease, check the box called 'Allow Scripts to write files...' in the scripting preferences of After Effects.";
+    var reInitPrompt = "/!\\ ======\n/!\\ It seems something went wrong with " + scriptName + " the last time you used it.\n/!\\ Check the box below to re-initialize {#} and try to make it work again.\n/!\\ ======";
+
+    var ui_reinitCheckbox;
+    
+    ui_accessFileAndNetworkGroup.add( 'statictext', undefined, accessExplanation,
+    {
+        multiline: true
+    } );
+
+    //if reinit add prompt
+    if (reInit)
+    {
+        ui_accessFileAndNetworkGroup.add( 'statictext', undefined, reInitPrompt,
+        {
+            multiline: true
+        } );
+        ui_reinitCheckbox = ui_accessFileAndNetworkGroup.add( 'checkbox', undefined, "Re-initialize " + scriptName + " before launch." );
+    }
+
+    var ui_buttonGroup = ui_accessFileAndNetworkGroup.add('group');
+    ui_buttonGroup.orientation = 'row';
+
+    var ui_cancelButton = ui_buttonGroup.add('button', undefined, "Cancel");
+    var ui_fileAndNetworkPrefButton = ui_buttonGroup.add( 'button', undefined, "Open preferences..." );
+
+    var accepted = true;
+
+    ui_cancelButton.onClick = function () { accepted = false; ui.close(); };
+
+    ui_fileAndNetworkPrefButton.onClick = function () { accepted = true; ui.close(); };
+
+    ui.show();
+
+    if ( hasFileAndNetworkAccess() )
+    {
+        if (reInit) if (ui_reinitCheckbox.value) reInitMethod();
+        return true;
+    }
+    if ( !accepted ) return false;
+
+    // Show prefs
+    if ( aeVersion() < 16.1 ) app.executeCommand( 2359 ); // General prefs
+    else app.executeCommand( 3131 ); // Scripting prefs
+
+    if ( hasFileAndNetworkAccess() )
+    {
+        if (reInit) if (ui_reinitCheckbox.value) reInitMethod();
+        return true;
+    }
+    else 
+    {
+        return askFilesAndNetworkAccess( scriptName, reInit, reInitMethod );
+    }
+}
 if (!askFilesAndNetworkAccess( scriptName ))
 {
     alert("Sorry, " + scriptName + " can't run without accessing the files and/or the network.");
@@ -362,9 +478,15 @@ DuESF.initMethods = [];
  * @type {function[]}
  */
 DuESF.enterRunTimeMethods = [];
+
+/**
+ * The settings used by DuESF
+ * @type {DuSettings}
+ */
+DuESF.settings = null;
+
 /**
  * This method has to be called once at the very beginning of the script, just after the inclusion of DuESF <code>#include DuESF.jsxinc</code>
- * @param {DuESF.host} hostApplication - The host application of the script.
  * @param {string} [scriptName="DuESF"] - The name of your script, as it has to be displayed in the UI and the filesystem
  * @param {string} [scriptVersion="0.0.0"] - The version of your script, in the form "XX.XX.XX-Comment", for example "1.0.12-Beta". The "-Comment" part is optional.
  * @param {string} [companyName="RxLaboratory"] - The name of the company/organisation/individual developping this script.
@@ -3268,8 +3390,8 @@ DuSettings.prototype.reset = function()
 
 /**
  * Gets a value from the settings. The key can be a path separated by /
- * @property {string} key The setting to get
- * @property {*} [defaultValue=null] The default value if the key is not set in the settings
+ * @param {string} key The setting to get
+ * @param {*} [defaultValue=null] The default value if the key is not set in the settings
  * @return {*} The value
  */
 DuSettings.prototype.get = function( key, defaultValue )
@@ -29111,7 +29233,7 @@ DuAEProject.getUnusedFootages = function() {
 
 /**
  * Gets a folder with its name. If name is "Project Root" or empty, returns the root of the project.
- * @param {string} folderName The name of the folder
+ * @param {string} folderName The name of the folder.
  * @return {FolderItem|null} The folder or null if not found.
  */
 DuAEProject.getFolderItem = function(folderName) {
@@ -29142,8 +29264,16 @@ DuAEProject.getUnusedComps = function(folder) {
         var item = app.project.item(i);
         if (item instanceof CompItem) {
             if (item.usedIn.length == 0) {
-                if (folder && folder.id == app.project.rootFolder.id && item.parentFolder == folder.id) continue;
-                if (folder && DuAEItem.isInFolder(item, folder)) continue;
+                if (!folder) {
+                    comps.push(item);
+                    continue;
+                }
+                // If it's the root
+                if (folder.id == app.project.rootFolder.id) {
+                    if (item.parentFolder.id != folder.id) comps.push(item);
+                    continue;
+                }
+                if (DuAEItem.isInFolder(item, folder)) continue;
                 comps.push(item);
             }
         }
@@ -32900,7 +33030,7 @@ DuAEPseudoEffect.prototype.apply = function(layer,name)
  * @namespace
  * @author Nicolas Dufresne and contributors
  * @copyright 2022 Nicolas Dufresne, RxLaboratory
- * @version 2.0.5
+ * @version 2.0.6-dev
  * @requires DuAEF>=1.0.0
  * @license GPL-3.0 <br />
  * DuSan is free software: you can redistribute it and/or modify<br />
@@ -33016,7 +33146,7 @@ w16_live_fix_d;
 
 /**
  * The sanity levels.
- * @enum {int}
+ * @enum {number}
  * @readonly
  */
 DuSanity.Level = {
@@ -33307,6 +33437,8 @@ DuSanity.Test.compNames.hasFix = true;
 DuSanity.Test.compNames.hasAutoFix = true;
 DuSanity.Test.compNames.timeOut = 600000;
 DuSanity.Test.compNames.paused = false;
+DuSanity.Test.compNames.testName = ""; // Added during init
+DuSanity.Test.compNames.options = {}; // Added during init
 DuSanity.Test.compNames.fix = function() {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.compNames.testName);
 
@@ -33370,6 +33502,8 @@ DuSanity.Test.layerNames.id = 0;
 DuSanity.Test.layerNames.hasFix = true;
 DuSanity.Test.layerNames.hasAutoFix = true;
 DuSanity.Test.layerNames.timeOut = 60000;
+DuSanity.Test.layerNames.testName = ""; // Added during init
+DuSanity.Test.layerNames.options = {}; // Added during init
 DuSanity.Test.layerNames.fix = function() {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.layerNames.testName);
 
@@ -33421,6 +33555,8 @@ DuSanity.Test.expressionEngine.id = 0;
 DuSanity.Test.expressionEngine.hasFix = true;
 DuSanity.Test.expressionEngine.hasAutoFix = true;
 DuSanity.Test.expressionEngine.timeOut = 1800000;
+DuSanity.Test.expressionEngine.testName = ""; // Added during init
+DuSanity.Test.expressionEngine.options = {}; // Added during init
 DuSanity.Test.expressionEngine.fix = function() {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.expressionEngine.testName);
 
@@ -33472,6 +33608,8 @@ DuSanity.Test.projectSize.enabled = true;
 DuSanity.Test.projectSize.id = 0;
 DuSanity.Test.projectSize.hasFix = false;
 DuSanity.Test.projectSize.hasAutoFix = false;
+DuSanity.Test.projectSize.testName = ""; // Added during init
+DuSanity.Test.projectSize.options = {}; // Added during init
 DuSanity.Test.projectSize.timeOut = 60000;
 
 /**
@@ -33500,6 +33638,8 @@ DuSanity.Test.projectItems.enabled = true;
 DuSanity.Test.projectItems.id = 0;
 DuSanity.Test.projectItems.hasFix = false;
 DuSanity.Test.projectItems.hasAutoFix = false;
+DuSanity.Test.projectItems.testName = ""; // Added during init
+DuSanity.Test.projectItems.options = {}; // Added during init
 DuSanity.Test.projectItems.timeOut = 600000;
 
 /**
@@ -33593,6 +33733,8 @@ DuSanity.Test.itemSources.id = 0;
 DuSanity.Test.itemSources.hasFix = false;
 DuSanity.Test.itemSources.hasAutoFix = false;
 DuSanity.Test.itemSources.timeOut = 1800000;
+DuSanity.Test.itemSources.testName = ""; // Added during init
+DuSanity.Test.itemSources.options = {}; // Added during init
 DuSanity.Test.itemSources.paused = false;
 
 /**
@@ -33635,6 +33777,8 @@ DuSanity.Test.unusedItems.id = 0;
 DuSanity.Test.unusedItems.hasFix = true;
 DuSanity.Test.unusedItems.hasAutoFix = true;
 DuSanity.Test.unusedItems.timeOut = 1800000;
+DuSanity.Test.unusedItems.testName = ""; // Added during init
+DuSanity.Test.unusedItems.options = {}; // Added during init
 DuSanity.Test.unusedItems.fix = function () {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.unusedItems.testName);
 
@@ -33685,6 +33829,8 @@ DuSanity.Test.precomps.id = 0;
 DuSanity.Test.precomps.hasFix = true;
 DuSanity.Test.precomps.hasAutoFix = true;
 DuSanity.Test.precomps.timeOut = 600000;
+DuSanity.Test.precomps.testName = ""; // Added during init
+DuSanity.Test.precomps.options = {}; // Added during init
 DuSanity.Test.precomps.fix = function () {
     DuAE.beginUndoGroup( i18n._("Fix") + ': ' + DuSanity.Test.precomps.testName);
 
@@ -33707,7 +33853,9 @@ DuSanity.Test.precomps.fix = function () {
 DuSanity.Test.unusedComps = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
-    var unusedFolder = DuAEProject.getFolderItem( DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "mainCompsFolder", "Project root" ) );
+    var folderName = DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "/mainCompsFolder", "" );
+    if (folderName == 'Project root') folderName = '';
+    var unusedFolder = DuAEProject.getFolderItem( folderName );
     var comps = DuAEProject.getUnusedComps(unusedFolder);
     var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "/maxUnusedComps", 1);
 
@@ -33739,6 +33887,8 @@ DuSanity.Test.unusedComps.id = 0;
 DuSanity.Test.unusedComps.hasFix = true;
 DuSanity.Test.unusedComps.hasAutoFix = false;
 DuSanity.Test.unusedComps.timeOut = 1800000;
+DuSanity.Test.unusedComps.testName = ""; // Added during init
+DuSanity.Test.unusedComps.options = {}; // Added during init
 DuSanity.Test.unusedComps.fix = function () {
     
     var unusedFolderName = DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "/mainCompsFolder", "Project root");
@@ -33823,6 +33973,8 @@ DuSanity.Test.memory.id = 0;
 DuSanity.Test.memory.hasFix = true;
 DuSanity.Test.memory.hasAutoFix = false;
 DuSanity.Test.memory.timeOut = 300000;
+DuSanity.Test.memory.testName = ""; // Added during init
+DuSanity.Test.memory.options = {}; // Added during init
 DuSanity.Test.memory.fix = function() {
     app.purge(PurgeTarget.SNAPSHOT_CACHES);
     app.purge(PurgeTarget.IMAGE_CACHES);
@@ -33863,6 +34015,8 @@ DuSanity.Test.essentialProperties.id = 0;
 DuSanity.Test.essentialProperties.hasFix = false;
 DuSanity.Test.essentialProperties.hasAutoFix = false;
 DuSanity.Test.essentialProperties.timeOut = 300000;
+DuSanity.Test.essentialProperties.testName = ""; // Added during init
+DuSanity.Test.essentialProperties.options = {}; // Added during init
 
 /**
  * Checks the elapsed time since last save
@@ -33926,6 +34080,8 @@ DuSanity.Test.save.id = 0;
 DuSanity.Test.save.hasFix = true;
 DuSanity.Test.save.hasAutoFix = true;
 DuSanity.Test.save.timeOut = 900000;
+DuSanity.Test.save.testName = ""; // Added during init
+DuSanity.Test.save.options = {}; // Added during init
 DuSanity.Test.save.fix = function() {
     app.project.save();
 }
@@ -33937,7 +34093,7 @@ DuSanity.Test.save.fix = function() {
 DuSanity.Test.upTime = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
-    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.upTime.stringId +"/timeout", 180) * 60000;
+    var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.upTime.stringId +"/timeout", 180);
 
     $.global.DuSan = def($.global.DuSan, {});
 
@@ -33965,6 +34121,8 @@ DuSanity.Test.upTime.id = 0;
 DuSanity.Test.upTime.hasFix = true;
 DuSanity.Test.upTime.hasAutoFix = false;
 DuSanity.Test.upTime.timeOut = 900000;
+DuSanity.Test.upTime.testName = ""; // Added during init
+DuSanity.Test.upTime.options = {}; // Added during init
 DuSanity.Test.upTime.fix = function() {
     app.quit();
 }
@@ -34309,11 +34467,11 @@ DuSanity.UI.test = function (container, test) {
             DuScriptUI.staticText(optG, option.description + ':');
             if (jstype(option.value) == 'number' || jstype(option.value) == 'string' ) {
                 var optB = DuScriptUI.editText( optG, {
-                    text: DuESF.settings.get("sanity/options" + test.stringId + "/" + o, option.value).toString(),
+                    text: DuESF.settings.get("sanity/options/" + test.stringId + "/" + o, option.value).toString(),
                     placeHolder: i18n._("Default")
                 });
                 optB.onChange = function () {
-                    DuESF.settings.set("sanity/options" + test.stringId + "/" + o, optB.text);
+                    DuESF.settings.set("sanity/options/" + test.stringId + "/" + o, optB.text);
                     DuESF.settings.save();
                     test();
                 }
@@ -34322,7 +34480,7 @@ DuSanity.UI.test = function (container, test) {
             {
                 var optB = DuScriptUI.simpleCheckBox(  optG );
                 optB.onClick = function () {
-                    DuESF.settings.set("sanity/options" + test.stringId + "/" + o, optB.checked);
+                    DuESF.settings.set("sanity/options/" + test.stringId + "/" + o, optB.checked);
                     DuESF.settings.save();
                     test();
                 }
@@ -34402,7 +34560,7 @@ DuSanity.init = function() {
 
     DuSanity.Test.precomps.options = {
         maxPrecompsAtRoot: {
-            value: 1,
+            value: 0,
             description: i18n._("Maximum number of precompositions in the root folder")
         },
         precompsFolder: {
@@ -34413,7 +34571,7 @@ DuSanity.init = function() {
 
     DuSanity.Test.unusedComps.options = {
         maxUnusedComps: {
-            value: 1,
+            value: 0,
             description: i18n._("Maximum unused comps in the project")
         },
         mainCompsFolder: {
@@ -34600,7 +34758,7 @@ function buildUI()
     ui.addCommonSettings();
 
     // Settings
-    //#include "settings.jsxinc"
+    //#include "settings.jsx"
     //buildSettingsUI( ui.settingsGroup );
 
     // Get the UI mode

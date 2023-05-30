@@ -2,7 +2,7 @@
 
 :: The version ::
 IF "%~1"=="" (
-    SET version=2.0.5
+    SET version=2.0.6-dev
 ) ELSE (
     SET version=%~1
 )
@@ -38,8 +38,8 @@ md "%types_path%"
 echo __Building API
 
 mkdir "%build_path%\DuSan_API"
-DuBuilder "%repoPath%\src\inc\api.jsxinc" --no-banner -r "{dusanVersion}:%version%" "%build_path%\DuSan_API\DuSan_api.jsxinc"
-DuBuilder "%repoPath%\src\inc\api_all.jsxinc" --no-banner -r "{dusanVersion}:%version%" "%build_path%\DuSan_API\DuAEF_DuSan_api.jsxinc"
+DuBuilder "%repoPath%\src\inc\api.jsx" --no-banner -r "{dusanVersion}:%version%" "%build_path%\DuSan_API\DuSan_api.jsxinc"
+DuBuilder "%repoPath%\src\inc\api_all.jsx" --no-banner -r "{dusanVersion}:%version%" "%build_path%\DuSan_API\DuAEF_DuSan_api.jsxinc"
 :: copy to dist
 echo " " > "%dist_path%\DuSan_api.jsxinc"
 echo " " > "%dist_path%\DuAEF_DuSan_api.jsxinc"
@@ -52,8 +52,8 @@ echo __Building DuSan
 mkdir "%build_path%\DuSan"
 mkdir "%build_path%\DuSan\ScriptUI Panels"
 DuBuilder "%repoPath%\src\DuSan.jsx" --no-banner -r "{dusanVersion}:%version%" "output\DuSan\ScriptUI Panels\DuSan.jsx"
-echo " " > "%dist_path%\DuSan.jsxinc"
-xcopy /Y "%build_path%\DuSan\ScriptUI Panels\DuSan.jsx" "%dist_path%\DuSan.jsxinc"
+echo " " > "%dist_path%\DuSan.jsx"
+xcopy /Y "%build_path%\DuSan\ScriptUI Panels\DuSan.jsx" "%dist_path%\DuSan.jsx"
 
 :: Build Doc ::
 echo __Building DuSan docs
