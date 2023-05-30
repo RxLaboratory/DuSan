@@ -58,7 +58,7 @@ DuSanity.init = function() {
 
     DuSanity.Test.precomps.options = {
         maxPrecompsAtRoot: {
-            value: 1,
+            value: 0,
             description: i18n._("Maximum number of precompositions in the root folder")
         },
         precompsFolder: {
@@ -69,7 +69,7 @@ DuSanity.init = function() {
 
     DuSanity.Test.unusedComps.options = {
         maxUnusedComps: {
-            value: 1,
+            value: 0,
             description: i18n._("Maximum unused comps in the project")
         },
         mainCompsFolder: {
