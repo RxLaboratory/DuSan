@@ -4,7 +4,7 @@ function buildUI()
     ui.addCommonSettings();
 
     // Settings
-    //#include "settings.jsxinc"
+    //#include "settings.jsx"
     //buildSettingsUI( ui.settingsGroup );
 
     // Get the UI mode

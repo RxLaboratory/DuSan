@@ -1,8 +1,0 @@
-// API
-#include "config/api_version.jsxinc"
-
-#include "api/icons.jsxinc"
-#include "api/core.jsxinc"
-#include "api/scriptui.jsxinc"
-#include "api/init.jsxinc"
-//*/

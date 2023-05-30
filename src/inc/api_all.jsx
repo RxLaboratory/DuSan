@@ -1,2 +1,2 @@
 #include "modules/DuAEF.jsxinc"
-#include "api.jsxinc"
+#include "api.jsx"

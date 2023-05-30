@@ -1,9 +1,10 @@
 @echo off
 
 :: Edit these variables with the correct paths on your system
-SET aeDir=C:\Program Files\Adobe\Adobe After Effects 2022\Support Files\Scripts\ScriptUI Panels
+SET aeVersion=2023
+SET "aeDir=C:\Program Files\Adobe\Adobe After Effects %aeVersion%\Support Files\Scripts\ScriptUI Panels"
 :: The repo is the current dir by default
-SET repoPath=%~dp0..
+SET repoPath=%~dp0..\..
 
 :: Need admin to create symlinks
 @echo off
@@ -14,21 +15,15 @@ CD /D "%~dp0"
 
 echo Installing "%repoPath%" in "%aeDir%"...
 
-REM (Trying to) remove older files
+:: (Trying to) remove older files
 del "%aeDir%\DuSan.jsx"
 rd /s /q "%aeDir%\inc"
-rd /s /q "%aeDir%\DuAEF"
 
-REM link the main files
-mklink "%aeDir%\DuSan.jsx" "%repoPath%\DuSan.jsx"
+:: link the main files
+mklink "%aeDir%\DuSan.jsx" "%repoPath%\src\DuSan.jsx"
 echo Linked main files
 
-mklink /D "%aeDir%\inc" "%repoPath%\inc"
+mklink /D "%aeDir%\inc" "%repoPath%\src\inc"
 echo Linked included files in 'inc\'
 
-REM link dependencies
-mklink /D "%aeDir%\DuAEF" "%repoPath%\DuAEF"
-echo Linked DuAEF
-
-:: Finished!
-PAUSE
+pause
