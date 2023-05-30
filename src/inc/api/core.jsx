@@ -691,7 +691,9 @@ DuSanity.Test.precomps.fix = function () {
 DuSanity.Test.unusedComps = function ( dontFix ) {
     dontFix = def(dontFix, false);
 
-    var unusedFolder = DuAEProject.getFolderItem( DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "mainCompsFolder", "Project root" ) );
+    var folderName = DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "/mainCompsFolder", "" );
+    if (folderName == 'Project root') folderName = '';
+    var unusedFolder = DuAEProject.getFolderItem( folderName );
     var comps = DuAEProject.getUnusedComps(unusedFolder);
     var limit = DuESF.settings.get("sanity/options/" + DuSanity.Test.unusedComps.stringId + "/maxUnusedComps", 1);
 

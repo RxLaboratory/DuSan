@@ -334,11 +334,11 @@ DuSanity.UI.test = function (container, test) {
             DuScriptUI.staticText(optG, option.description + ':');
             if (jstype(option.value) == 'number' || jstype(option.value) == 'string' ) {
                 var optB = DuScriptUI.editText( optG, {
-                    text: DuESF.settings.get("sanity/options" + test.stringId + "/" + o, option.value).toString(),
+                    text: DuESF.settings.get("sanity/options/" + test.stringId + "/" + o, option.value).toString(),
                     placeHolder: i18n._("Default")
                 });
                 optB.onChange = function () {
-                    DuESF.settings.set("sanity/options" + test.stringId + "/" + o, optB.text);
+                    DuESF.settings.set("sanity/options/" + test.stringId + "/" + o, optB.text);
                     DuESF.settings.save();
                     test();
                 }
@@ -347,7 +347,7 @@ DuSanity.UI.test = function (container, test) {
             {
                 var optB = DuScriptUI.simpleCheckBox(  optG );
                 optB.onClick = function () {
-                    DuESF.settings.set("sanity/options" + test.stringId + "/" + o, optB.checked);
+                    DuESF.settings.set("sanity/options/" + test.stringId + "/" + o, optB.checked);
                     DuESF.settings.save();
                     test();
                 }
