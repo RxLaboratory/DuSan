@@ -1,4 +1,4 @@
-# DuAEF_DuSan
+# DuSan
  Sanity tests for After Effects projects.
 
 [![Platform](https://img.shields.io/badge/After%20Effects-Win%20|%20Mac-informational?color=lightgrey&logo=adobeaftereffects)](#) [![GitHub](https://img.shields.io/github/license/RxLaboratory/DuSan?color=lightgrey)](LICENSE.md)
