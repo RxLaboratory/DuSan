@@ -8,13 +8,17 @@
     ],
     "os": [
         {
-            "name": "",
-            "title": ""
+            "name": "win",
+            "title": "Windows"
+        },
+        {
+            "name": "mac",
+            "title": "macOS"
         }
     ],
-    "userGuide": "",
-    "apiReference": "",
-    "website": "https://rxlaboratory.org/tools/dufx/",
-    "description": "FX Manager for After Effects",
+    "userGuide": "http://dusan.rxlab.guide/",
+    "apiReference": "http://dusan.rxlab.io/",
+    "website": "https://rxlaboratory.org/tools/dusan/",
+    "description": "Sanity tests for After Effects projects.",
     "tutorials": ""
 }
