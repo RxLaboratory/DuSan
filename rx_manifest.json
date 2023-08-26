@@ -1,0 +1,20 @@
+{
+    "title": "DuSan",
+    "hosts": [
+        {
+            "name": "aftereffects",
+            "title": "After Effects"
+        }
+    ],
+    "os": [
+        {
+            "name": "",
+            "title": ""
+        }
+    ],
+    "userGuide": "",
+    "apiReference": "",
+    "website": "https://rxlaboratory.org/tools/dufx/",
+    "description": "FX Manager for After Effects",
+    "tutorials": ""
+}
