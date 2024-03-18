@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dusan\n"
 "POT-Creation-Date: 2022-08-14 18:00\n"
-"PO-Revision-Date: 2022-08-14 16:06\n"
+"PO-Revision-Date: 2024-03-18 08:04\n"
 "Last-Translator: \n"
 "Language-Team: Esperanto\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: core.jsxinc:295
 #, qt-format
 msgid "Fix"
-msgstr ""
+msgstr "Ripari"
 
 #: init.jsxinc:48
 #, qt-format
@@ -175,7 +175,7 @@ msgstr ""
 #: scriptui.jsxinc:57
 #, qt-format
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: scriptui.jsxinc:63
 #, qt-format
@@ -260,47 +260,47 @@ msgstr "Defaŭlto"
 #: comp.jsxinc:589
 #, qt-format
 msgid "Null"
-msgstr ""
+msgstr "Nulo"
 
 #: comp.jsxinc:638
 #, qt-format
 msgid "Adjustment layer"
-msgstr ""
+msgstr "Tavolo de adapto"
 
 #: comp.jsxinc:667
 #, qt-format
 msgid "Solid"
-msgstr ""
+msgstr "Solido"
 
 #: comp.jsxinc:696
 #, qt-format
 msgid "Shape"
-msgstr ""
+msgstr "Formo"
 
 #: comp.jsxinc:706
 #, qt-format
 msgid "Rectangle"
-msgstr ""
+msgstr "Rektangulo"
 
 #: comp.jsxinc:711
 #, qt-format
 msgid "Rounded rectangle"
-msgstr ""
+msgstr "Cirkla rektangulo"
 
 #: comp.jsxinc:717
 #, qt-format
 msgid "Circle"
-msgstr ""
+msgstr "Cirklo"
 
 #: comp.jsxinc:722
 #, qt-format
 msgid "Polygon"
-msgstr ""
+msgstr "Plurlatero"
 
 #: comp.jsxinc:728
 #, qt-format
 msgid "Star"
-msgstr ""
+msgstr "Stelo"
 
 #: duscriptui_extension.jsxinc:162
 #, qt-format
@@ -337,102 +337,102 @@ msgstr "Editi reĝimo"
 #: layer.jsxinc:1506
 #, qt-format
 msgid "Locator"
-msgstr ""
+msgstr "Lokalizilo"
 
 #: project.jsxinc:467
 #, qt-format
 msgid "Project Root"
-msgstr ""
+msgstr "Radiko de la projekto"
 
 #: oco.jsxinc:336
 #, qt-format
 msgid "Arm"
-msgstr ""
+msgstr "Brako"
 
 #: oco.jsxinc:394
 #, qt-format
 msgid "Shoulder"
-msgstr ""
+msgstr "Ŝultro"
 
 #: oco.jsxinc:443
 #, qt-format
 msgid "Forearm"
-msgstr ""
+msgstr "Antaŭbrako"
 
 #: oco.jsxinc:484
 #, qt-format
 msgid "Hand"
-msgstr ""
+msgstr "Mano"
 
 #: oco.jsxinc:525
 #, qt-format
 msgid "Claws"
-msgstr ""
+msgstr "Ungegoj"
 
 #: oco.jsxinc:561
 #, qt-format
 msgid "Tip"
-msgstr ""
+msgstr "Pinto"
 
 #: oco.jsxinc:602
 #, qt-format
 msgid "Heel"
-msgstr ""
+msgstr "Kalkano"
 
 #: oco.jsxinc:664
 #, qt-format
 msgid "Leg"
-msgstr ""
+msgstr "Kruro"
 
 #: oco.jsxinc:703
 #, qt-format
 msgid "Thigh"
-msgstr ""
+msgstr "Femuro"
 
 #: oco.jsxinc:711
 #, qt-format
 msgid "Calf"
-msgstr ""
+msgstr "Suro"
 
 #: oco.jsxinc:732
 #, qt-format
 msgid "Foot"
-msgstr ""
+msgstr "Piedo"
 
 #: oco.jsxinc:754
 #, qt-format
 msgid "Toes"
-msgstr ""
+msgstr "Piedfingroj"
 
 #: oco.jsxinc:768
 #, qt-format
 msgid "Hoof"
-msgstr ""
+msgstr "Hufo"
 
 #: oco.jsxinc:839
 #, qt-format
 msgid "Spine"
-msgstr ""
+msgstr "Spino"
 
 #: oco.jsxinc:857
 #, qt-format
 msgid "Hips"
-msgstr ""
+msgstr "Koksoj"
 
 #: oco.jsxinc:878
 #, qt-format
 msgid "Torso"
-msgstr ""
+msgstr "Torso"
 
 #: oco.jsxinc:899
 #, qt-format
 msgid "Neck"
-msgstr ""
+msgstr "Kolo"
 
 #: oco.jsxinc:908
 #, qt-format
 msgid "Head"
-msgstr ""
+msgstr "Kapo"
 
 #: oco.jsxinc:944
 #, qt-format
@@ -442,32 +442,32 @@ msgstr "Vosto"
 #: oco.jsxinc:983
 #, qt-format
 msgid "Hair"
-msgstr ""
+msgstr "Haro"
 
 #: oco.jsxinc:1045
 #, qt-format
 msgid "Wing"
-msgstr ""
+msgstr "Alo"
 
 #: oco.jsxinc:1127
 #, qt-format
 msgid "Feather"
-msgstr ""
+msgstr "Plumo"
 
 #: oco.jsxinc:1389
 #, qt-format
 msgid "Fin"
-msgstr ""
+msgstr "Naĝilo"
 
 #: oco.jsxinc:1410
 #, qt-format
 msgid "Fishbone"
-msgstr ""
+msgstr "Ostofiŝoj"
 
 #: button.jsxinc:157
 #, qt-format
 msgid "[Shift]: More options..."
-msgstr ""
+msgstr "[Shift]: Pli da opcioj..."
 
 #: colorSelector.jsxinc:65
 #, qt-format
@@ -479,19 +479,21 @@ msgstr "Fiksi hazardon valoron."
 #, qt-format
 msgctxt "file system"
 msgid "Path..."
-msgstr ""
+msgstr "Vojeto..."
 
 #: help.jsxinc:42
 #, qt-format
 msgid "Bug Report or Feature Request"
-msgstr ""
+msgstr "Raporto de Eraro aŭ Ĉefaĵa Peto"
 
 #: help.jsxinc:43
 #, qt-format
 msgid "Bug report\n"
 "Feature request\n\n"
 "Tell us what's wrong or request a new feature."
-msgstr ""
+msgstr "Raporto de eraro\n"
+"Ĉefaĵa peto\n\n"
+"Diru al ni tio kion ne estas bone aŭ demandu novan peton."
 
 #: help.jsxinc:86
 #, qt-format
@@ -506,83 +508,85 @@ msgstr "Demandu helpon."
 #: help.jsxinc:131
 #, qt-format
 msgid "Translate %1"
-msgstr ""
+msgstr "Traduki %1"
 
 #: help.jsxinc:132
 #, qt-format
 msgid "Help translating %1 to make it available to more people."
-msgstr ""
+msgstr "Helpu traduki %1 por fari ĝin pli disponebla pri plej homoj."
 
 #: help.jsxinc:342
 #, qt-format
 msgid "New version"
-msgstr ""
+msgstr "Nova versio"
 
 #: help.jsxinc:480
 #, qt-format
 msgid "Thank you for your donations!"
-msgstr ""
+msgstr "Dankon pro viaj donacoj!"
 
 #: help.jsxinc:486
 #, qt-format
 msgid "This month, the %1 fund is $%2.\n"
 "That's %3% of our monthly goal ( $%4 )\n\n"
 "Click on this button to join the development fund!"
-msgstr ""
+msgstr "Ĉimonate, la fonduso de %1 estas %2.\n"
+"Tio estas %3% de nia celo ($%4)\n\n"
+"Klaku ĉi tiu butono per aniĝi la fonduso de niaj laboriloj!"
 
 #. "an item in the After Effects project"
 #: library.jsxinc:162
 #, qt-format
 msgctxt "project"
 msgid "Item"
-msgstr ""
+msgstr "Elemento"
 
 #. "as in "run script""
 #: library.jsxinc:163
 #, qt-format
 msgctxt "file"
 msgid "Run"
-msgstr ""
+msgstr "Kuri"
 
 #: library.jsxinc:164
 #, qt-format
 msgid "Open folder"
-msgstr ""
+msgstr "Malfermi la dosierujon"
 
 #: library.jsxinc:165
 #, qt-format
 msgid "Add item or category"
-msgstr ""
+msgstr "Aldoni elementon aŭ kategorion"
 
 #: library.jsxinc:166
 #, qt-format
 msgid "Edit item or category"
-msgstr ""
+msgstr "Ŝanĝi elementon aŭ kategorion"
 
 #: library.jsxinc:167
 #, qt-format
 msgid "Remove item or category"
-msgstr ""
+msgstr "Forigi elementon aŭ kategorion"
 
 #: library.jsxinc:411
 #, qt-format
 msgid "Remove all"
-msgstr ""
+msgstr "Forigi ĉiujn"
 
 #: library.jsxinc:421
 #, qt-format
 msgid "Start typing..."
-msgstr ""
+msgstr "Startu skribi..."
 
 #: library.jsxinc:549
 #, qt-format
 msgid "Refresh"
-msgstr ""
+msgstr "Refreŝigi"
 
 #: library.jsxinc:567
 #, qt-format
 msgid "Category"
-msgstr ""
+msgstr "Kategorio"
 
 #: panel.jsxinc:570
 #, qt-format
@@ -652,7 +656,7 @@ msgstr "La oranĝkolora After Effects helo de la bona maljuna CS6"
 #: panel.jsxinc:654
 #, qt-format
 msgid "Custom..."
-msgstr ""
+msgstr "Proprigi..."
 
 #: panel.jsxinc:656
 #, qt-format
@@ -727,7 +731,7 @@ msgstr "Apliki"
 #: panel.jsxinc:795
 #, qt-format
 msgid "Apply settings."
-msgstr ""
+msgstr "Apliki agordojn."
 
 #: panel.jsxinc:869
 #, qt-format
@@ -737,7 +741,7 @@ msgstr "Vi devus rekomenci la scripto per apliki la tutajn ŝanĝojn."
 #: panel.jsxinc:910
 #, qt-format
 msgid "Help and options"
-msgstr ""
+msgstr "Helpo kaj opcioj"
 
 #: panel.jsxinc:924
 #, qt-format
@@ -747,12 +751,12 @@ msgstr "Editi fiksoj"
 #: progressbar.jsxinc:13
 #, qt-format
 msgid "Working"
-msgstr ""
+msgstr "Laborante"
 
 #: progressbar.jsxinc:23
 #, qt-format
 msgid "Magic is happening"
-msgstr ""
+msgstr "La Magio okazas"
 
 #: rssPanel.jsxinc:88
 #, qt-format
@@ -767,5 +771,5 @@ msgstr "Sekvonte"
 #: titleBar.jsxinc:55
 #, qt-format
 msgid "Keep this panel open"
-msgstr ""
+msgstr "Teni ĉi tiun panelon malferman"
 
